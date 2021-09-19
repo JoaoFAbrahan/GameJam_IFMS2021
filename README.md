@@ -8,7 +8,7 @@ Este projeto foi desenvolvido para a GameJam do Instituto Federal de Educação,
 - WebGL;
 
 ## Deselvolvedores:
-- Programação: João Felipe Abrahan, André Luiz Rodrigues de Oliveira;
-- Artista Conceitual: Ivan Fernandes Pires Neto;
-- Level Designers: Daniel Santos da Silva, Franclei Barnabé dos Santos;
-- Trilha Sonora: Anderson Luiz Bazzotti Santos.
+- ***Programação:*** João Felipe Abrahan, André Luiz Rodrigues de Oliveira;
+- ***Arte Conceitual:*** Ivan Fernandes Pires Neto;
+- ***Design de Level:*** Daniel Santos da Silva, Franclei Barnabé dos Santos;
+- ***Design de Som:*** Anderson Luiz Bazzotti Santos.
