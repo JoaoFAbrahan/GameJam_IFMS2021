@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Player/Code/CODE_Player.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "PlayerAnimation_CROUCH"
+length = 10.0
+step = 1.0
+
+[sub_resource type="Animation" id=3]
+resource_name = "PlayerAnimation_IDLE"
+length = 10.0
+step = 1.0
+
+[sub_resource type="Animation" id=4]
+resource_name = "PlayerAnimation_JUMP"
+length = 10.0
+step = 1.0
+
+[sub_resource type="Animation" id=5]
+resource_name = "PlayerAnimation_RUN"
+length = 10.0
+step = 1.0
+
+[sub_resource type="Animation" id=6]
+resource_name = "PlayerAnimation_WALK"
+length = 10.0
+step = 1.0
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+collision_mask = 15
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -32 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.4, 0.4 )
+limit_left = 0
+limit_top = -1000
+limit_bottom = 500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 16, -16 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/PlayerAnimation_CROUCH = SubResource( 2 )
+anims/PlayerAnimation_IDLE = SubResource( 3 )
+anims/PlayerAnimation_JUMP = SubResource( 4 )
+anims/PlayerAnimation_RUN = SubResource( 5 )
+anims/PlayerAnimation_WALK = SubResource( 6 )
