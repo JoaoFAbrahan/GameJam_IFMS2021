@@ -1,6 +1,14 @@
-GameJam_IFMS2021
+# GAMEJAM IFMS 2021
+Este projeto foi desenvolvido para a GameJam do Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso do Sul realizado no ano de 2021 entre os dias 01/10 à 06/10.
 
-Projeto de Jogo desenvolvido para a Game Jam do IFMS no ano de 2021 realizado entre os dias 01/10 à 06/10.
-Desenvolvedores:
-- Programação: João Felipe abrahan
-- Programação: André
+## Versão da Engine
+- Godot 3.3.3
+
+## Plataforma de Lançamento:
+- WebGL
+
+## Deselvolvedores:
+- Programação: João Felipe Abrahan, André
+- Artista Conceitual: Ivan
+- Level Designers: Daniel, Franclei Barnabé dos Sant
+- Trilha Sonora: Anderson Luiz Bazzotti Santos
