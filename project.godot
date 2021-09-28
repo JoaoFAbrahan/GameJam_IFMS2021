@@ -9,15 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "CLASS_ActorAttributes",
-"language": "GDScript",
-"path": "res://Characters/BaseClasses/CLASS_ActorAttributes.gd"
-}, {
-"base": "CLASS_ActorAttributes",
+"base": "CLASS_CharacterAttributes",
 "class": "CLASS_Character",
 "language": "GDScript",
-"path": "res://Characters/BaseClasses/CLASS_Character.gd"
+"path": "res://Characters/BaseClass/CLASS_Character.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "CLASS_CharacterAttributes",
@@ -25,7 +20,6 @@ _global_script_classes=[ {
 "path": "res://Characters/BaseClass/CLASS_CharacterAttributes.gd"
 } ]
 _global_script_class_icons={
-"CLASS_ActorAttributes": "",
 "CLASS_Character": "",
 "CLASS_CharacterAttributes": ""
 }
@@ -34,7 +28,7 @@ _global_script_class_icons={
 
 config/name="GameJam_IFMS2021"
 run/main_scene="res://Levels/Level_TESTE/SCENE_Level_TESTE.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/Sounds/Sound Effects/icon.png"
 
 [display]
 
