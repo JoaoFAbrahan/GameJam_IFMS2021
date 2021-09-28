@@ -274,5 +274,6 @@ tile_data = PoolIntArray( -720871, 3, 0, -720870, 3, 0, -720869, 3, 0, -720868, 
 
 [node name="Player" parent="World Components/Main Layer" instance=ExtResource( 1 )]
 position = Vector2( 0, -64 )
+JumpHeight = 500
 
 [node name="Foreground Layer" type="Node2D" parent="World Components"]

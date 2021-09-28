@@ -338,8 +338,6 @@ tracks/2/keys = {
 position = Vector2( 0, -30.5297 )
 collision_mask = 15
 script = ExtResource( 2 )
-Speed = 130
-JumpHeight = 350
 isAlive = true
 
 [node name="Sprite" type="Sprite" parent="."]
