@@ -1,32 +1,370 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Characters/Player/Sprite Sheet/robot_idle-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://Characters/BaseClasses/CODE_Player.gd" type="Script" id=2]
+[ext_resource path="res://Characters/Player/Sprite Sheet/SPRITE-PlayerKnight (64x64).png" type="Texture" id=1]
+[ext_resource path="res://Characters/Player/Code/CODE_Player.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 6.0
-height = 16.0
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.0733, 20.6355 )
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 5.0
+radius = 7.0
+height = 21.0
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 6.0
 height = 10.0
 
+[sub_resource type="Animation" id=4]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 34, 35, 36, 37, 38, 39, 40 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Hit_Area/Attack-COLLISION:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 3, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dash-COLLISION:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Standard-COLLISION:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 1.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Standard-COLLISION:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dash-COLLISION:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Standard-COLLISION:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dash-COLLISION:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 27, 26, 24, 25, 26, 27 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 57, 58, 59, 60, 61 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 22, 23 ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 52, 53, 54, 55, 56, 57 ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Standard-COLLISION:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dash-COLLISION:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 16, 17, 18, 19, 20, 21, 23 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "JumpFall"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 19, 20, 21 ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 12, 13 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Standard-COLLISION:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dash-COLLISION:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [node name="Player" type="KinematicBody2D"]
-collision_mask = 14
+position = Vector2( 0, -30.5297 )
+collision_mask = 15
 script = ExtResource( 2 )
+Speed = 130
+JumpHeight = 350
 isAlive = true
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -32 )
+position = Vector2( -2.38419e-07, -2.38419e-07 )
 texture = ExtResource( 1 )
-hframes = 9
+hframes = 7
+vframes = 15
+frame = 23
+
+[node name="Hit_Area" type="Area2D" parent="Sprite"]
+position = Vector2( 1.86265e-07, 0 )
+scale = Vector2( 0.78125, 0.78125 )
+
+[node name="Attack-COLLISION" type="CollisionShape2D" parent="Sprite/Hit_Area"]
+modulate = Color( 0.337255, 1, 0, 1 )
+position = Vector2( 19.6066, 5.46128 )
+shape = SubResource( 1 )
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -16 )
+position = Vector2( 0, -21 )
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.8, 0.8 )
 limit_left = -80
-limit_top = -190
+limit_top = -512
 limit_bottom = 20
 limit_smoothed = true
 smoothing_enabled = true
@@ -34,14 +372,30 @@ smoothing_speed = 10.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="Standard-Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -14 )
-shape = SubResource( 1 )
-
-[node name="Crouch-Collision" type="CollisionShape2D" parent="."]
-modulate = Color( 0, 0.454902, 0.854902, 1 )
-position = Vector2( 0, -5 )
-rotation = 1.5708
+[node name="Standard-COLLISION" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 13.4703 )
 shape = SubResource( 2 )
 
+[node name="Dash-COLLISION" type="CollisionShape2D" parent="."]
+modulate = Color( 0.0313726, 0.0392157, 0.694118, 1 )
+position = Vector2( 0, 25 )
+rotation = 1.5708
+shape = SubResource( 3 )
+disabled = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Attack = SubResource( 4 )
+anims/Crouch-IN = SubResource( 5 )
+anims/Crouch-Idle = SubResource( 6 )
+anims/Crouch-OUT = SubResource( 7 )
+anims/Dash = SubResource( 8 )
+anims/Dead = SubResource( 9 )
+anims/Fall = SubResource( 10 )
+anims/Hurt = SubResource( 11 )
+anims/Idle = SubResource( 12 )
+anims/Jump = SubResource( 13 )
+anims/JumpFall = SubResource( 14 )
+anims/Walk = SubResource( 15 )
+
+[connection signal="area_entered" from="Sprite/Hit_Area" to="." method="_on_Hit_Area_area_entered"]

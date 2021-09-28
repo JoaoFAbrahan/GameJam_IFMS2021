@@ -9,33 +9,33 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "CLASS_ActorAttributes",
-"language": "GDScript",
-"path": "res://Characters/BaseClasses/CLASS_ActorAttributes.gd"
-}, {
-"base": "CLASS_ActorAttributes",
+"base": "CLASS_CharacterAttributes",
 "class": "CLASS_Character",
 "language": "GDScript",
-"path": "res://Characters/BaseClasses/CLASS_Character.gd"
+"path": "res://Characters/BaseClass/CLASS_Character.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "CLASS_CharacterAttributes",
+"language": "GDScript",
+"path": "res://Characters/BaseClass/CLASS_CharacterAttributes.gd"
 } ]
 _global_script_class_icons={
-"CLASS_ActorAttributes": "",
-"CLASS_Character": ""
+"CLASS_Character": "",
+"CLASS_CharacterAttributes": ""
 }
 
 [application]
 
-config/name="GameJam_IFMS2021"
-run/main_scene="res://Levels/Maps/Level_TESTE/Level_TESTE.tscn"
-config/icon="res://Assets/icon.png"
+config/name="Referência_Codigos"
+run/main_scene="res://Levels/Level_TESTE/SCENE_Level_TESTE.tscn"
+config/icon="res://icon.png"
 
 [display]
 
-window/size/width=640
-window/size/height=384
-window/size/test_width=1280
-window/size/test_height=768
+window/size/width=960
+window/size/height=540
+window/size/test_width=1920
+window/size/test_height=1080
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -128,19 +128,12 @@ PlayerMovement_LEFT={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
  ]
 }
-PlayerMovement_UP={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
- ]
-}
-PlayerMovement_DOWN={
+PlayerAction_CROUCH={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
  ]
 }
-PlayerAction_CROUCH={
+PlayerAction_DASH={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
  ]
@@ -148,11 +141,6 @@ PlayerAction_CROUCH={
 PlayerAction_JUMP={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
- ]
-}
-PlayerAction_INTERATION={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
  ]
 }
 PlayerAction_ATTACK={
@@ -167,9 +155,11 @@ PlayerAction_ATTACK={
 2d_physics/layer_1="Player"
 2d_render/layer_2="Enemies"
 2d_physics/layer_2="Enemies"
-2d_render/layer_3="World"
-2d_physics/layer_3="World"
+2d_render/layer_3="Traps"
+2d_physics/layer_3="Traps"
 2d_render/layer_4="Upgrades"
+2d_physics/layer_4="World"
+2d_render/layer_5="World"
 
 [physics]
 
