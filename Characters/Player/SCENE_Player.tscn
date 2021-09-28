@@ -347,7 +347,6 @@ position = Vector2( -2.38419e-07, -2.38419e-07 )
 texture = ExtResource( 1 )
 hframes = 7
 vframes = 15
-frame = 23
 
 [node name="Hit_Area" type="Area2D" parent="Sprite"]
 position = Vector2( 1.86265e-07, 0 )

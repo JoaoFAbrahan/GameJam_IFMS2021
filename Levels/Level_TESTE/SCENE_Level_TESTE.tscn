@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Characters/Player/SCENE_Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Level_TESTE/Tilesets/TileSet 32x32.tres" type="TileSet" id=2]
 [ext_resource path="res://Levels/Level_TESTE/Sprite Tilesets/Tileset_TESTE(32x32).png" type="Texture" id=3]
+[ext_resource path="res://Assets/Probs/Items/Life_Item/SCENE_Life_Item.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -269,6 +270,9 @@ format = 1
 tile_data = PoolIntArray( -720871, 3, 0, -720870, 3, 0, -720869, 3, 0, -720868, 3, 0, -720867, 3, 0, -720866, 3, 0, -720865, 3, 0, -720864, 3, 0, -720863, 3, 0, -720862, 3, 0, -720861, 3, 0, -720860, 3, 0, -720859, 3, 0, -720858, 3, 0, -720857, 3, 0, -262104, 3, 0, -262103, 3, 0, -262102, 3, 0, -262101, 3, 0, -262100, 3, 0, -262099, 3, 0, -262098, 3, 0, -262097, 3, 0, -262096, 3, 0, -262095, 3, 0, -262094, 3, 0, -262093, 3, 0 )
 
 [node name="Upgrades" type="Node" parent="World Components/Main Layer"]
+
+[node name="Life_Item" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 4 )]
+position = Vector2( 96, -64 )
 
 [node name="Enemies" type="Node" parent="World Components/Main Layer"]
 
