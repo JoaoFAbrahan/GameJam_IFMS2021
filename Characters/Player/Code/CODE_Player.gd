@@ -4,10 +4,6 @@ extends CLASS_Character
 export var DashDistance = 2000;
 var onDash = false;
 
-var StateMachine;
-var PlayerState = State.IDLE;
-var Cont_Attack = 3;
-
 
 #### EntryPoint
 func _ready():
@@ -38,7 +34,7 @@ func PlayerMovimentation():
 	Movimentation();
 	
 	##### /// DEBUG /// #####
-	#DebugMessage();
+	DebugMessage();
 	
 	### Ações
 	JumpAction();
@@ -55,7 +51,7 @@ func PlayerMovimentation():
 func Movimentation():
 	var Direction;
 	
-	if PlayerState != State.CROUCH_IN && PlayerState != State.CROUCH_OUT && !isAttack && !onDash:
+	if CharacterState != State.CROUCH_IN && CharacterState != State.CROUCH_OUT && !isAttack && !onDash && CharacterState != State.HURT:
 		# Movimentação ESQUERDA/DIREITA
 		Direction = Input.get_action_strength("PlayerMovement_RIGHT") - Input.get_action_strength("PlayerMovement_LEFT");
 	else:
@@ -68,32 +64,32 @@ func Movimentation():
 		$Sprite.scale.x = Direction;
 		
 		# StateMachine
-		if !isCrouch && !isAttack && !onDash && isGrounded:
-			if PlayerState != State.CROUCH_OUT:
-				PlayerState = State.WALK;
+		if !isCrouch && !isAttack && !onDash && isGrounded && CharacterState != State.HURT:
+			if CharacterState != State.CROUCH_OUT:
+				CharacterState = State.WALK;
 	else:
 		# StateMachine
-		if !isCrouch && !isAttack && !onDash && isGrounded:
-			if PlayerState != State.CROUCH_OUT:
-				PlayerState = State.IDLE;
+		if !isCrouch && !isAttack && !onDash && isGrounded && CharacterState != State.HURT:
+			if CharacterState != State.CROUCH_OUT:
+				CharacterState = State.IDLE;
 		else:
-			if PlayerState != State.CROUCH_IN && !isAttack && !onDash:
-				PlayerState = State.CROUCH_IDLE;
+			if CharacterState != State.CROUCH_IN && !isAttack && !onDash && CharacterState != State.HURT:
+				CharacterState = State.CROUCH_IDLE;
 	
 	## Processa o cálculo de movimentação do eixo X
 	CalculateVelocity(Direction, isCrouch);
 
 ### Ação de Agachar
 func CrouchAction():
-	if Input.is_action_just_pressed("PlayerAction_CROUCH") && PlayerState != State.CROUCH_IDLE:
+	if Input.is_action_just_pressed("PlayerAction_CROUCH") && CharacterState != State.CROUCH_IDLE:
 		## Animação de entrando no modo Crouch
-			PlayerState = State.CROUCH_IN;
+			CharacterState = State.CROUCH_IN;
 			#CollisionController(!isCrouch);
 			isCrouch = true;
 	
 	if Input.is_action_just_released("PlayerAction_CROUCH"):
 		# Animação de saindo do modo Crouch
-			PlayerState = State.CROUCH_OUT;
+			CharacterState = State.CROUCH_OUT;
 			#CollisionController(!isCrouch);
 			isCrouch = false;
 
@@ -107,7 +103,7 @@ func DashAction():
 		
 		CollisionController(true);
 		onDash = true;
-		PlayerState = State.DASH;
+		CharacterState = State.DASH;
 
 ### Ação de Pular
 func JumpAction():
@@ -116,7 +112,7 @@ func JumpAction():
 		VELOCITY.y = JumpHeight;
 		
 		# StateMachine
-		PlayerState = State.JUMP;
+		CharacterState = State.JUMP;
 
 ### Ação de Ataque
 func AttackAction():
@@ -125,14 +121,18 @@ func AttackAction():
 		isAttack = true;
 		
 		# StateMachine
-		PlayerState = State.ATTACK;
+		CharacterState = State.ATTACK;
+### Signal method
+func _on_Hit_Area_body_entered(body):
+	#print(body.Life_Status())
+	body.Damage(10);
 
 
 #### State Machine Controller
 func PlayerAnimation():
 	### Verifica se o jogador esta colidindo com um piso
 	if isGrounded:
-		match PlayerState:
+		match CharacterState:
 			State.IDLE:
 				$AnimationPlayer.play("Idle");
 			State.WALK:
@@ -140,11 +140,11 @@ func PlayerAnimation():
 			State.CROUCH_IN:
 				$AnimationPlayer.play("Crouch-IN");
 				yield($AnimationPlayer,"animation_finished");
-				PlayerState = State.CROUCH_IDLE;
+				CharacterState = State.CROUCH_IDLE;
 			State.CROUCH_OUT:
 				$AnimationPlayer.play("Crouch-OUT");
 				yield($AnimationPlayer,"animation_finished");
-				PlayerState = State.IDLE;
+				CharacterState = State.IDLE;
 			State.CROUCH_IDLE:
 				$AnimationPlayer.play("Crouch-Idle");
 			State.DASH:
@@ -155,12 +155,19 @@ func PlayerAnimation():
 			State.JUMP:
 					$AnimationPlayer.play("Jump");
 					#yield($AnimationPlayer,"animation_finished");
+			State.HURT:
+				## Inicia a animação de receber dano
+				$AnimationPlayer.play("Hurt");
+				yield($AnimationPlayer,"animation_finished");
+				
+				## Retorna ao estado padrão
+				CharacterState = State.IDLE;
 			State.ATTACK:
-				## Inicio da animação de ataque
+				## Inicia a animação de ataque
 				$AnimationPlayer.play("Attack");
 				yield($AnimationPlayer,"animation_finished");
 				
-				## retorna o estado para falso
+				## Retorna o estado para falso
 				isAttack = false;
 			State.DEAD:
 				$AnimationPlayer.play("Dead");
@@ -180,28 +187,12 @@ func CollisionController(status: bool):
 	$"Dash-COLLISION".disabled = !status;
 ### DEBUG
 func DebugMessage():
-	print("X = ",VELOCITY.x, "  -  ","Y = ",VELOCITY.y);
-	#print("inFlying: ", isFlying);
-#	match PlayerState:
-#		StateMachine.IDLE:
-#			print("StateMachine: IDLE");
-#		StateMachine.WALK:
-#			print("StateMachine: WALK");
-#		StateMachine.CROUCH:
-#			print("StateMachine: CROUCH");
-#		StateMachine.JUMP:
-#			print("StateMachine: JUMP");
-#		StateMachine.FALL:
-#			print("StateMachine: FALL");
-#		StateMachine.ATTACK:
-#			print("StateMachine: ATTACK");
-#		StateMachine.DEAD:
-#			print("StateMachine: DEAD");
+	#print("X = ",VELOCITY.x, "  -  ","Y = ",VELOCITY.y);
+	print("Player: ", health);
 
 
 
 
 
-func _on_Hit_Area_area_entered(area):
-	if area.is_in_group("hurtbox"):
-		area.take_damage();
+
+

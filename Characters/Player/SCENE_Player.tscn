@@ -4,7 +4,7 @@
 [ext_resource path="res://Characters/Player/Code/CODE_Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.0733, 20.6355 )
+extents = Vector2( 15.4334, 25.9033 )
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 7.0
@@ -334,9 +334,11 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
 position = Vector2( 0, -30.5297 )
-collision_mask = 15
+collision_mask = 14
 script = ExtResource( 2 )
 Speed = 150
 JumpHeight = 350
@@ -347,14 +349,17 @@ position = Vector2( -2.38419e-07, -2.38419e-07 )
 texture = ExtResource( 1 )
 hframes = 7
 vframes = 15
+frame = 52
 
 [node name="Hit_Area" type="Area2D" parent="Sprite"]
 position = Vector2( 1.86265e-07, 0 )
 scale = Vector2( 0.78125, 0.78125 )
+collision_mask = 2
 
 [node name="Attack-COLLISION" type="CollisionShape2D" parent="Sprite/Hit_Area"]
 modulate = Color( 0.337255, 1, 0, 1 )
-position = Vector2( 19.6066, 5.46128 )
+light_mask = 2
+position = Vector2( 24.0866, 6.74128 )
 shape = SubResource( 1 )
 disabled = true
 
@@ -397,4 +402,4 @@ anims/Jump = SubResource( 13 )
 anims/JumpFall = SubResource( 14 )
 anims/Walk = SubResource( 15 )
 
-[connection signal="area_entered" from="Sprite/Hit_Area" to="." method="_on_Hit_Area_area_entered"]
+[connection signal="body_entered" from="Sprite/Hit_Area" to="." method="_on_Hit_Area_body_entered"]
