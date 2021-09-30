@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PlayerAttack.wav-59c9a699eeb8636e3af40240a8c12b1c.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sound Effects/PlayerAttack.wav"
+dest_files=[ "res://.import/PlayerAttack.wav-59c9a699eeb8636e3af40240a8c12b1c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

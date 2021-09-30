@@ -118,6 +118,7 @@ func AttackAction():
 ### Signal method
 func _on_Hit_Area_body_entered(body):
 	body.Damage(10);
+	$SFX/PlayerHits_SFX.play();
 	body.HealthBar.Health_Update(body.health, 10);
 
 
