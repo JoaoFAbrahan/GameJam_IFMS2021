@@ -279,7 +279,10 @@ tile_data = PoolIntArray( -1376208, 3, 0, -1376207, 4, 0, -1245142, 3, 0, -12451
 [node name="Upgrades" type="Node" parent="World Components/Main Layer"]
 
 [node name="Life_Item" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 4 )]
-position = Vector2( 96, -64 )
+position = Vector2( 271.272, -322.458 )
+
+[node name="Life_Item2" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 4 )]
+position = Vector2( 484.404, -64 )
 
 [node name="Enemies" type="Node" parent="World Components/Main Layer"]
 
@@ -287,7 +290,10 @@ position = Vector2( 96, -64 )
 position = Vector2( 239.272, -96 )
 
 [node name="Enemy_02" parent="World Components/Main Layer/Enemies" instance=ExtResource( 5 )]
-position = Vector2( 112, -32 )
+position = Vector2( 113, -32 )
+
+[node name="Enemy_03" parent="World Components/Main Layer/Enemies" instance=ExtResource( 5 )]
+position = Vector2( 563.228, -178.301 )
 
 [node name="Player" parent="World Components/Main Layer" instance=ExtResource( 1 )]
 position = Vector2( 0, -64 )

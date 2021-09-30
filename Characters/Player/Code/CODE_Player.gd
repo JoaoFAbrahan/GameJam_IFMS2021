@@ -8,20 +8,15 @@ var onDash = false;
 #### EntryPoint
 func _ready():
 	### Inicializando variáveis
+	HealthBar = get_node("HealthBar");
+	HealthBar.MaxHealth_Update(MaxHealth);
 	ForwardFacing = 1;
 	JumpHeight *= -1;
 	isAlive = true;
 	isCrouch = false;
 	isAttack = false;
 	
-	#StateMachine = $AnimationTree.get("parameters/playback");
 	$"Dash-COLLISION".disabled = true;
-#func _physics_process(delta):
-#	### Processando os cálculos
-#	PlayerMovimentation();
-#	VELOCITY = move_and_slide(VELOCITY, UP_SIDE);
-#	isGrounded = check_IsGrounded();
-
 func _process(delta):
 	### Processando os cálculos
 	PlayerMovimentation();
@@ -34,7 +29,7 @@ func PlayerMovimentation():
 	Movimentation();
 	
 	##### /// DEBUG /// #####
-	DebugMessage();
+	#DebugMessage();
 	
 	### Ações
 	JumpAction();
@@ -84,13 +79,11 @@ func CrouchAction():
 	if Input.is_action_just_pressed("PlayerAction_CROUCH") && CharacterState != State.CROUCH_IDLE:
 		## Animação de entrando no modo Crouch
 			CharacterState = State.CROUCH_IN;
-			#CollisionController(!isCrouch);
 			isCrouch = true;
 	
 	if Input.is_action_just_released("PlayerAction_CROUCH"):
 		# Animação de saindo do modo Crouch
 			CharacterState = State.CROUCH_OUT;
-			#CollisionController(!isCrouch);
 			isCrouch = false;
 
 ### Ação de Dash
@@ -124,8 +117,10 @@ func AttackAction():
 		CharacterState = State.ATTACK;
 ### Signal method
 func _on_Hit_Area_body_entered(body):
-	#print(body.Life_Status())
 	body.Damage(10);
+	body.HealthBar.Health_Update(body.health, 10);
+
+
 
 
 #### State Machine Controller
@@ -154,7 +149,7 @@ func PlayerAnimation():
 				onDash = false;
 			State.JUMP:
 					$AnimationPlayer.play("Jump");
-					#yield($AnimationPlayer,"animation_finished");
+					yield($AnimationPlayer,"animation_finished");
 			State.HURT:
 				## Inicia a animação de receber dano
 				$AnimationPlayer.play("Hurt");

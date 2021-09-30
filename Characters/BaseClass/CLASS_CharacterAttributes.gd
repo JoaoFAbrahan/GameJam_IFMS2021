@@ -6,7 +6,7 @@ class_name CLASS_CharacterAttributes
 
 
 ### Character variables
-export var MaxHealth = 100;
+export var MaxHealth = 50;
 export var Stamina = 50;
 export var Speed = 250;
 export var CrouchSpeed = 70;
@@ -18,6 +18,7 @@ export var isCrouch: bool;
 export var isFlying: bool;
 
 ### Internal variables
+onready var HealthBar;
 var health = MaxHealth;
 var ForwardFacing: int;
 var isAttack: bool;

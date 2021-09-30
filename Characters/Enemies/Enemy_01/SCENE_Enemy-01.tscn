@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Characters/Enemies/Enemy_01/Sprite Sheet/saw bot enemy-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Enemies/Enemy_01/Code/CODE_Enemy-01.gd" type="Script" id=2]
+[ext_resource path="res://User Interface/HearthBar/SCENE_HealthBar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 6.0
@@ -161,6 +162,12 @@ rotation = -1.5708
 enabled = true
 cast_to = Vector2( 0, 15 )
 collision_mask = 8
+
+[node name="HealthBar" parent="." instance=ExtResource( 3 )]
+margin_left = -11.0
+margin_top = -34.0
+margin_right = -11.0
+margin_bottom = -34.0
 
 [node name="Hit-COLLISION" type="Area2D" parent="."]
 collision_layer = 2

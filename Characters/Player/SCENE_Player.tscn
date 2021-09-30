@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Characters/Player/Sprite Sheet/SPRITE-PlayerKnight (64x64).png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player/Code/CODE_Player.gd" type="Script" id=2]
+[ext_resource path="res://User Interface/HearthBar/SCENE_HealthBar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.4334, 25.9033 )
@@ -337,9 +338,12 @@ tracks/2/keys = {
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
-position = Vector2( 0, -30.5297 )
+position = Vector2( 0, -31 )
 collision_mask = 14
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 Speed = 150
 JumpHeight = 350
 isAlive = true
@@ -401,5 +405,11 @@ anims/Idle = SubResource( 12 )
 anims/Jump = SubResource( 13 )
 anims/JumpFall = SubResource( 14 )
 anims/Walk = SubResource( 15 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 3 )]
+margin_left = -10.0
+margin_top = -15.0
+margin_right = -10.0
+margin_bottom = -15.0
 
 [connection signal="body_entered" from="Sprite/Hit_Area" to="." method="_on_Hit_Area_body_entered"]
