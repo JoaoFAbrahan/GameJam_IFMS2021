@@ -261,7 +261,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="World Components/Background Layer"]
 
 [node name="Background_00" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
-motion_scale = Vector2( 0.6, 1 )
+motion_scale = Vector2( 0.05, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_00"]
@@ -270,7 +270,7 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="Background_01" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
-motion_scale = Vector2( 0.7, 1 )
+motion_scale = Vector2( 0.1, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_01"]
@@ -279,7 +279,7 @@ texture = ExtResource( 6 )
 centered = false
 
 [node name="Background_02" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
-motion_scale = Vector2( 0.8, 1 )
+motion_scale = Vector2( 0.3, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_02"]
@@ -320,10 +320,10 @@ tile_data = PoolIntArray( -1376208, 3, 0, -1376207, 4, 0, -1245142, 3, 0, -12451
 [node name="Upgrades" type="Node" parent="World Components/Main Layer"]
 
 [node name="Life_Item" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 4 )]
-position = Vector2( 271.272, -322.458 )
+position = Vector2( 237.601, -323.699 )
 
 [node name="Life_Item2" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 4 )]
-position = Vector2( 484.404, -64 )
+position = Vector2( 471.866, -66.742 )
 
 [node name="Enemies" type="Node" parent="World Components/Main Layer"]
 
@@ -340,3 +340,4 @@ position = Vector2( 563.228, -178.301 )
 position = Vector2( 0, -64 )
 
 [node name="Foreground Layer" type="Node2D" parent="World Components"]
+position = Vector2( 15.1361, -55.4991 )

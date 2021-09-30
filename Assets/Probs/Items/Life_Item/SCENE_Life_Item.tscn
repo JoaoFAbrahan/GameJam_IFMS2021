@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Probs/Items/Life_Item/Sprite Sheet/Collected.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Probs/Items/Life_Item/Sprite Sheet/Apple.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Probs/Items/Life_Item/Code/CODE_Life_Item.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sounds/Sound Effects/FruitCollect.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
@@ -115,6 +116,10 @@ shape = SubResource( 1 )
 autoplay = "Motion"
 anims/Collected = SubResource( 2 )
 anims/Motion = SubResource( 3 )
+
+[node name="FruitCollect_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -6.0
 
 [connection signal="body_entered" from="." to="." method="_on_Life_Item_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
