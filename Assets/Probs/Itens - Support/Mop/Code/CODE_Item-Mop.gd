@@ -5,6 +5,9 @@ func _on_ItemMop_body_entered(body):
 	### Adiciona efeito
 	body._AddScore(50);
 	
+	### Efeito Sonoro
+	$CollectMop_SFX.play();
+	
 	### Animação
 	$AnimationPlayer.play("Collected");
 

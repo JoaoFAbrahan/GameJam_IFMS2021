@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Maps/Level_TESTE/Tileset_TESTE(32x32).png" type="Texture" id=2]
 [ext_resource path="res://Assets/Probs/Itens - Support/Timer/SCENE_Item-Timer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Probs/Itens - Support/Mop/SCENE_Item-Mop.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Maps/Level_02/Background Maps/SandHillsBack_Background.png" type="Texture" id=5]
+[ext_resource path="res://Levels/Maps/Level_02/Background Maps/SandHillFront_Background.png" type="Texture" id=6]
+[ext_resource path="res://Levels/Maps/Level_02/Background Maps/DesertRocks_Background.png" type="Texture" id=7]
+[ext_resource path="res://Levels/Maps/Level_02/Background Maps/Sky_Background.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -47,3 +51,39 @@ position = Vector2( 64, 0 )
 
 [node name="Item-Timer" parent="." instance=ExtResource( 3 )]
 position = Vector2( 576, -96 )
+
+[node name="Background Layer" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background Layer"]
+
+[node name="Background_00" type="ParallaxLayer" parent="Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background Layer/ParallaxBackground/Background_00"]
+position = Vector2( 544, -192 )
+texture = ExtResource( 8 )
+
+[node name="Background_01" type="ParallaxLayer" parent="Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background Layer/ParallaxBackground/Background_01"]
+position = Vector2( 544, -192 )
+texture = ExtResource( 7 )
+
+[node name="Background_02" type="ParallaxLayer" parent="Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background Layer/ParallaxBackground/Background_02"]
+position = Vector2( 544, -192 )
+texture = ExtResource( 5 )
+
+[node name="Background_03" type="ParallaxLayer" parent="Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background Layer/ParallaxBackground/Background_03"]
+position = Vector2( 544, -192 )
+texture = ExtResource( 6 )

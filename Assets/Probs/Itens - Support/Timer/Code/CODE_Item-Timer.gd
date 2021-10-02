@@ -5,6 +5,9 @@ func _on_ItemTimer_body_entered(body):
 	### Adiciona efeito
 	body._AddTime(15);
 	
+	### Efeito Sonoro
+	$CollectTimer_SFX.play();
+	
 	### Animação
 	$AnimationPlayer.play("Collected");
 
