@@ -7,7 +7,7 @@
 [ext_resource path="res://Levels/Maps/Level_TESTE/Background Maps/Background_03.png" type="Texture" id=5]
 [ext_resource path="res://Levels/Maps/Level_TESTE/Background Maps/Background_02.png" type="Texture" id=6]
 
-[node name="Level_TESTE" type="Node"]
+[node name="Level_TESTE2" type="Node"]
 
 [node name="World Components" type="Node" parent="."]
 
