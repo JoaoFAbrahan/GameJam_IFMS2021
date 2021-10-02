@@ -12,9 +12,8 @@ extents = Vector2( 15.4334, 25.9033 )
 radius = 7.0
 height = 21.0
 
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 6.0
-height = 10.0
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6, 10 )
 
 [sub_resource type="Animation" id=4]
 length = 0.7
@@ -373,7 +372,7 @@ position = Vector2( 0, -21 )
 current = true
 zoom = Vector2( 0.8, 0.8 )
 limit_left = -80
-limit_top = -512
+limit_top = -350
 limit_bottom = 20
 limit_smoothed = true
 smoothing_enabled = true

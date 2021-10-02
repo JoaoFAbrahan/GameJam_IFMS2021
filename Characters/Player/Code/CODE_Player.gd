@@ -100,7 +100,7 @@ func DashAction():
 
 ### Ação de Pular
 func JumpAction():
-	if Input.is_action_just_pressed("PlayerAction_JUMP") && isGrounded && !isCrouch && !onDash:
+	if Input.is_action_pressed("PlayerAction_JUMP") && isGrounded && !isCrouch && !onDash:
 		# Calcula a física do pulo
 		VELOCITY.y = JumpHeight;
 		
