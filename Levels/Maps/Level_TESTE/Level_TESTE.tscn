@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Characters/Player/SCENE_Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Maps/Level_TESTE/TileSet/TILESET_Teste.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/Probs/Itens - Support/Timer/SCENE_Item-Timer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Probs/Itens - Support/Mop/SCENE_Item-Mop.tscn" type="PackedScene" id=4]
 
 [node name="Level_TESTE" type="Node"]
 
@@ -41,9 +43,14 @@ tile_data = PoolIntArray( -1048499, 13, 0, -982967, 13, 0, -982966, 13, 0, -9829
 
 [node name="Upgrades" type="Node" parent="World Components/Main Layer"]
 
+[node name="Item-Timer" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 3 )]
+position = Vector2( 160, 0 )
+
+[node name="Item-Mop" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 4 )]
+position = Vector2( 384, 0 )
+
 [node name="Enemies" type="Node" parent="World Components/Main Layer"]
 
-[node name="Player" parent="World Components/Main Layer" instance=ExtResource( 1 )]
-position = Vector2( 32, -32 )
+[node name="Main_Player" parent="World Components/Main Layer" instance=ExtResource( 1 )]
 
 [node name="Foreground Layer" type="Node2D" parent="World Components"]
