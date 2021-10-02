@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sky_Background.png-57baa53456b057db96fe28b2f37f34b5.stex"
+path="res://.import/Background_02.png-d450cd377a62299848301cbcd55cc629.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Maps/Desert_Level/Background Maps/Sky_Background.png"
-dest_files=[ "res://.import/Sky_Background.png-57baa53456b057db96fe28b2f37f34b5.stex" ]
+source_file="res://Levels/Maps/Desert_Level/Background Maps/Background_02.png"
+dest_files=[ "res://.import/Background_02.png-d450cd377a62299848301cbcd55cc629.stex" ]
 
 [params]
 

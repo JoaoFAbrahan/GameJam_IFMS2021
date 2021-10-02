@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SandHillsBack_Background.png-5616492f941483b4478c67c4e7519d12.stex"
+path="res://.import/Background_00.png-d2d2cab8bb21b43666cbf25175ec52d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Maps/Desert_Level/Background Maps/SandHillsBack_Background.png"
-dest_files=[ "res://.import/SandHillsBack_Background.png-5616492f941483b4478c67c4e7519d12.stex" ]
+source_file="res://Levels/Maps/Desert_Level/Background Maps/Background_00.png"
+dest_files=[ "res://.import/Background_00.png-d2d2cab8bb21b43666cbf25175ec52d3.stex" ]
 
 [params]
 
