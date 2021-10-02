@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/10_Medieval_Knight_Facts-770x437.jpg-bc143aa30a7bceb3c64492d88b0899d0.stex"
+path="res://.import/player_walk-Sheet.png-c00db34f962959a6b71b8465e07564f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Player/Sprite Sheet/10_Medieval_Knight_Facts-770x437.jpg"
-dest_files=[ "res://.import/10_Medieval_Knight_Facts-770x437.jpg-bc143aa30a7bceb3c64492d88b0899d0.stex" ]
+source_file="res://Characters/Player/Sprite Sheet/player_walk-Sheet.png"
+dest_files=[ "res://.import/player_walk-Sheet.png-c00db34f962959a6b71b8465e07564f1.stex" ]
 
 [params]
 
