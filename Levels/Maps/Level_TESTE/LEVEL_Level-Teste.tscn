@@ -369,24 +369,28 @@ text = "PAUSA"
 align = 1
 
 [node name="Continuar" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+pause_mode = 2
 margin_top = 18.0
 margin_right = 107.0
 margin_bottom = 38.0
 text = "Continuar"
 
 [node name="Configurações" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+pause_mode = 2
 margin_top = 42.0
 margin_right = 107.0
 margin_bottom = 62.0
 text = "Configurações"
 
 [node name="MenuPrincipal" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+pause_mode = 2
 margin_top = 66.0
 margin_right = 107.0
 margin_bottom = 86.0
 text = "Menu Principal"
 
 [node name="Sair" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+pause_mode = 2
 margin_top = 90.0
 margin_right = 107.0
 margin_bottom = 110.0
