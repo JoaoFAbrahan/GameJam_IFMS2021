@@ -57,6 +57,6 @@ margin_right = 107.0
 margin_bottom = 110.0
 text = "Sair"
 
-[connection signal="button_up" from="CenterContainer/VBoxContainer/Continuar" to="." method="_on_Continuar_button_up"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Configurações" to="." method="_on_Configuraes_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MenuPrincipal" to="." method="_on_MenuPrincipal_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Sair" to="." method="_on_Sair_pressed"]
