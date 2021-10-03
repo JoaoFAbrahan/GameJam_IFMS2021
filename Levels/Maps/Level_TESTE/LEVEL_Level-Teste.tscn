@@ -134,7 +134,6 @@ texture = ExtResource( 6 )
 script = ExtResource( 9 )
 
 [node name="MenuPausa" type="Control" parent="Interface"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
