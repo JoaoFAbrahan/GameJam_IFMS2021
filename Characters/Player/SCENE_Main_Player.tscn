@@ -6,6 +6,7 @@
 [ext_resource path="res://Characters/Player/Code/CODE_TimerLabel.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sounds/Sound Effects/Jump.wav" type="AudioStream" id=5]
 
+
 [sub_resource type="Animation" id=1]
 resource_name = "GameOver"
 
