@@ -78,6 +78,9 @@ func JumpAction():
 		# Calcula a física do pulo
 		VELOCITY.y = JumpHeight;
 		
+		# Efeito Sonoro
+		$SFX/Jump_SFX.play();
+		
 		# StateMachine
 		CharacterState = State.JUMP;
 

@@ -1,17 +1,4 @@
-[gd_scene load_steps=22 format=2]
-
-[ext_resource path="res://Levels/Maps/Level_TESTE/Sprite Tileset/Sprite-0001.png" type="Texture" id=2]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Background Maps/Background_00.png" type="Texture" id=3]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Background Maps/Background_01.png" type="Texture" id=4]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Background Maps/Background_03.png" type="Texture" id=5]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Background Maps/Background_02.png" type="Texture" id=6]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Sprite Tileset/Sprite-0002.png" type="Texture" id=7]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Sprite Tileset/Sprite-0010.png" type="Texture" id=8]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Sprite Tileset/Sprite-0005.png" type="Texture" id=9]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Sprite Tileset/Sprite-00003.png" type="Texture" id=10]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Sprite Tileset/Sprite-0006.png" type="Texture" id=11]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Sprite Tileset/Sprite-0007.png" type="Texture" id=12]
-[ext_resource path="res://Levels/Maps/Level_TESTE/Sprite Tileset/Sprite-0009.png" type="Texture" id=13]
+[gd_scene load_steps=10 format=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -39,7 +26,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
 [sub_resource type="TileSet" id=9]
 0/name = "Sprite-0001.png 0"
-0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 32, 32 )
@@ -60,7 +46,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 } ]
 0/z_index = 0
 1/name = "Sprite-0006.png 1"
-1/texture = ExtResource( 11 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 32, 32 )
@@ -81,7 +66,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 } ]
 1/z_index = 0
 2/name = "Sprite-0007.png 2"
-2/texture = ExtResource( 12 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 32, 32 )
@@ -102,7 +86,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 } ]
 2/z_index = 0
 4/name = "Sprite-0002.png 4"
-4/texture = ExtResource( 7 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 32, 32 )
@@ -123,7 +106,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 } ]
 4/z_index = 0
 6/name = "Sprite-0005.png 6"
-6/texture = ExtResource( 9 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 32, 32 )
@@ -144,7 +126,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 } ]
 6/z_index = 0
 9/name = "Sprite-0009.png 9"
-9/texture = ExtResource( 13 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 32, 32 )
@@ -165,7 +146,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 } ]
 9/z_index = 0
 10/name = "Sprite-00003.png 10"
-10/texture = ExtResource( 10 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 0, 0, 32, 32 )
@@ -186,7 +166,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 } ]
 10/z_index = 0
 11/name = "Sprite-0010.png 11"
-11/texture = ExtResource( 8 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 0, 32, 32 )
@@ -221,7 +200,6 @@ motion_mirroring = Vector2( 1280, 0 )
 
 [node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_01"]
 position = Vector2( -94.5858, -448 )
-texture = ExtResource( 3 )
 centered = false
 
 [node name="Background_02" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
@@ -230,7 +208,6 @@ motion_mirroring = Vector2( 1280, 0 )
 
 [node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_02"]
 position = Vector2( -96, -448 )
-texture = ExtResource( 4 )
 centered = false
 
 [node name="Background_03" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
@@ -239,7 +216,6 @@ motion_mirroring = Vector2( 1280, 0 )
 
 [node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_03"]
 position = Vector2( -96, -448 )
-texture = ExtResource( 6 )
 centered = false
 
 [node name="Background_04" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
@@ -248,7 +224,6 @@ motion_mirroring = Vector2( 1280, 0 )
 
 [node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_04"]
 position = Vector2( -93.9977, -446.665 )
-texture = ExtResource( 5 )
 centered = false
 
 [node name="Main Layer" type="Node2D" parent="World Components"]

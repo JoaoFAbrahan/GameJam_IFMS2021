@@ -1,15 +1,22 @@
 extends Area2D
 
+var alreadyCollected = false;
+
 #### Efeito de colisão com o jogador
 func _on_ItemTimer_body_entered(body):
-	### Adiciona efeito
-	body._AddTime(15);
-	
-	### Efeito Sonoro
-	$CollectTimer_SFX.play();
-	
-	### Animação
-	$AnimationPlayer.play("Collected");
+	### Verifica se o item já foi coletado uma vez
+	if(alreadyCollected == false):
+		### Já coletou o item
+		alreadyCollected = true;
+		
+		### Adiciona efeito
+		body._AddScore(50);
+		
+		### Efeito Sonoro
+		$CollectTimer_SFX.play();
+		
+		### Animação
+		$AnimationPlayer.play("Collected");
 
 #### Efeito pós colisão
 func _on_AnimationPlayer_animation_finished(anim_name):
