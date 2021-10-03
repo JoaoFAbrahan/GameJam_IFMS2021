@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Characters/Player/Sprite Sheet/player-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player/Code/CODE_Main_Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Probs/Itens - Support/Mop/Sprite Sheet/icon2.png" type="Texture" id=3]
 [ext_resource path="res://Characters/Player/Code/CODE_TimerLabel.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sounds/Sound Effects/Jump.wav" type="AudioStream" id=5]
-
 
 [sub_resource type="Animation" id=1]
 resource_name = "GameOver"
@@ -59,10 +58,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[sub_resource type="CircleShape2D" id=9]
-radius = 35.0
-
-[sub_resource type="CapsuleShape2D" id=10]
+[sub_resource type="CapsuleShape2D" id=9]
 height = 10.0
 
 [node name="Main_Player" type="KinematicBody2D"]
@@ -101,17 +97,9 @@ anims/Jump = SubResource( 6 )
 anims/Minigame_Fail = SubResource( 7 )
 anims/Walk = SubResource( 8 )
 
-[node name="Interaction-AREA" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="Interact-Collision" type="CollisionShape2D" parent="Interaction-AREA"]
-modulate = Color( 0, 1, 0.25098, 1 )
-position = Vector2( 0, -20 )
-shape = SubResource( 9 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -15 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="HUD Timer" type="CanvasLayer" parent="."]
 
@@ -154,4 +142,3 @@ stream = ExtResource( 5 )
 volume_db = -12.0
 
 [connection signal="onChangeTime" from="." to="HUD Timer/MarginContainer/HBoxContainer/Timer Label" method="_on_Main_Player_onChangeTime"]
-[connection signal="body_entered" from="Interaction-AREA" to="." method="_on_InteractionAREA_body_entered"]

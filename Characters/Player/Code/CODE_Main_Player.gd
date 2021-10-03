@@ -35,7 +35,7 @@ func PlayerMovimentation():
 	Movimentation();
 	
 	##### /// DEBUG /// #####
-	#DebugMessage();
+	DebugMessage();
 	
 	### Ações
 	JumpAction();
@@ -85,15 +85,13 @@ func JumpAction():
 		CharacterState = State.JUMP;
 
 ### Ação de Interação
-func _on_InteractionAREA_body_entered(body):
-	## Verifica se o jogador está interagindo
-	if Input.is_action_pressed("PlayerAction_INTERACTION") && isGrounded && VELOCITY.x < 100:
-		# Passa o tipo de objeto o jogador está interagindo
-		InteractTo = body.Type;
-		
-		# StateMachine
-		isInteract = true;
-		CharacterState = State.INTERACTION;
+func InteractAction(ObjRef: String):
+	## Passa a referencia do tipo de objeto
+	InteractTo = ObjRef;
+	
+	# StateMachine
+	isInteract = true;
+	CharacterState = State.INTERACTION;
 
 
 #### State Machine Controller
@@ -109,15 +107,28 @@ func PlayerAnimation():
 				yield($AnimationPlayer,"animation_finished");
 			State.INTERACTION:
 				## Verifica com qual tipo de objeto o jogador está interagindo
-				if InteractTo == "Plataforma":
-					# Ativa animação de reparo de plataforma
-					$AnimationPlayer.play("Interation_1");
-				elif InteractTo == "Cano":
-					# Ativa animação de desentupir cano 
-					$AnimationPlayer.play("Interation_2");
-				else:
-					# Ativa animação de reviver aliado 
-					$AnimationPlayer.play("Interation_3")
+				match InteractTo:
+					"Tile":
+						# Ativa animação de reparo de plataforma
+						$AnimationPlayer.play("Interation_1");
+						yield($AnimationPlayer,"animation_finished");
+						
+						# Volta pro estado normal após a animação
+						isInteract = false;
+					"Cano":
+						# Ativa animação de desentupir cano 
+						$AnimationPlayer.play("Interation_2");
+						yield($AnimationPlayer,"animation_finished");
+						
+						# Volta pro estado normal após a animação
+						isInteract = false;
+					"Aliado":
+						# Ativa animação de reviver aliado 
+						$AnimationPlayer.play("Interation_3");
+						yield($AnimationPlayer,"animation_finished");
+						
+						# Volta pro estado normal após a animação
+						isInteract = false;
 			State.MINIGAME_FAIL:
 				$AnimationPlayer.play("Minigame_Fail");
 			State.GAMEOVER:
@@ -142,4 +153,4 @@ func _AddScore(points: int):
 
 
 func DebugMessage():
-	print(MyScore);
+	print(CharacterState);

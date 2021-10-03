@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GameJam_IFMS2021"
-run/main_scene="res://User Interface/Menu/Menu.tscn"
+run/main_scene="res://Levels/Maps/Level_TESTE/Level_TESTE.tscn"
 config/icon="res://Assets/Probs/Itens - Support/Timer/Sprite Sheet/icon.png"
 
 [display]
