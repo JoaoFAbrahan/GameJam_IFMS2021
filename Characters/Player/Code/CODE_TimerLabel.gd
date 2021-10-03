@@ -8,4 +8,7 @@ func _on_Main_Player_onChangeTime(time):
 	Seconds = int(fmod(time, 60));
 	Minutes = int(fmod(time,60*60) /60);
 	
-	text = String(Minutes) + ":" + String(Seconds);
+	if Seconds < 10:
+		text = String(Minutes) + ":0" + String(Seconds);
+	else:
+		text = String(Minutes) + ":" + String(Seconds);
