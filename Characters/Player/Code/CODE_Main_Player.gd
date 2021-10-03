@@ -74,7 +74,7 @@ func Movimentation():
 
 ### Ação de Pular
 func JumpAction():
-	if Input.is_action_pressed("PlayerAction_JUMP") && isGrounded:
+	if Input.is_action_pressed("PlayerAction_JUMP") && isGrounded && !isInteract:
 		# Calcula a física do pulo
 		VELOCITY.y = JumpHeight;
 		
@@ -153,4 +153,5 @@ func _AddScore(points: int):
 
 
 func DebugMessage():
-	print(CharacterState);
+	#print(CharacterState);
+	print(MyScore)

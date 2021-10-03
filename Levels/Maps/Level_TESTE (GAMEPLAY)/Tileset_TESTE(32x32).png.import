@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tileset_TESTE(32x32).png-cc1e3ddb3e1cf6a6946969969edc855b.stex"
+path="res://.import/Tileset_TESTE(32x32).png-b23dc39bdd9956f34caa0aa393d21371.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Maps/Level_TESTE/Tileset_TESTE(32x32).png"
-dest_files=[ "res://.import/Tileset_TESTE(32x32).png-cc1e3ddb3e1cf6a6946969969edc855b.stex" ]
+source_file="res://Levels/Maps/Level_TESTE (GAMEPLAY)/Tileset_TESTE(32x32).png"
+dest_files=[ "res://.import/Tileset_TESTE(32x32).png-b23dc39bdd9956f34caa0aa393d21371.stex" ]
 
 [params]
 

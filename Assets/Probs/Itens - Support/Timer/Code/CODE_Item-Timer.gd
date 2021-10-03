@@ -10,7 +10,7 @@ func _on_ItemTimer_body_entered(body):
 		alreadyCollected = true;
 		
 		### Adiciona efeito
-		body._AddScore(50);
+		body._AddTime(10);
 		
 		### Efeito Sonoro
 		$CollectTimer_SFX.play();
