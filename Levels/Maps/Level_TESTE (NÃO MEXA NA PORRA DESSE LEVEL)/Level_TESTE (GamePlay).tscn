@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/Maps/Level_TESTE (NÃO MEXA NA PORRA DESSE LEVEL)/Tileset/Level_TESTE (GamePlay).tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Probs/Itens - Support/Mop/SCENE_Item-Mop.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Repairable Objects/Level_01/Scenes/SCENE_Tile_0002-Broken.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Probs/Itens - Support/Timer/SCENE_Item-Timer.tscn" type="PackedScene" id=5]
 
 [node name="Level_TESTE (GamePlay)" type="Node"]
@@ -16,18 +15,9 @@ cell_size = Vector2( 32, 32 )
 collision_layer = 8
 collision_mask = 8
 format = 1
-tile_data = PoolIntArray( -589812, 1, 0, -589811, 1, 0, -589810, 1, 0, -589809, 1, 0, -589808, 1, 0, -589807, 1, 0, -589806, 1, 0, -589805, 1, 0, -589804, 1, 0, -589803, 1, 0, -589802, 1, 0, -458748, 1, 0, -458747, 1, 0, -458746, 1, 0, -458745, 1, 0, -262135, 7, 0, -262134, 1, 0, -262133, 1, 0, -262132, 1, 0, -262130, 1, 0, -262129, 1, 0, -262128, 1, 0, -196600, 7, 0, -196599, 6, 0, -196598, 3, 0, -196586, 1, 0, -196585, 1, 0, -196584, 0, 0, -196583, 1, 0, -196582, 1, 0, -131052, 1, 0, -131051, 1, 0, -131050, 3, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0 )
+tile_data = PoolIntArray( -589812, 1, 0, -589811, 1, 0, -589810, 1, 0, -589809, 1, 0, -589808, 1, 0, -589807, 1, 0, -589806, 1, 0, -589805, 1, 0, -589804, 1, 0, -589803, 1, 0, -589802, 1, 0, -458748, 1, 0, -458747, 1, 0, -458746, 1, 0, -458745, 1, 0, -262135, 7, 0, -262134, 1, 0, -262133, 1, 0, -262132, 1, 0, -262130, 1, 0, -262129, 1, 0, -262128, 1, 0, -196600, 7, 0, -196599, 6, 0, -196598, 3, 0, -196586, 1, 0, -196585, 1, 0, -196583, 1, 0, -196582, 1, 0, -131052, 1, 0, -131051, 1, 0, -131050, 3, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0 )
 
 [node name="Reparable Objects" type="Node2D" parent="."]
-
-[node name="Tile_0002-Broken" parent="Reparable Objects" instance=ExtResource( 4 )]
-position = Vector2( 416, -96 )
-
-[node name="Tile_0002-Broken2" parent="Reparable Objects" instance=ExtResource( 4 )]
-position = Vector2( 288, 32 )
-
-[node name="Tile_0002-Broken3" parent="Reparable Objects" instance=ExtResource( 4 )]
-position = Vector2( 768, -64 )
 
 [node name="Upgrade Itens" type="Node2D" parent="."]
 
