@@ -5,20 +5,22 @@ class_name CLASS_CharacterAttributes
 ### Character variables
 export var Level_Time = 300;
 export var Level_Score = 1000;
-export var Speed = 250;
-export var JumpHeight = 450;
-
-### Character status
-export var isAlive: bool;
+export var Respawn_POS = Vector2(0,0);
 
 ### Internal variables
+var Speed = 250;
+var JumpHeight = 450;
 var MyTime;
 var ForwardFacing: int;
+
+### Character status
+var isAlive: bool;
 var isInteract: bool;
 var isGrounded: bool;
 
+
 ### Character Animation
-enum State {IDLE = 0, WALK, JUMP, FALL, GAMEOVER, MINIGAME_FAIL, INTERACTION};
+enum State {IDLE = 0, WALK, JUMP, FALL, INTERACTION};
 var CharacterState = State.IDLE;
 
 
