@@ -57,12 +57,11 @@ centered = false
 [node name="Main_Player" parent="World Componnets/Main Layer" instance=ExtResource( 1 )]
 Level_Time = 1000
 Speed = 150
-JumpHeight = 400
+JumpHeight = 350
 
 [node name="Level01_Soundtrack" type="AudioStreamPlayer" parent="World Componnets/Main Layer/Main_Player"]
 stream = ExtResource( 7 )
 volume_db = -8.0
-autoplay = true
 
 [node name="TileMaps" type="Node" parent="World Componnets/Main Layer"]
 

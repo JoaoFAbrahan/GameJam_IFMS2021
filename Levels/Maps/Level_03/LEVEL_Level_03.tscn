@@ -1,4 +1,7 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Levels/Maps/Level_03/Tileset/Tundra_Tilemap.tres" type="TileSet" id=1]
+[ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=2]
 
 [node name="Level_03" type="Node"]
 
@@ -10,8 +13,20 @@
 
 [node name="TileMaps" type="Node" parent="World Componnets/Main Layer"]
 
+[node name="TileMap" type="TileMap" parent="World Componnets/Main Layer/TileMaps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -458731, 4, 0, -458730, 4, 0, -327682, 0, 0, -327681, 1, 0, -393216, 2, 0, -262146, 3, 0, -262145, 4, 0, -327680, 5, 0, -196610, 3, 0, -196609, 4, 0, -262144, 5, 0, -131074, 3, 0, -131073, 4, 0, -196608, 5, 0, -196605, 0, 0, -196604, 2, 0, -196600, 0, 0, -196595, 0, 0, -196594, 1, 0, -196593, 2, 0, -196589, 6, 0, -196588, 1, 0, -196587, 1, 0, -196586, 1, 0, -196585, 1, 0, -196584, 9, 0, -65538, 3, 0, -65537, 4, 0, -131072, 5, 0, -131069, 3, 0, -131068, 5, 0, -131064, 3, 0, -131063, 5, 0, -131059, 3, 0, -131058, 4, 0, -131057, 5, 0, -131054, 6, 0, -131053, 7, 0, -131052, 4, 0, -131051, 4, 0, -131050, 4, 0, -131049, 4, 0, -131048, 8, 0, -131047, 9, 0, -2, 3, 0, -1, 4, 0, -65536, 5, 0, -65533, 3, 0, -65532, 5, 0, -65528, 3, 0, -65527, 5, 0, -65523, 3, 0, -65522, 4, 0, -65521, 5, 0, -65518, 7, 0, -65517, 4, 0, -65516, 4, 0, -65515, 4, 0, -65514, 4, 0, -65513, 4, 0, -65512, 4, 0, -65511, 8, 0, -65510, 9, 0, 65534, 3, 0, 65535, 4, 0, 0, 5, 0, 3, 3, 0, 4, 5, 0, 8, 3, 0, 9, 5, 0, 13, 3, 0, 14, 4, 0, 15, 5, 0, 18, 3, 0, 19, 4, 0, 20, 4, 0, 21, 4, 0, 22, 4, 0, 23, 4, 0, 24, 4, 0, 25, 4, 0, 26, 8, 0 )
+
 [node name="Upgrades" type="Node" parent="World Componnets/Main Layer"]
 
 [node name="ReparableItens" type="Node" parent="World Componnets/Main Layer"]
+
+[node name="Main_Player" parent="World Componnets/Main Layer" instance=ExtResource( 2 )]
+position = Vector2( -32, -192 )
+Level_Time = 1000
+Speed = 150
+JumpHeight = 350
 
 [node name="Foreground Layer" type="Node2D" parent="World Componnets"]
