@@ -1,8 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://User Interface/GUI/Interface.gd" type="Script" id=1]
 [ext_resource path="res://User Interface/GUI/GameOver.gd" type="Script" id=2]
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://User Interface/Fonts/pixelart.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 4 )
 
 [node name="Cena_Teste_Menu" type="Node2D"]
 
@@ -11,6 +36,7 @@ margin_left = 210.973
 margin_top = 98.4471
 margin_right = 415.973
 margin_bottom = 129.447
+custom_fonts/font = SubResource( 8 )
 text = "Teste dos menus mude de cena
 "
 __meta__ = {
@@ -43,14 +69,15 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Interface/MenuPausa/CenterContainer"]
 pause_mode = 2
-margin_right = 107.0
+margin_right = 172.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( 54, 20 )
 
 [node name="Continuar" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
 pause_mode = 2
-margin_right = 107.0
+margin_right = 172.0
 margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
 text = "Continuar"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -59,8 +86,9 @@ __meta__ = {
 [node name="Configurações" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
 pause_mode = 2
 margin_top = 24.0
-margin_right = 107.0
+margin_right = 172.0
 margin_bottom = 44.0
+custom_fonts/font = SubResource( 2 )
 text = "Configurações"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -69,8 +97,9 @@ __meta__ = {
 [node name="MenuPrincipal" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
 pause_mode = 2
 margin_top = 48.0
-margin_right = 107.0
+margin_right = 172.0
 margin_bottom = 68.0
+custom_fonts/font = SubResource( 3 )
 text = "Menu Principal"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -79,8 +108,9 @@ __meta__ = {
 [node name="Sair" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
 pause_mode = 2
 margin_top = 72.0
-margin_right = 107.0
+margin_right = 172.0
 margin_bottom = 92.0
+custom_fonts/font = SubResource( 4 )
 text = "Sair"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -108,15 +138,16 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameOver/GameOver/CenterContainer"]
-margin_left = 266.0
+margin_left = 234.0
 margin_top = 161.0
-margin_right = 373.0
+margin_right = 406.0
 margin_bottom = 223.0
 rect_pivot_offset = Vector2( 54, 20 )
 
 [node name="Label" type="Label" parent="GameOver/GameOver/CenterContainer/VBoxContainer"]
-margin_right = 107.0
+margin_right = 172.0
 margin_bottom = 14.0
+custom_fonts/font = SubResource( 5 )
 text = "Game Over!"
 align = 1
 valign = 1
@@ -126,9 +157,10 @@ __meta__ = {
 
 [node name="Reiniciar" type="Button" parent="GameOver/GameOver/CenterContainer/VBoxContainer"]
 margin_top = 18.0
-margin_right = 107.0
+margin_right = 172.0
 margin_bottom = 38.0
 rect_pivot_offset = Vector2( 33.5, 10 )
+custom_fonts/font = SubResource( 6 )
 text = "Reiniciar"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -136,9 +168,10 @@ __meta__ = {
 
 [node name="MenuPrincipal" type="Button" parent="GameOver/GameOver/CenterContainer/VBoxContainer"]
 margin_top = 42.0
-margin_right = 107.0
+margin_right = 172.0
 margin_bottom = 62.0
 rect_pivot_offset = Vector2( 53.5, 10 )
+custom_fonts/font = SubResource( 7 )
 text = "Menu Principal"
 __meta__ = {
 "_edit_use_anchors_": false

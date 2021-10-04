@@ -1,9 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://User Interface/Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://User Interface/Sprites/Tela_de_Abertura.png" type="Texture" id=2]
 [ext_resource path="res://User Interface/Sprites/Notas.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sounds/Soundtracks/The Cleaner - Theme.wav" type="AudioStream" id=4]
+[ext_resource path="res://User Interface/Fonts/pixelart.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 5 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -29,22 +42,23 @@ alignment = 2
 
 [node name="Tile_Notas" type="Node" parent="."]
 
+[node name="Menu_Background" type="Sprite" parent="."]
+position = Vector2( 320.02, 192 )
+texture = ExtResource( 2 )
+
 [node name="Titulo" type="Label" parent="."]
 anchor_left = -0.0046875
 anchor_right = -0.0046875
-margin_left = 272.0
+margin_left = 259.0
 margin_top = 96.0
-margin_right = 376.0
+margin_right = 387.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 52, 7 )
+custom_fonts/font = SubResource( 1 )
 text = "NOME DO JOGO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Menu_Background" type="Sprite" parent="."]
-position = Vector2( 320, 192 )
-texture = ExtResource( 2 )
 
 [node name="Jogar" type="Sprite" parent="."]
 position = Vector2( 272, 128 )
@@ -62,6 +76,7 @@ light_mask = 0
 margin_right = 96.0
 margin_bottom = 32.0
 rect_pivot_offset = Vector2( 21, 10 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Jogar"
 flat = true
@@ -84,8 +99,9 @@ margin_top = -16.0
 margin_right = 48.0
 margin_bottom = 16.0
 rect_pivot_offset = Vector2( 50.5, 16 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Opções"
+text = "Som"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -130,6 +146,7 @@ __meta__ = {
 margin_right = 96.0
 margin_bottom = 32.0
 rect_pivot_offset = Vector2( 52, 10 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Sair"
 flat = true
