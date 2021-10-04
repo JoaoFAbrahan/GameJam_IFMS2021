@@ -3,6 +3,7 @@ extends CLASS_Character
 #### Player Variables
 var InteractTo;
 
+
 #### EntryPoint
 func _ready():
 	### Inicializando variáveis
@@ -21,13 +22,8 @@ func _process(delta):
 		if MyScore < Level_Score:
 			VELOCITY = move_and_slide(VELOCITY, UP_SIDE);
 			isGrounded = check_IsGrounded();
-		else:
-			# Condição de vitória
-			pass #### chamar a tela de vitória e passar pro próximo mapa
-	else:
-		### CONDIÇÃO DE MORTE
-		print("GAMEOVER");
 
+#### Condição de Morte
 func _input(event):
 	if !isAlive:
 		get_node("GameOver/GameOver").show()
