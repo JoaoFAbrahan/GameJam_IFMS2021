@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crack.png-eb988ecea1977fb861df113d6a491af0.stex"
+path="res://.import/slime_sheet.png-1e6c3d6070e18ade6c50cbf21d35fd6e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Repairable Objects/Level_01/Scenes/Tiles/Sprites/crack.png"
-dest_files=[ "res://.import/crack.png-eb988ecea1977fb861df113d6a491af0.stex" ]
+source_file="res://Levels/Repairable Objects/Level_01/Reviver/Sprite Sheet/slime_sheet.png"
+dest_files=[ "res://.import/slime_sheet.png-1e6c3d6070e18ade6c50cbf21d35fd6e.stex" ]
 
 [params]
 
