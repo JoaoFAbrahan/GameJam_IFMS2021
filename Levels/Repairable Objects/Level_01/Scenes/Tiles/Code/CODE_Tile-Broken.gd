@@ -9,7 +9,6 @@ var isReparable: bool;
 func _ready():
 	isPlayerInside = false;
 	isReparable = true;
-	$"Sprite-Normal".visible = false;
 
 #### Ação de interação
 func _input(event):
@@ -23,7 +22,6 @@ func _input(event):
 		
 		## Troca sprite quebrado pelo normal
 		$"Sprite-Broken".visible = false;
-		$"Sprite-Normal".visible = true;
 		
 		## Adicionando pontuação
 		PlayerRef._AddScore(150);

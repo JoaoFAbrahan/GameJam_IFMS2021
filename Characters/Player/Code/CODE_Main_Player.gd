@@ -2,7 +2,7 @@ extends CLASS_Character
 
 #### Player Variables
 var InteractTo;
-
+var SoundStart;
 
 #### EntryPoint
 func _ready():
@@ -87,9 +87,7 @@ func JumpAction():
 func InteractAction(ObjRef: String):
 	## Passa a referencia do tipo de objeto
 	InteractTo = ObjRef;
-	
-	# Efeito Sonoro
-	$SFX/Repairing_SFX.play();
+	SoundStart = true;
 	
 	# StateMachine
 	isInteract = true;
@@ -113,7 +111,16 @@ func PlayerAnimation():
 					"Tile":
 						# Ativa animação de reparo de plataforma
 						$AnimationPlayer.play("Interation_3 (RepararTile)");
+						# Efeito Sonoro
+						if SoundStart:
+							$SFX/Repairing_SFX.play();
+							SoundStart = false;
 						
+						yield($AnimationPlayer,"animation_finished");
+						
+						# Volta pro estado normal após a animação
+						isInteract = false;
+						CharacterState = State.IDLE;
 					"Cano":
 						# Ativa animação de desentupir cano 
 						$AnimationPlayer.play("Interation_2 (Desentupir)");
