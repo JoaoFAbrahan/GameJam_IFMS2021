@@ -74,7 +74,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 16, 16 )
+extents = Vector2( 32, 16 )
 
 [sub_resource type="RectangleShape2D" id=9]
 
@@ -86,7 +86,7 @@ script = ExtResource( 3 )
 position = Vector2( 0, -26 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 4 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]
