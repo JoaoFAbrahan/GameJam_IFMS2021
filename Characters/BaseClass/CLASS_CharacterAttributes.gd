@@ -4,6 +4,7 @@ class_name CLASS_CharacterAttributes
 ##### Class Atributes
 ### Character variables
 export var Level_Time = 300;
+export var Level_Score = 1000;
 export var Speed = 250;
 export var JumpHeight = 450;
 

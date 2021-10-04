@@ -23,6 +23,7 @@ func _process(delta):
 		VELOCITY = move_and_slide(VELOCITY, UP_SIDE);
 		isGrounded = check_IsGrounded();
 	else:
+		### CONDIÇÃO DE MORTE
 		CharacterState = State.GAMEOVER;
 		print("GAMEOVER");
 		if CharacterState == State.GAMEOVER:
