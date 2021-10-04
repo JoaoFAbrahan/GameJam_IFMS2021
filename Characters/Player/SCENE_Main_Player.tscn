@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ 13 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=2]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -124,7 +124,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="CapsuleShape2D" id=8]
 height = 10.0
 
 [node name="Main_Player" type="KinematicBody2D"]
@@ -153,7 +153,7 @@ editor_draw_drag_margin = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 1 )
-anims/Idle = SubResource( 10 )
+anims/Idle = SubResource( 2 )
 "anims/Interation_1 (AliadoRevive)" = SubResource( 3 )
 "anims/Interation_2 (Desentupir)" = SubResource( 4 )
 "anims/Interation_3 (RepararTile)" = SubResource( 5 )
@@ -162,7 +162,7 @@ anims/Walk = SubResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -15 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="HUD Timer" type="CanvasLayer" parent="."]
 

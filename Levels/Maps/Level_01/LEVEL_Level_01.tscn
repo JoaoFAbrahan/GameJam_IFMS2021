@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Maps/Level_01/Background Maps/Grass_Background.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Levels/Maps/Level_01/Background Maps/Mountains_Background.png" type="Texture" id=4]
 [ext_resource path="res://Levels/Maps/Level_01/Background Maps/Hills_Background.png" type="Texture" id=5]
 [ext_resource path="res://Levels/Maps/Level_01/Tileset/Tileset_Level01.tres" type="TileSet" id=6]
+[ext_resource path="res://Assets/Sounds/Soundtracks/First Level.wav" type="AudioStream" id=7]
 
 [node name="Level_01" type="Node"]
 
@@ -57,6 +58,11 @@ centered = false
 Level_Time = 1000
 Speed = 150
 JumpHeight = 400
+
+[node name="Level01_Soundtrack" type="AudioStreamPlayer" parent="World Componnets/Main Layer/Main_Player"]
+stream = ExtResource( 7 )
+volume_db = -8.0
+autoplay = true
 
 [node name="TileMaps" type="Node" parent="World Componnets/Main Layer"]
 
