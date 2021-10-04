@@ -5,15 +5,13 @@ func _input(event):
 		get_node("MenuPausa").show()
 		get_tree().paused = true
 
-func _on_Sair_pressed():
-	get_tree().quit()
-
+func _on_Continuar_pressed():
+	get_tree().paused = false
+	get_node("MenuPausa").hide()
 
 func _on_MenuPrincipal_pressed():
 	get_tree().paused = false
 	get_tree().change_scene("res://User Interface/Menu/Menu.tscn")
 
-
-func _on_Continuar_pressed():
-	get_tree().paused = false
-	get_node("MenuPausa").hide()
+func _on_Sair_pressed():
+	get_tree().quit()

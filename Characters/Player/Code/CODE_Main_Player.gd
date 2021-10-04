@@ -90,6 +90,9 @@ func InteractAction(ObjRef: String):
 	## Passa a referencia do tipo de objeto
 	InteractTo = ObjRef;
 	
+	# Efeito Sonoro
+	$SFX/Repairing_SFX.play();
+	
 	# StateMachine
 	isInteract = true;
 	CharacterState = State.INTERACTION;
