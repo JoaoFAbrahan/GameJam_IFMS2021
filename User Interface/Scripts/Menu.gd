@@ -9,6 +9,3 @@ func _on_Config_pressed():
 
 func _on_Button3_pressed():
 	get_tree().quit()
-
-
-

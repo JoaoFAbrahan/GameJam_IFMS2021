@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Menu_Background.png-a4e22b8144e2a15febe000fbd2f684e0.stex"
+path="res://.import/Tela_de_Abertura.png-a4da9533417ec4e90271c7c845a6eb22.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://User Interface/Sprites/Menu_Background.png"
-dest_files=[ "res://.import/Menu_Background.png-a4e22b8144e2a15febe000fbd2f684e0.stex" ]
+source_file="res://User Interface/Sprites/Tela_de_Abertura.png"
+dest_files=[ "res://.import/Tela_de_Abertura.png-a4da9533417ec4e90271c7c845a6eb22.stex" ]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://User Interface/Scripts/Menu.gd" type="Script" id=1]
-[ext_resource path="res://User Interface/Sprites/Menu_Background.png" type="Texture" id=2]
+[ext_resource path="res://User Interface/Sprites/Tela_de_Abertura.png" type="Texture" id=2]
 [ext_resource path="res://User Interface/Sprites/Notas.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sounds/Soundtracks/The Cleaner - Theme.wav" type="AudioStream" id=4]
 
