@@ -1,6 +1,6 @@
-extends Control
+extends CanvasLayer
 
-# Reinicia a fase
+
 func _on_Reiniciar_pressed():
 	get_tree().reload_current_scene()
 	get_node("GameOver").hide()
