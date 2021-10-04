@@ -1,7 +1,6 @@
 extends CLASS_Character
 
 #### Player Variables
-var MyScore;
 var InteractTo;
 
 
@@ -112,25 +111,28 @@ func PlayerAnimation():
 				match InteractTo:
 					"Tile":
 						# Ativa animação de reparo de plataforma
-						$AnimationPlayer.play("Interation_1");
+						$AnimationPlayer.play("Interation_3 (RepararTile)");
 						yield($AnimationPlayer,"animation_finished");
 						
 						# Volta pro estado normal após a animação
 						isInteract = false;
+						CharacterState = State.IDLE;
 					"Cano":
 						# Ativa animação de desentupir cano 
-						$AnimationPlayer.play("Interation_2");
+						$AnimationPlayer.play("Interation_2 (Desentupir)");
 						yield($AnimationPlayer,"animation_finished");
 						
 						# Volta pro estado normal após a animação
 						isInteract = false;
+						CharacterState = State.IDLE;
 					"Aliado":
 						# Ativa animação de reviver aliado 
-						$AnimationPlayer.play("Interation_3");
+						$AnimationPlayer.play("Interation_1 (AliadoRevive)");
 						yield($AnimationPlayer,"animation_finished");
 						
 						# Volta pro estado normal após a animação
 						isInteract = false;
+						CharacterState = State.IDLE;
 					"Background":
 						pass
 	else:

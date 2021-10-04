@@ -11,6 +11,7 @@ export var Respawn_POS = Vector2(0,0);
 var Speed = 250;
 var JumpHeight = 450;
 var MyTime;
+var MyScore;
 var ForwardFacing: int;
 
 ### Character status

@@ -190,4 +190,4 @@ position = Vector2( 192, -224 )
 
 [node name="Main_Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0.125, 0 )
-Level_Time = 10
+Level_Time = 100

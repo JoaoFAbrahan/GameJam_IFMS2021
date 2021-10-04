@@ -1,6 +1,7 @@
 extends CLASS_CharacterAttributes
-signal onChangeTime(time)
 class_name CLASS_Character
+signal onChangeTime(time);
+signal onCheckScore(_myScore, _levelScore);
 
 ##### Class Atributes
 const UP_SIDE = Vector2(0, -1);
@@ -16,8 +17,10 @@ func _physics_process(delta: float) -> void:
 	### Controle da Gravidade
 	VELOCITY.y += GRAVITY * delta;
 	
-	### Controle do Tempo
+	### HUD
+	## Controle do Tempo
 	TimerCount(delta);
+	PresentationScore();
 	
 	### Processamento
 	_process(delta);
@@ -40,6 +43,7 @@ func check_IsGrounded() -> bool:
 		return false;
 
 
+#### HUD do Player
 ### Timer Count
 func TimerCount(delta):
 	MyTime -= delta
@@ -49,3 +53,7 @@ func TimerCount(delta):
 		isAlive = true;
 	else:
 		isAlive = false;
+
+### Score
+func PresentationScore():
+	emit_signal("onCheckScore", MyScore, Level_Score);
