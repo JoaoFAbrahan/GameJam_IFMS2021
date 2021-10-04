@@ -8,7 +8,7 @@ const UP_SIDE = Vector2(0, -1);
 var VELOCITY = Vector2.ZERO;
 
 #### Physics Atributes
-export var GRAVITY = 1000;
+var GRAVITY = 1000;
 export (float,0,1.0) var FRICTION = 0.1;
 export (float,0,1.0) var ACCELERATION = 0.25;
 
