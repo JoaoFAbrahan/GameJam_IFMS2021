@@ -113,11 +113,7 @@ func PlayerAnimation():
 					"Tile":
 						# Ativa animação de reparo de plataforma
 						$AnimationPlayer.play("Interation_3 (RepararTile)");
-						yield($AnimationPlayer,"animation_finished");
 						
-						# Volta pro estado normal após a animação
-						isInteract = false;
-						CharacterState = State.IDLE;
 					"Cano":
 						# Ativa animação de desentupir cano 
 						$AnimationPlayer.play("Interation_2 (Desentupir)");

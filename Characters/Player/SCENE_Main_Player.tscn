@@ -45,6 +45,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "Interation_1 (AliadoRevive)"
 length = 6.0
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -78,6 +79,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=5]
 resource_name = "Interation_3 (RepararTile)"
 length = 3.0
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -134,7 +136,7 @@ position = Vector2( 0, -32 )
 texture = ExtResource( 1 )
 hframes = 6
 vframes = 6
-frame = 21
+frame = 30
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 65 )

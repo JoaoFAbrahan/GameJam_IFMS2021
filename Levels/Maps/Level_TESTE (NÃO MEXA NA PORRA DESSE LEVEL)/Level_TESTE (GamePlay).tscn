@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Maps/Level_TESTE (NÃO MEXA NA PORRA DESSE LEVEL)/Tileset/Level_TESTE (GamePlay).tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Probs/Itens - Support/Mop/SCENE_Item-Mop.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Repairable Objects/Level_01/Scenes/Reviver/Level01-Revive.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Probs/Itens - Support/Timer/SCENE_Item-Timer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Repairable Objects/Level_01/Scenes/Tiles/Level01-Tile_01-Broken.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Maps/Level_TESTE (NÃO MEXA NA PORRA DESSE LEVEL)/Code/CODE_Level_TESTE (GamePlay).gd" type="Script" id=7]
 
 [node name="Level_TESTE (GamePlay)" type="Node"]
+script = ExtResource( 7 )
 
 [node name="Tilemap" type="Node2D" parent="."]
 
@@ -19,6 +23,21 @@ tile_data = PoolIntArray( -589812, 1, 0, -589811, 1, 0, -589810, 1, 0, -589809, 
 
 [node name="Reparable Objects" type="Node2D" parent="."]
 
+[node name="StaticBody2D" parent="Reparable Objects" instance=ExtResource( 4 )]
+position = Vector2( 352, -128 )
+
+[node name="StaticBody2D2" parent="Reparable Objects" instance=ExtResource( 4 )]
+position = Vector2( 480, 0 )
+
+[node name="Level01-Tile_01-Broken" parent="Reparable Objects" instance=ExtResource( 6 )]
+position = Vector2( 224, 32 )
+
+[node name="Level01-Tile_01-Broken2" parent="Reparable Objects" instance=ExtResource( 6 )]
+position = Vector2( 416, -96 )
+
+[node name="Level01-Tile_01-Broken3" parent="Reparable Objects" instance=ExtResource( 6 )]
+position = Vector2( 608, -32 )
+
 [node name="Upgrade Itens" type="Node2D" parent="."]
 
 [node name="Item-Mop" parent="Upgrade Itens" instance=ExtResource( 3 )]
@@ -29,4 +48,4 @@ position = Vector2( 192, -224 )
 
 [node name="Main_Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0.125, 0 )
-Level_Time = 3
+Level_Time = 100
