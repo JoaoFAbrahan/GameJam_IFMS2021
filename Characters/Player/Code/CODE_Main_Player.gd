@@ -3,7 +3,6 @@ extends CLASS_Character
 #### Player Variables
 var InteractTo;
 
-
 #### EntryPoint
 func _ready():
 	### Inicializando variáveis
@@ -29,6 +28,9 @@ func _process(delta):
 		### CONDIÇÃO DE MORTE
 		print("GAMEOVER");
 
+func _input(event):
+	if !isAlive:
+		get_node("GameOver/GameOver").show()
 
 #### Player Controller
 func PlayerMovimentation():
