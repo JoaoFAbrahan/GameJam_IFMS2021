@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Levels/Maps/Level_01/tileset/Sprite-0002.png" type="Texture" id=1]
+[ext_resource path="res://Levels/Maps/Level_01/Sprite Tileset/Standard Tileset/Sprite-0002.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Repairable Objects/Level_01/Codes/CODE_Tile-Broken.gd" type="Script" id=2]
 [ext_resource path="res://Levels/Repairable Objects/Interactive Icon/Botao_F_32x32.png" type="Texture" id=3]
 

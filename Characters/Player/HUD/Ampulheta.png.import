@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ponte.png-741d97f5a4c48666c3f5e93ede4709e5.stex"
+path="res://.import/Ampulheta.png-3d91b586aaed1d9fbbefbbc8c5aa7a04.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Maps/Level_01/tileset/Ponte.png"
-dest_files=[ "res://.import/Ponte.png-741d97f5a4c48666c3f5e93ede4709e5.stex" ]
+source_file="res://Characters/Player/HUD/Ampulheta.png"
+dest_files=[ "res://.import/Ampulheta.png-3d91b586aaed1d9fbbefbbc8c5aa7a04.stex" ]
 
 [params]
 

@@ -19,15 +19,16 @@ func _process(delta):
 	### Processando os cálculos
 	PlayerMovimentation();
 	if isAlive:
-		
-		VELOCITY = move_and_slide(VELOCITY, UP_SIDE);
-		isGrounded = check_IsGrounded();
+		## Verifica se o Jogador já completou a pontuação necessária
+		if MyScore < Level_Score:
+			VELOCITY = move_and_slide(VELOCITY, UP_SIDE);
+			isGrounded = check_IsGrounded();
+		else:
+			# Condição de vitória
+			pass #### chamar a tela de vitória e passar pro próximo mapa
 	else:
 		### CONDIÇÃO DE MORTE
-		CharacterState = State.GAMEOVER;
 		print("GAMEOVER");
-		if CharacterState == State.GAMEOVER:
-			print("death");
 
 
 #### Player Controller
@@ -36,7 +37,7 @@ func PlayerMovimentation():
 	Movimentation();
 	
 	##### /// DEBUG /// #####
-	DebugMessage();
+	#DebugMessage();
 	
 	### Ações
 	JumpAction();
@@ -130,11 +131,8 @@ func PlayerAnimation():
 						
 						# Volta pro estado normal após a animação
 						isInteract = false;
-			State.MINIGAME_FAIL:
-				$AnimationPlayer.play("Minigame_Fail");
-			State.GAMEOVER:
-				$AnimationPlayer.play("GameOver");
-				yield($AnimationPlayer,"animation_finished");
+					"Background":
+						pass
 	else:
 		if VELOCITY.y >= 200:
 			isInteract = false;
@@ -145,6 +143,10 @@ func PlayerAnimation():
 ### Adiciona mais tempo
 func _AddTime(time: int):
 	MyTime += time;
+
+### Remover um pouco do tempo
+func _RemoveTime(time: int):
+	MyTime -= time;
 
 ### Adiciona pontos
 func _AddScore(points: int):

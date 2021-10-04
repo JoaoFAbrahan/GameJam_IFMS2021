@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite-0009.png-99094213cc5499999a961e5d31732ff6.stex"
+path="res://.import/Ponte.png-d59d2f61a495d773ab4d1b1824f72fc3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Maps/Level_01/tileset/Sprite-0009.png"
-dest_files=[ "res://.import/Sprite-0009.png-99094213cc5499999a961e5d31732ff6.stex" ]
+source_file="res://Levels/Maps/Level_01/Sprite Tileset/Standard Tileset/Ponte.png"
+dest_files=[ "res://.import/Ponte.png-d59d2f61a495d773ab4d1b1824f72fc3.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite-0007.png-bbd882726235014efce6c07c29f5f0db.stex"
+path="res://.import/Sprite-0005.png-8f875ce1a4e2f8d5e860962f97223240.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Maps/Level_01/tileset/Sprite-0007.png"
-dest_files=[ "res://.import/Sprite-0007.png-bbd882726235014efce6c07c29f5f0db.stex" ]
+source_file="res://Levels/Maps/Level_01/Sprite Tileset/Standard Tileset/Sprite-0005.png"
+dest_files=[ "res://.import/Sprite-0005.png-8f875ce1a4e2f8d5e860962f97223240.stex" ]
 
 [params]
 
