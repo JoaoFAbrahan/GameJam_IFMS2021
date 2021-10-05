@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Levels/Repairable Objects/Tiles/Sprites/crack.png" type="Texture" id=1]
-[ext_resource path="res://Levels/Repairable Objects/Tiles/Code/CODE_Tile-Broken.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Repairable Objects/Independentes/Tiles/Sprites/crack.png" type="Texture" id=1]
+[ext_resource path="res://Levels/Repairable Objects/Independentes/Tiles/Code/CODE_Tile-Broken.gd" type="Script" id=2]
 [ext_resource path="res://User Interface/Interactive Icon/Botao_F_32x32.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]

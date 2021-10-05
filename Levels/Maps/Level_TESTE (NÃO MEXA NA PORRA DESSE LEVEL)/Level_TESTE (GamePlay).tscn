@@ -1,15 +1,18 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Levels/Maps/Level_TESTE (NÃO MEXA NA PORRA DESSE LEVEL)/Tileset/Tileset_TESTE(32x32).png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Repairable Objects/Level_03/Reviver/Level3-Revive.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Repairable Objects/Level_01/Reviver/Level01-Revive.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Repairable Objects/Level_01/Cano/Level01-Cano.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Repairable Objects/Level_02/Reviver/Level2-Revive.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Maps/Level_TESTE (NÃO MEXA NA PORRA DESSE LEVEL)/Code/CODE_Level_TESTE (GamePlay).gd" type="Script" id=7]
-[ext_resource path="res://Levels/Repairable Objects/Tiles/Tile-Broken.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Repairable Objects/Independentes/Tiles/Tile-Broken.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Probs/FallZone/CODE_Fallzone.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Probs/StageEnd/SCENE_Transition_In.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/Repairable Objects/Level_03/Cano/Level03-Cano.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Probs/StageEnd/SCENE_Stage_END.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Levels/Repairable Objects/Level_02/Cano/Level02-Cano.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/Repairable Objects/Independentes/Background_Repair/Background-Broken.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -74,14 +77,23 @@ position = Vector2( 128, -224 )
 [node name="Slime_3" parent="Reparable Objects" instance=ExtResource( 3 )]
 position = Vector2( 608, -64 )
 
+[node name="Level03-Cano" parent="Reparable Objects" instance=ExtResource( 10 )]
+position = Vector2( 224, 0 )
+
+[node name="Level02-Cano" parent="Reparable Objects" instance=ExtResource( 12 )]
+position = Vector2( 320, -160 )
+
+[node name="Bg-Broken" parent="Reparable Objects" instance=ExtResource( 13 )]
+position = Vector2( 96, 0 )
+
+[node name="Level01-Cano" parent="." instance=ExtResource( 5 )]
+position = Vector2( 416, 0 )
+
 [node name="Upgrade Itens" type="Node2D" parent="."]
 
 [node name="Main_Player" parent="." instance=ExtResource( 2 )]
-Level_Time = 60
-Level_Score = 10
+Level_Time = 10
 
 [node name="Stage_END" parent="." instance=ExtResource( 11 )]
 position = Vector2( 672, -64 )
 path = "res://Levels/Maps/Level_01/LEVEL_Level_01.tscn"
-
-[node name="Transition_In" parent="." instance=ExtResource( 10 )]

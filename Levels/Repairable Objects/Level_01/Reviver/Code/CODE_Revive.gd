@@ -2,7 +2,6 @@ extends StaticBody2D
 
 #### Variables
 onready var PlayerRef;
-var Minigame = load("res://Minigames/Minigame_1.tscn");
 var isPlayerInside: bool;
 var isRevived: bool;
 

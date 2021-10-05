@@ -138,7 +138,19 @@ func PlayerAnimation():
 						isInteract = false;
 						CharacterState = State.IDLE;
 					"Background":
-						pass
+						# Ativa animação de reviver aliado 
+						$AnimationPlayer.play("Interation_4 (RepararBG)");
+						
+						#Efeito Sonoro
+						if SoundStart:
+							$SFX/Repairing_SFX.play();
+							SoundStart = false;
+						
+						yield($AnimationPlayer,"animation_finished");
+						
+						# Volta pro estado normal após a animação
+						isInteract = false;
+						CharacterState = State.IDLE;
 	else:
 		if VELOCITY.y >= 200:
 			isInteract = false;

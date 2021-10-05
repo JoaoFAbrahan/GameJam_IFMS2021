@@ -9,7 +9,7 @@ export var Respawn_POS = Vector2(0,0);
 
 ### Internal variables
 export var Speed = 250;
-export var JumpHeight = 450;
+export var JumpHeight = 400;
 var MyTime;
 var MyScore;
 var ForwardFacing: int;

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crack.png-6b8527d3af926ba86bf605632e29d589.stex"
+path="res://.import/pipe3_Sheet.png-bc40fa2412dd040e8897ef8609111f27.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Repairable Objects/Tiles/Sprites/crack.png"
-dest_files=[ "res://.import/crack.png-6b8527d3af926ba86bf605632e29d589.stex" ]
+source_file="res://Levels/Repairable Objects/Level_03/Cano/Sprite Sheet/pipe3_Sheet.png"
+dest_files=[ "res://.import/pipe3_Sheet.png-bc40fa2412dd040e8897ef8609111f27.stex" ]
 
 [params]
 

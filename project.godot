@@ -28,6 +28,7 @@ _global_script_class_icons={
 
 config/name="GameJam_IFMS2021"
 run/main_scene="res://User Interface/Menu/Menu.tscn"
+config/icon="res://Assets/Probs/Itens - Support/Timer/Sprite Sheet/icon.png"
 
 [display]
 

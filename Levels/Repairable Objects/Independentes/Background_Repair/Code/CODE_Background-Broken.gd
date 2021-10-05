@@ -3,31 +3,30 @@ extends StaticBody2D
 #### Variables
 onready var PlayerRef;
 var isPlayerInside: bool;
-var isRevived: bool;
+var isReparable: bool;
 
 #### EntryPoint
 func _ready():
 	isPlayerInside = false;
-	isRevived = true;
-
+	isReparable = true;
+	$"Sprite-Normal".visible = false;
 
 #### Ação de interação
 func _input(event):
-	if event.is_action_pressed("PlayerAction_INTERACTION") && isPlayerInside && isRevived:
+	if event.is_action_pressed("PlayerAction_INTERACTION") && isPlayerInside && isReparable:
 		## Controle da StateMachine
-		PlayerRef.InteractAction("Cano");
+		PlayerRef.InteractAction("Background");
 		
 		## Controle do objeto
-		isRevived = false;
+		isReparable = false;
 		$Icon.visible = false;
 		
 		## Troca sprite quebrado pelo normal
-		$AnimationPlayer.play("Broken");
-		$AnimationPlayer.stop();
-		$AnimationPlayer.play("Standard");
+		$"Sprite-Broken".visible = false;
+		$"Sprite-Normal".visible = true;
 		
 		## Adicionando pontuação
-		PlayerRef._AddScore(150);
+		PlayerRef._AddScore(75);
 
 
 #### Verificador de area

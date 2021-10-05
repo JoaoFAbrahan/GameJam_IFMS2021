@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DesertPipe.png-602948ca30f6d0502c71ae2f97992fda.stex"
+path="res://.import/background_rip.png-87f6f98f102d27afd17e68b0937704a1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Repairable Objects/Level_02/Cano/DesertPipe.png"
-dest_files=[ "res://.import/DesertPipe.png-602948ca30f6d0502c71ae2f97992fda.stex" ]
+source_file="res://Levels/Repairable Objects/Independentes/Background_Repair/Spites/background_rip.png"
+dest_files=[ "res://.import/background_rip.png-87f6f98f102d27afd17e68b0937704a1.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player_sheet_64x64.png-69aedb51b5e414c454a1f6e76b271d5c.stex"
+path="res://.import/PlaquinhaDoCaralho.png-600c771fcfddb34afe8e5395f248612e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Player/Sprite Sheet/player_sheet_64x64.png"
-dest_files=[ "res://.import/player_sheet_64x64.png-69aedb51b5e414c454a1f6e76b271d5c.stex" ]
+source_file="res://Assets/Probs/StageEnd/Sprite/PlaquinhaDoCaralho.png"
+dest_files=[ "res://.import/PlaquinhaDoCaralho.png-600c771fcfddb34afe8e5395f248612e.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BarraMinigame.png-7dd5bfcee4d07ab8a972ccd77c4f4711.stex"
+path="res://.import/player_sheet.png-cbb273deabe7d0c5ca5f40572402ddeb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minigames/Sprite/BarraMinigame.png"
-dest_files=[ "res://.import/BarraMinigame.png-7dd5bfcee4d07ab8a972ccd77c4f4711.stex" ]
+source_file="res://Characters/Player/Sprite Sheet/player_sheet.png"
+dest_files=[ "res://.import/player_sheet.png-cbb273deabe7d0c5ca5f40572402ddeb.stex" ]
 
 [params]
 
