@@ -23,14 +23,17 @@ func _process(delta):
 			VELOCITY = move_and_slide(VELOCITY, UP_SIDE);
 			isGrounded = check_IsGrounded();
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 #### Player Controller
 func PlayerMovimentation():
 	### Direção
 	Movimentation();
 	
 	##### /// DEBUG /// #####
-	#DebugMessage();
+	DebugMessage();
 	
 	### Ações
 	JumpAction();
@@ -159,4 +162,5 @@ func _AddScore(points: int):
 
 func DebugMessage():
 	#print(CharacterState);
-	print(MyScore)
+	if Input.is_action_just_pressed("PlayerMinigame_Confirm"):
+		global_position = Vector2(0,0)
