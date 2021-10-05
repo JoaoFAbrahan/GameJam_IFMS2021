@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TundraBlocks_Tilesheet.png-2552d759b0556a6f61347a220b5ad0ac.stex"
+path="res://.import/DesertBlocksRemake-sheet.png-6f7f06105fa54bb4df91b9f0cf9ade26.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Maps/Level_03/Sprite Tileset/TundraBlocks_Tilesheet.png"
-dest_files=[ "res://.import/TundraBlocks_Tilesheet.png-2552d759b0556a6f61347a220b5ad0ac.stex" ]
+source_file="res://Levels/Maps/Level_02/Sprite Tileset/DesertBlocksRemake-sheet.png"
+dest_files=[ "res://.import/DesertBlocksRemake-sheet.png-6f7f06105fa54bb4df91b9f0cf9ade26.stex" ]
 
 [params]
 

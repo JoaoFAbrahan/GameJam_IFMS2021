@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Blocks_Tilesheet.png-cfa3cc52768e33db44e73deae3f16035.stex"
+path="res://.import/BlocksRemake.png-02ed6db26196ccc5e3a485f19bb02e71.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Maps/Level_01/Sprite Tileset/Standard Tileset/Blocks_Tilesheet.png"
-dest_files=[ "res://.import/Blocks_Tilesheet.png-cfa3cc52768e33db44e73deae3f16035.stex" ]
+source_file="res://Levels/Maps/Level_01/Sprite Tileset/Standard Tileset/BlocksRemake.png"
+dest_files=[ "res://.import/BlocksRemake.png-02ed6db26196ccc5e3a485f19bb02e71.stex" ]
 
 [params]
 
