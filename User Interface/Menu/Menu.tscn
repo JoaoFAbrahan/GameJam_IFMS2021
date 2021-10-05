@@ -111,6 +111,7 @@ __meta__ = {
 }
 
 [node name="Sound" type="Sprite" parent="."]
+visible = false
 position = Vector2( 448, 192 )
 texture = ExtResource( 3 )
 region_enabled = true

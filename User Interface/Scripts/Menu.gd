@@ -2,7 +2,7 @@ extends Control
 
 func _on_Button_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Levels/Maps/Level_TESTE/LEVEL_Level-Teste.tscn")
+	get_tree().change_scene("res://Levels/Maps/Level_01/LEVEL_Level_01.tscn")
 
 func _on_Config_pressed():
 	get_node("Sound").show()
