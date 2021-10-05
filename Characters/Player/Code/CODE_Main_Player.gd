@@ -23,10 +23,6 @@ func _process(delta):
 			VELOCITY = move_and_slide(VELOCITY, UP_SIDE);
 			isGrounded = check_IsGrounded();
 
-#### Condição de Morte
-func _input(event):
-	if !isAlive:
-		get_node("GameOver/GameOver").show()
 
 #### Player Controller
 func PlayerMovimentation():

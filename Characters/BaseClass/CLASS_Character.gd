@@ -53,6 +53,7 @@ func TimerCount(delta):
 		isAlive = true;
 	else:
 		isAlive = false;
+		get_node("GameOver/GameOver").show();
 
 ### Score
 func PresentationScore():
