@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://User Interface/Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://User Interface/Sprites/Tela_de_Abertura.png" type="Texture" id=2]
@@ -16,6 +16,9 @@ font_data = ExtResource( 5 )
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 5 )
 
 [node name="Menu" type="Control"]
@@ -123,11 +126,22 @@ margin_top = -16.0
 margin_right = 48.0
 margin_bottom = 16.0
 rect_pivot_offset = Vector2( 50.5, 16 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "Som"
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Sound"]
+margin_left = -32.0
+margin_top = -16.0
+margin_right = 32.0
+margin_bottom = 16.0
+min_value = -40.0
+max_value = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -146,7 +160,7 @@ __meta__ = {
 margin_right = 96.0
 margin_bottom = 32.0
 rect_pivot_offset = Vector2( 52, 10 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Sair"
 flat = true
@@ -163,4 +177,5 @@ autoplay = true
 [connection signal="pressed" from="Jogar/Jogar" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Config/Config" to="." method="_on_Config_pressed"]
 [connection signal="pressed" from="Sound/Sound" to="." method="_on_Button2_pressed"]
+[connection signal="value_changed" from="Sound/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="Sair/Sair" to="." method="_on_Button3_pressed"]
