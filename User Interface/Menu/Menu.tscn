@@ -174,8 +174,19 @@ stream = ExtResource( 4 )
 volume_db = -2.0
 autoplay = true
 
+[node name="FullScreen" type="Button" parent="."]
+margin_left = 576.0
+margin_top = 32.0
+margin_right = 608.0
+margin_bottom = 52.0
+text = "[  ]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Jogar/Jogar" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Config/Config" to="." method="_on_Config_pressed"]
 [connection signal="pressed" from="Sound/Sound" to="." method="_on_Button2_pressed"]
 [connection signal="value_changed" from="Sound/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="Sair/Sair" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="FullScreen" to="." method="_on_FullScreen_pressed"]

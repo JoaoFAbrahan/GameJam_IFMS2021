@@ -72,15 +72,6 @@ centered = false
 
 [node name="Main Layer" type="Node2D" parent="World Componnets"]
 
-[node name="Main_Player" parent="World Componnets/Main Layer" instance=ExtResource( 1 )]
-Level_Time = 1000
-Speed = 150
-JumpHeight = 350
-
-[node name="Level01_Soundtrack" type="AudioStreamPlayer" parent="World Componnets/Main Layer/Main_Player"]
-stream = ExtResource( 7 )
-autoplay = true
-
 [node name="TileMaps" type="Node" parent="World Componnets/Main Layer"]
 
 [node name="TileMap" type="TileMap" parent="World Componnets/Main Layer/TileMaps"]
@@ -92,6 +83,15 @@ tile_data = PoolIntArray( -524292, 10, 0, -589675, 6, 0, -589674, 7, 0, -589673,
 [node name="Upgrades" type="Node" parent="World Componnets/Main Layer"]
 
 [node name="ReparableItens" type="Node" parent="World Componnets/Main Layer"]
+
+[node name="Main_Player" parent="World Componnets/Main Layer" instance=ExtResource( 1 )]
+Level_Time = 1000
+Speed = 150
+JumpHeight = 350
+
+[node name="Level01_Soundtrack" type="AudioStreamPlayer" parent="World Componnets/Main Layer/Main_Player"]
+stream = ExtResource( 7 )
+autoplay = true
 
 [node name="Foreground Layer" type="Node2D" parent="World Componnets"]
 
@@ -118,10 +118,10 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Interface/MenuPausa/CenterContainer"]
-margin_left = -54.0
-margin_top = -55.0
-margin_right = 53.0
-margin_bottom = 55.0
+margin_left = -86.0
+margin_top = -62.0
+margin_right = 86.0
+margin_bottom = 62.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
