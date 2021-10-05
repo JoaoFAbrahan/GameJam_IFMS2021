@@ -128,6 +128,12 @@ func PlayerAnimation():
 					"Aliado":
 						# Ativa animação de reviver aliado 
 						$AnimationPlayer.play("Interation_1 (AliadoRevive)");
+						
+						#Efeito Sonoro
+						if SoundStart:
+							$SFX/Reviving_SFX.play();
+							SoundStart = false;
+						
 						yield($AnimationPlayer,"animation_finished");
 						
 						# Volta pro estado normal após a animação
