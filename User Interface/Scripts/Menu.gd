@@ -6,6 +6,10 @@ func _on_Button_pressed():
 
 func _on_Config_pressed():
 	get_node("Sound").show()
-
+	AudioServer.generate_bus_layout() 
 func _on_Button3_pressed():
 	get_tree().quit()
+
+
+func _on_HSlider_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
