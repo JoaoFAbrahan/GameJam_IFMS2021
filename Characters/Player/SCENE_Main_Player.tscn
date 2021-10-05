@@ -28,7 +28,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-length = 0.4
+length = 0.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -37,7 +37,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 6, 7, 8, 9 ]
@@ -143,7 +143,7 @@ position = Vector2( 0, -32 )
 texture = ExtResource( 1 )
 hframes = 6
 vframes = 6
-frame = 20
+frame = 9
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 65 )

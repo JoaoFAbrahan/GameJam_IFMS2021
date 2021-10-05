@@ -2,6 +2,7 @@ extends CLASS_CharacterAttributes
 class_name CLASS_Character
 signal onChangeTime(time);
 signal onCheckScore(_myScore, _levelScore);
+signal onSpawnpoint();
 
 ##### Class Atributes
 const UP_SIDE = Vector2(0, -1);
@@ -53,6 +54,7 @@ func TimerCount(delta):
 		isAlive = true;
 	else:
 		isAlive = false;
+		get_node("GameOver/GameOver").show();
 
 ### Score
 func PresentationScore():
