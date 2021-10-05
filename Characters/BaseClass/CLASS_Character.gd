@@ -24,7 +24,11 @@ func _physics_process(delta: float) -> void:
 	PresentationScore();
 	
 	### Processamento
+<<<<<<< Updated upstream
 	
+=======
+	#_process(delta);
+>>>>>>> Stashed changes
 
 
 #### Physics X axis Calculation

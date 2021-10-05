@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Sounds/Soundtracks/First Level.wav" type="AudioStream" id=7]
 [ext_resource path="res://User Interface/Scripts/Interface.gd" type="Script" id=8]
 [ext_resource path="res://User Interface/Fonts/pixelart.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Levels/FallZone/CODE_Fallzone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Probs/FallZone/CODE_Fallzone.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/Repairable Objects/Level_01/Reviver/Level01-Revive.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Levels/Repairable Objects/Tiles/Tile-Broken.tscn" type="PackedScene" id=12]
 

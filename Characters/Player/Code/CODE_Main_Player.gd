@@ -18,10 +18,8 @@ func _process(delta):
 	### Processando os cálculos
 	PlayerMovimentation();
 	if isAlive:
-		## Verifica se o Jogador já completou a pontuação necessária
-		if MyScore < Level_Score:
-			VELOCITY = move_and_slide(VELOCITY, UP_SIDE);
-			isGrounded = check_IsGrounded();
+		VELOCITY = move_and_slide(VELOCITY, UP_SIDE);
+		isGrounded = check_IsGrounded();
 
 
 #### Player Controller
