@@ -30,7 +30,7 @@ func PlayerMovimentation():
 	Movimentation();
 	
 	##### /// DEBUG /// #####
-	DebugMessage();
+	#DebugMessage();
 	
 	### Ações
 	JumpAction();
