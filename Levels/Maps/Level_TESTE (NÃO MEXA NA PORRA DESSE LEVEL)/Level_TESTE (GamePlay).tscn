@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Levels/Maps/Level_TESTE (NÃO MEXA NA PORRA DESSE LEVEL)/Tileset/Level_TESTE (GamePlay).tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Probs/Itens - Support/Mop/SCENE_Item-Mop.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Repairable Objects/Level_01/Scenes/Reviver/Level01-Revive.tscn" type="PackedScene" id=4]
@@ -14,7 +13,6 @@ script = ExtResource( 7 )
 [node name="Tilemap" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Tilemap"]
-tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 8
 collision_mask = 8
