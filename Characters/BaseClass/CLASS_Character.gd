@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	PresentationScore();
 	
 	### Processamento
-	_process(delta);
+	
 
 
 #### Physics X axis Calculation
