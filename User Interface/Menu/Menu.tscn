@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://User Interface/Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://User Interface/Menu/Sprite/Desentupidores.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://User Interface/Menu/Sprite/Main Menu.png" type="Texture" id=7]
 [ext_resource path="res://User Interface/Menu/Sprite/volume_slider.png" type="Texture" id=8]
 [ext_resource path="res://User Interface/Menu/Sprite/volume_bar.png" type="Texture" id=9]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_icon.png" type="Texture" id=10]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -163,7 +164,7 @@ __meta__ = {
 }
 
 [node name="Sound" type="Sprite" parent="."]
-position = Vector2( 591.732, 364.251 )
+position = Vector2( 575.473, 365.365 )
 region_enabled = true
 region_rect = Rect2( 288, 0, 96, 32 )
 __meta__ = {
@@ -200,6 +201,10 @@ max_value = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="volume_icon" type="Sprite" parent="Sound"]
+position = Vector2( 47.309, -0.479004 )
+texture = ExtResource( 10 )
 
 [node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 320.02, 196.548 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Maps/Level_02/Tilesets/Level02_Tilemap.tres" type="TileSet" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://User Interface/Menu/Sprite/fullscreen_button.png" type="Texture" id=23]
 [ext_resource path="res://User Interface/Menu/Sprite/volume_slider.png" type="Texture" id=24]
 [ext_resource path="res://User Interface/Sprites/Menu_Centro.png" type="Texture" id=25]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_icon.png" type="Texture" id=26]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 14 )
@@ -278,12 +279,16 @@ __meta__ = {
 }
 
 [node name="Sound" type="Sprite" parent="Interface/MenuPausa"]
-position = Vector2( 264, 90 )
+position = Vector2( 253.405, 88.9405 )
 region_enabled = true
 region_rect = Rect2( 288, 0, 96, 32 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="volume_icon" type="Sprite" parent="Interface/MenuPausa/Sound"]
+position = Vector2( 47.7178, -0.25473 )
+texture = ExtResource( 26 )
 
 [node name="Sound" type="Button" parent="Interface/MenuPausa/Sound"]
 margin_left = -48.0

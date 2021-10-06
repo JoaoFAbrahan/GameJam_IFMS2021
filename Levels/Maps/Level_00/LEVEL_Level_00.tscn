@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Levels/Maps/Level_01/Background Maps/Mountains_Background.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Maps/Level_01/Background Maps/Hills_Background.png" type="Texture" id=2]
@@ -21,6 +21,11 @@
 [ext_resource path="res://User Interface/Fonts/pixelart.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://Levels/Maps/Level_01/Tileset/Tileset_Level01.tres" type="TileSet" id=20]
 [ext_resource path="res://Levels/Repairable Objects/Independentes/Background_Repair/Background-Broken.tscn" type="PackedScene" id=21]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_bar.png" type="Texture" id=22]
+[ext_resource path="res://User Interface/Menu/Sprite/fullscreen_button.png" type="Texture" id=23]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_slider.png" type="Texture" id=24]
+[ext_resource path="res://User Interface/Sprites/Menu_Centro.png" type="Texture" id=25]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_icon.png" type="Texture" id=26]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 19 )
@@ -36,6 +41,14 @@ font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 19 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 64, 32 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
 
 [node name="Level_01" type="Node"]
 script = ExtResource( 18 )
@@ -148,20 +161,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FullScreen" type="Button" parent="Interface/MenuPausa"]
-margin_left = 288.0
-margin_top = -270.0
-margin_right = 320.0
-margin_bottom = -238.0
-text = "[  ]"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Tela_de_fundo" type="Sprite" parent="Interface/MenuPausa"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 0.745098 )
+position = Vector2( 6.10352e-05, -78 )
+scale = Vector2( 19.9878, 12 )
+texture = ExtResource( 25 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Interface/MenuPausa"]
+margin_top = -18.2499
 margin_right = 600.0
-margin_bottom = 344.0
+margin_bottom = 325.75
 use_top_left = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -176,8 +185,8 @@ rect_pivot_offset = Vector2( -680, -76 )
 alignment = 1
 
 [node name="pause_screen" type="Sprite" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
-position = Vector2( 56, -82 )
-scale = Vector2( 0.666667, 0.666667 )
+position = Vector2( 56, -64 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 7 )
 
 [node name="Continuar" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
@@ -216,15 +225,30 @@ margin_bottom = 124.0
 custom_fonts/font = SubResource( 4 )
 text = "Sair"
 
-[node name="Sound" type="Sprite" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
-position = Vector2( 344, 120 )
+[node name="FullScreen2" type="Button" parent="Interface/MenuPausa"]
+margin_left = -312.0
+margin_top = 66.0
+margin_right = -268.0
+margin_bottom = 104.0
+icon = ExtResource( 23 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="Sprite" parent="Interface/MenuPausa"]
+position = Vector2( 253.405, 88.9405 )
 region_enabled = true
 region_rect = Rect2( 288, 0, 96, 32 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sound" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer/Sound"]
+[node name="volume_icon" type="Sprite" parent="Interface/MenuPausa/Sound"]
+position = Vector2( 47.7178, -0.25473 )
+texture = ExtResource( 26 )
+
+[node name="Sound" type="Button" parent="Interface/MenuPausa/Sound"]
 margin_left = -48.0
 margin_top = -16.0
 margin_right = 48.0
@@ -239,12 +263,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HSlider" type="HSlider" parent="Interface/MenuPausa/CenterContainer/VBoxContainer/Sound"]
+[node name="HSlider" type="HSlider" parent="Interface/MenuPausa/Sound"]
 margin_left = -32.0
 margin_top = -16.0
 margin_right = 32.0
 margin_bottom = 16.0
-min_value = -40.0
+custom_icons/grabber_highlight = ExtResource( 24 )
+custom_icons/grabber = ExtResource( 24 )
+custom_styles/slider = SubResource( 6 )
+custom_styles/grabber_area_highlight = SubResource( 7 )
+custom_styles/grabber_area = SubResource( 8 )
+min_value = -30.0
 max_value = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -253,9 +282,9 @@ __meta__ = {
 [node name="GameOver" parent="Interface" instance=ExtResource( 14 )]
 visible = false
 
-[connection signal="pressed" from="Interface/MenuPausa/FullScreen" to="Interface" method="_on_FullScreen_pressed"]
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Continuar" to="Interface" method="_on_Continuar_pressed"]
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/MenuPrincipal" to="Interface" method="_on_MenuPrincipal_pressed"]
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Sair" to="Interface" method="_on_Sair_pressed"]
-[connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Sound/Sound" to="Interface" method="_on_Sound_pressed"]
-[connection signal="value_changed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Sound/HSlider" to="Interface" method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="Interface/MenuPausa/FullScreen2" to="Interface" method="_on_FullScreen2_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/Sound/Sound" to="Interface" method="_on_Sound_pressed"]
+[connection signal="value_changed" from="Interface/MenuPausa/Sound/HSlider" to="Interface" method="_on_HSlider_value_changed"]
