@@ -1,11 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://User Interface/Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://User Interface/Menu/Sprite/Desentupidores.png" type="Texture" id=2]
+[ext_resource path="res://User Interface/Menu/Sprite/fullscreen_button.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sounds/Soundtracks/The Cleaner - Theme.wav" type="AudioStream" id=4]
 [ext_resource path="res://User Interface/Fonts/pixelart.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://User Interface/Menu/Sprite/Outline.png" type="Texture" id=6]
 [ext_resource path="res://User Interface/Menu/Sprite/Main Menu.png" type="Texture" id=7]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_slider.png" type="Texture" id=8]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_bar.png" type="Texture" id=9]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -35,6 +38,14 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 64, 32 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -152,7 +163,7 @@ __meta__ = {
 }
 
 [node name="Sound" type="Sprite" parent="."]
-position = Vector2( 576, 365 )
+position = Vector2( 591.732, 364.251 )
 region_enabled = true
 region_rect = Rect2( 288, 0, 96, 32 )
 __meta__ = {
@@ -179,6 +190,11 @@ margin_left = -32.0
 margin_top = -16.0
 margin_right = 32.0
 margin_bottom = 16.0
+custom_icons/grabber_highlight = ExtResource( 8 )
+custom_icons/grabber = ExtResource( 8 )
+custom_styles/slider = SubResource( 7 )
+custom_styles/grabber_area_highlight = SubResource( 8 )
+custom_styles/grabber_area = SubResource( 9 )
 min_value = -40.0
 max_value = 0.0
 __meta__ = {
@@ -192,11 +208,12 @@ volume_db = -2.0
 autoplay = true
 
 [node name="FullScreen" type="Button" parent="."]
-margin_left = 17.0
-margin_top = 349.0
-margin_right = 49.0
-margin_bottom = 369.0
-text = "[  ]"
+margin_left = 1.0
+margin_top = 345.0
+margin_right = 45.0
+margin_bottom = 383.0
+icon = ExtResource( 3 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
