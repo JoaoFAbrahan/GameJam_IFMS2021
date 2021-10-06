@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Levels/Maps/Level_03/Tileset/Tundra_Tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Sounds/Soundtracks/Desert.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sounds/Soundtracks/Winter.wav" type="AudioStream" id=3]
 [ext_resource path="res://Levels/Maps/Level_03/Background Maps/PostMountains_Background.png" type="Texture" id=4]
 [ext_resource path="res://Levels/Maps/Level_03/Background Maps/Front_Background.png" type="Texture" id=5]
 [ext_resource path="res://Levels/Maps/Level_03/Background Maps/Sky_Background.png" type="Texture" id=6]
@@ -199,6 +199,7 @@ stream = ExtResource( 25 )
 
 [node name="Stage_END" parent="." instance=ExtResource( 12 )]
 position = Vector2( 4688, -192 )
+path = "res://User Interface/Intro/Win.tscn"
 
 [node name="Interface" type="CanvasLayer" parent="."]
 pause_mode = 2
