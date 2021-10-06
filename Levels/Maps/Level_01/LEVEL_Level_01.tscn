@@ -157,6 +157,7 @@ Level_Score = 1575
 
 [node name="Level_Soundtrack" type="AudioStreamPlayer" parent="World Components/Main_Player"]
 stream = ExtResource( 7 )
+autoplay = true
 
 [node name="GameOver_Soundtrack" type="AudioStreamPlayer2D" parent="World Components/Main_Player"]
 stream = ExtResource( 15 )
