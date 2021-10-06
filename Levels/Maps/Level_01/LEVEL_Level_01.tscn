@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Maps/Level_01/Background Maps/Grass_Background.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://User Interface/Menu/GameOver.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/Probs/StageEnd/SCENE_Stage_END.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Levels/Repairable Objects/Independentes/Background_Repair/Background-Broken.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Probs/Itens - Support/Timer/SCENE_Item-Timer.tscn" type="PackedScene" id=21]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 9 )
@@ -97,6 +98,9 @@ scale = Vector2( 50, 1 )
 
 [node name="Upgrades" type="Node" parent="World Components/Main Layer"]
 
+[node name="Item-Timer" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 21 )]
+position = Vector2( 2976, -192 )
+
 [node name="ReparableItens" type="Node" parent="World Components/Main Layer"]
 
 [node name="Slime_1" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 11 )]
@@ -148,11 +152,11 @@ position = Vector2( 5696, -160 )
 position = Vector2( 4512, 0 )
 
 [node name="Main_Player" parent="World Components" instance=ExtResource( 1 )]
+Level_Time = 100
 Level_Score = 1575
 
 [node name="Level_Soundtrack" type="AudioStreamPlayer" parent="World Components/Main_Player"]
 stream = ExtResource( 7 )
-autoplay = true
 
 [node name="GameOver_Soundtrack" type="AudioStreamPlayer2D" parent="World Components/Main_Player"]
 stream = ExtResource( 15 )
