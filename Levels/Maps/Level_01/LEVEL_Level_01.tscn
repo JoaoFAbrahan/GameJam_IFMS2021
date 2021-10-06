@@ -15,7 +15,7 @@
 [ext_resource path="res://Levels/Maps/Level_01/Code/CODE_LEVEL_Level_01.gd" type="Script" id=13]
 [ext_resource path="res://Levels/Repairable Objects/Level_01/Cano/Level01-Cano.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sounds/Soundtracks/GameOver_OST.wav" type="AudioStream" id=15]
-[ext_resource path="res://User Interface/Sprites/pause_screen.png" type="Texture" id=16]
+[ext_resource path="res://User Interface/Menu/Sprite/pause_screen.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Probs/StageEnd/SCENE_Transition_Out.tscn" type="PackedScene" id=17]
 [ext_resource path="res://User Interface/Menu/GameOver.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/Probs/StageEnd/SCENE_Stage_END.tscn" type="PackedScene" id=19]
@@ -198,8 +198,9 @@ scale = Vector2( 19.9878, 12 )
 texture = ExtResource( 23 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Interface/MenuPausa"]
+margin_top = -18.2499
 margin_right = 600.0
-margin_bottom = 344.0
+margin_bottom = 325.75
 use_top_left = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -214,8 +215,8 @@ rect_pivot_offset = Vector2( -680, -76 )
 alignment = 1
 
 [node name="pause_screen" type="Sprite" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
-position = Vector2( 56, -82 )
-scale = Vector2( 0.666667, 0.666667 )
+position = Vector2( 56, -64 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 16 )
 
 [node name="Continuar" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
