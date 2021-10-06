@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Levels/Maps/Level_03/Tileset/Tundra_Tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=2]
@@ -9,8 +9,10 @@
 [ext_resource path="res://Levels/Maps/Level_03/Background Maps/Middle_Background.png" type="Texture" id=7]
 [ext_resource path="res://Levels/Repairable Objects/Independentes/Tiles/Tile-Broken.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Probs/FallZone/CODE_Fallzone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Maps/Level_01/Code/CODE_LEVEL_Level_01.gd" type="Script" id=10]
 
 [node name="Level_03" type="Node"]
+script = ExtResource( 10 )
 
 [node name="World Componnets" type="Node" parent="."]
 

@@ -13,7 +13,7 @@ func _ready():
 
 #### Ação de interação
 func _input(event):
-	if event.is_action_pressed("PlayerAction_INTERACTION") && isPlayerInside && isRevived:
+	if event.is_action_pressed("PlayerAction_INTERACTION") && isPlayerInside && isRevived && PlayerRef.isGrounded:
 		## Controle da StateMachine
 		PlayerRef.InteractAction("Cano");
 		
