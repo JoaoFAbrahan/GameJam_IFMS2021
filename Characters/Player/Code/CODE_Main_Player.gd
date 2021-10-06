@@ -149,7 +149,7 @@ func PlayerAnimation():
 						
 						#Efeito Sonoro
 						if SoundStart:
-							$SFX/Repairing_SFX.play();
+							$SFX/RepairingBackground_SFX.play();
 							SoundStart = false;
 						
 						yield($AnimationPlayer,"animation_finished");

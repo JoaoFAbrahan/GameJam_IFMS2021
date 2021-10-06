@@ -98,6 +98,9 @@ scale = Vector2( 50, 1 )
 [node name="Item-Timer" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 21 )]
 position = Vector2( 2368, -160 )
 
+[node name="Item-Timer2" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 21 )]
+position = Vector2( 1568, -352 )
+
 [node name="ReparableItens" type="Node" parent="World Components/Main Layer"]
 
 [node name="Slime_2" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 17 )]

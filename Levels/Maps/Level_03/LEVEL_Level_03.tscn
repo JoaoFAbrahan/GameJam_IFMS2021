@@ -103,6 +103,9 @@ position = Vector2( 1536, -160 )
 [node name="Item-Timer3" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 17 )]
 position = Vector2( 3328, 0 )
 
+[node name="Item-Timer5" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 17 )]
+position = Vector2( 3968, -288 )
+
 [node name="Item-Timer4" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 17 )]
 position = Vector2( 960, -224 )
 
