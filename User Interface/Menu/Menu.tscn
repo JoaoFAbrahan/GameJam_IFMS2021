@@ -1,0 +1,232 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://User Interface/Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://User Interface/Menu/Sprite/Desentupidores.png" type="Texture" id=2]
+[ext_resource path="res://User Interface/Menu/Sprite/fullscreen_button.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sounds/Soundtracks/The Cleaner - Theme.wav" type="AudioStream" id=4]
+[ext_resource path="res://User Interface/Fonts/pixelart.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://User Interface/Menu/Sprite/Outline.png" type="Texture" id=6]
+[ext_resource path="res://User Interface/Menu/Sprite/Main Menu.png" type="Texture" id=7]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_slider.png" type="Texture" id=8]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_bar.png" type="Texture" id=9]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_icon.png" type="Texture" id=10]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 Direction = vec2(1.0,0.0);
+uniform float Speed = 0.0;
+
+void fragment()
+{
+	COLOR = texture(TEXTURE, UV + (Direction * TIME *Speed));
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/Direction = Vector2( 1.6, -1.9 )
+shader_param/Speed = 0.05
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 64, 32 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 320.0
+margin_top = 192.0
+margin_right = 320.0
+margin_bottom = 192.0
+alignment = 2
+
+[node name="Tile_Notas" type="Node" parent="."]
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 384.0
+color = Color( 0.105882, 0.568627, 0.847059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animated_Sprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 320, 192 )
+texture = ExtResource( 2 )
+
+[node name="Outline" type="Sprite" parent="."]
+position = Vector2( 320, 192 )
+texture = ExtResource( 6 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 320, 192 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 7 )
+
+[node name="Jogar" type="Sprite" parent="."]
+position = Vector2( 334, 197 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 96, 0, 96, 32 )
+__meta__ = {
+"_edit_group_": true,
+"_editor_description_": ""
+}
+
+[node name="Jogar" type="Button" parent="Jogar"]
+light_mask = 0
+margin_right = 96.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 21, 10 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.176471, 0.172549, 0.14902, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.372549, 0.772549, 1 )
+text = "Play"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sair" type="Sprite" parent="."]
+position = Vector2( 329, 223 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 96, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sair" type="Button" parent="Sair"]
+margin_right = 96.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 52, 10 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.176471, 0.172549, 0.14902, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.372549, 0.772549, 1 )
+text = "Tutorial"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Config" type="Sprite" parent="."]
+position = Vector2( 384, 262 )
+region_enabled = true
+region_rect = Rect2( 192, 0, 96, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Config" type="Button" parent="Config"]
+margin_left = -48.0
+margin_top = -16.0
+margin_right = 48.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 50.5, 16 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.176471, 0.172549, 0.14902, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.372549, 0.772549, 1 )
+text = "Credits"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="Sprite" parent="."]
+position = Vector2( 575.473, 365.365 )
+region_enabled = true
+region_rect = Rect2( 288, 0, 96, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="volume_icon" type="Sprite" parent="Sound"]
+position = Vector2( -45.3689, -0.157166 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="Sound" type="Button" parent="Sound"]
+margin_left = -48.0
+margin_top = -16.0
+margin_right = 48.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 50.5, 16 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Sound"]
+margin_left = -32.0
+margin_top = -16.0
+margin_right = 32.0
+margin_bottom = 16.0
+custom_icons/grabber_highlight = ExtResource( 8 )
+custom_icons/grabber = ExtResource( 8 )
+custom_styles/slider = SubResource( 7 )
+custom_styles/grabber_area_highlight = SubResource( 8 )
+custom_styles/grabber_area = SubResource( 9 )
+min_value = -30.0
+max_value = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 320.02, 196.548 )
+stream = ExtResource( 4 )
+volume_db = -2.0
+autoplay = true
+
+[node name="FullScreen" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 345.0
+margin_right = 45.0
+margin_bottom = 383.0
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Jogar/Jogar" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Sair/Sair" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Config/Config" to="." method="_on_Config_pressed"]
+[connection signal="pressed" from="Sound/Sound" to="." method="_on_Button2_pressed"]
+[connection signal="value_changed" from="Sound/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="FullScreen" to="." method="_on_FullScreen_pressed"]

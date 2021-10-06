@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Levels/Repairable Objects/Level_01/Cano/Code/CODE_Level01-Cano.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Repairable Objects/Level_02/Cano/Sprite Sheet/pipe2_Sheet.png" type="Texture" id=2]
+[ext_resource path="res://User Interface/Interactive Icon/Botao_F_32x32.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 16, 32 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "Broken"
+length = 1.15
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Standard"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 16, 16 )
+
+[node name="Level02-Cano" type="StaticBody2D"]
+collision_layer = 10
+collision_mask = 8
+script = ExtResource( 1 )
+
+[node name="Icon" type="AnimatedSprite" parent="."]
+position = Vector2( 16, -48 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 4 )
+playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -32 )
+texture = ExtResource( 2 )
+centered = false
+hframes = 8
+vframes = 2
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 16, 0 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Broken"
+anims/Broken = SubResource( 6 )
+anims/Standard = SubResource( 7 )
+
+[node name="Repair_Area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Repair-Collision" type="CollisionShape2D" parent="Repair_Area"]
+modulate = Color( 0.0705882, 0.611765, 0.00784314, 1 )
+position = Vector2( 16, -48 )
+shape = SubResource( 8 )
+
+[connection signal="body_entered" from="Repair_Area" to="." method="_on_Repair_Area_body_entered"]
+[connection signal="body_exited" from="Repair_Area" to="." method="_on_Repair_Area_body_exited"]

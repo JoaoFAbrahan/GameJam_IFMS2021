@@ -1,0 +1,336 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Maps/Level_02/Tilesets/Level02_Tilemap.tres" type="TileSet" id=2]
+[ext_resource path="res://Levels/Maps/Level_02/Background Maps/DesertRocks_Background.png" type="Texture" id=3]
+[ext_resource path="res://Levels/Maps/Level_02/Background Maps/Sky_Background.png" type="Texture" id=4]
+[ext_resource path="res://Levels/Maps/Level_02/Background Maps/SandHillFront_Background.png" type="Texture" id=5]
+[ext_resource path="res://Levels/Maps/Level_02/Background Maps/SandHillsBack_Background.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sounds/Soundtracks/Desert.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Probs/FallZone/CODE_Fallzone.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Maps/Level_02/Code/CODE_LEVEL_Level_02.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Sounds/Soundtracks/GameOver_OST.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Probs/StageEnd/SCENE_Transition_Out.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Probs/StageEnd/SCENE_Stage_END.tscn" type="PackedScene" id=12]
+[ext_resource path="res://User Interface/Menu/GameOver.tscn" type="PackedScene" id=13]
+[ext_resource path="res://User Interface/Fonts/pixelart.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://User Interface/Scripts/Interface.gd" type="Script" id=15]
+[ext_resource path="res://User Interface/Menu/Sprite/pause_screen.png" type="Texture" id=16]
+[ext_resource path="res://Levels/Repairable Objects/Level_02/Reviver/Level2-Revive.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Levels/Repairable Objects/Level_02/Cano/Level02-Cano.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Levels/Repairable Objects/Independentes/Tiles/Tile-Broken.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Levels/Repairable Objects/Independentes/Background_Repair/Background-Broken.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Probs/Itens - Support/Timer/SCENE_Item-Timer.tscn" type="PackedScene" id=21]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_bar.png" type="Texture" id=22]
+[ext_resource path="res://User Interface/Menu/Sprite/fullscreen_button.png" type="Texture" id=23]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_slider.png" type="Texture" id=24]
+[ext_resource path="res://User Interface/Sprites/Menu_Centro.png" type="Texture" id=25]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_icon.png" type="Texture" id=26]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 14 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 64, 32 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[node name="Level_02" type="Node"]
+script = ExtResource( 9 )
+
+[node name="World Components" type="Node" parent="."]
+
+[node name="Background Layer" type="Node2D" parent="World Components"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="World Components/Background Layer"]
+
+[node name="Background_00" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_00"]
+position = Vector2( -96, -480 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Background_01" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_01"]
+position = Vector2( -96, -480 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Background_02" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_02"]
+position = Vector2( -96, -480 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Background_03" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_03"]
+position = Vector2( -96, -480 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Main Layer" type="Node2D" parent="World Components"]
+
+[node name="TileMaps" type="Node" parent="World Components/Main Layer"]
+
+[node name="TileMap" type="TileMap" parent="World Components/Main Layer/TileMaps"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -720905, 15, 0, -720904, 15, 0, -720903, 15, 0, -720902, 15, 0, -720901, 15, 0, -720900, 15, 0, -655369, 15, 0, -655368, 15, 0, -655367, 15, 0, -655366, 15, 0, -655365, 15, 0, -655364, 15, 0, -720848, 11, 0, -720847, 12, 0, -720846, 12, 0, -720845, 13, 0, -589833, 15, 0, -589832, 15, 0, -589831, 15, 0, -589830, 15, 0, -589829, 15, 0, -589828, 15, 0, -655324, 23, 0, -655318, 23, 0, -524297, 15, 0, -524296, 15, 0, -524295, 15, 0, -524294, 15, 0, -524293, 15, 0, -524292, 15, 0, -589745, 11, 0, -589744, 12, 0, -589743, 12, 0, -589742, 12, 0, -589741, 12, 0, -589740, 12, 0, -589739, 12, 0, -589738, 12, 0, -589737, 12, 0, -589736, 13, 0, -458761, 15, 0, -458760, 15, 0, -458759, 15, 0, -458758, 15, 0, -458757, 15, 0, -458756, 15, 0, -524255, 26, 0, -524232, 11, 0, -524231, 12, 0, -524230, 12, 0, -524229, 20, 0, -524209, 14, 0, -524208, 15, 0, -524207, 15, 0, -524206, 15, 0, -524205, 15, 0, -524204, 15, 0, -524203, 15, 0, -524202, 15, 0, -524201, 15, 0, -524200, 16, 0, -524195, 11, 0, -524194, 12, 0, -524193, 13, 0, -393225, 15, 0, -393224, 15, 0, -393223, 15, 0, -393222, 15, 0, -393221, 15, 0, -393220, 15, 0, -458696, 14, 0, -458695, 15, 0, -458694, 15, 0, -458693, 19, 0, -458692, 20, 0, -458676, 24, 0, -327689, 15, 0, -327688, 15, 0, -327687, 15, 0, -327686, 15, 0, -327685, 15, 0, -327684, 15, 0, -393186, 0, 0, -393185, 31, 0, -393184, 1, 0, -393182, 1, 0, -393181, 2, 0, -393166, 11, 0, -393165, 12, 0, -393164, 13, 0, -393160, 14, 0, -393159, 15, 0, -393158, 15, 0, -393157, 15, 0, -393156, 19, 0, -393155, 20, 0, -262153, 15, 0, -262152, 15, 0, -262151, 15, 0, -262150, 15, 0, -262149, 15, 0, -262148, 15, 0, -327650, 11, 0, -327649, 12, 0, -327648, 12, 0, -327647, 12, 0, -327646, 12, 0, -327645, 13, 0, -327631, 22, 0, -327630, 14, 0, -327629, 15, 0, -327628, 16, 0, -327624, 14, 0, -327623, 15, 0, -327622, 15, 0, -327621, 15, 0, -327620, 15, 0, -327619, 19, 0, -327618, 20, 0, -327607, 24, 0, -196617, 15, 0, -196616, 15, 0, -196615, 15, 0, -196614, 15, 0, -196613, 15, 0, -196612, 15, 0, -262116, 21, 0, -262107, 21, 0, -262098, 31, 0, -262094, 14, 0, -262093, 15, 0, -262092, 16, 0, -262091, 30, 0, -262088, 14, 0, -262087, 15, 0, -262086, 15, 0, -262085, 15, 0, -262084, 15, 0, -262083, 15, 0, -262082, 19, 0, -262081, 20, 0, -262061, 31, 0, -262050, 32, 0, -131081, 15, 0, -131080, 15, 0, -131079, 15, 0, -131078, 15, 0, -131077, 15, 0, -131076, 15, 0, -196604, 23, 0, -196595, 32, 0, -196589, 22, 0, -196588, 21, 0, -196587, 21, 0, -196586, 30, 0, -196583, 32, 0, -196563, 11, 0, -196562, 12, 0, -196561, 13, 0, -196558, 14, 0, -196557, 15, 0, -196556, 16, 0, -196552, 14, 0, -196551, 15, 0, -196550, 15, 0, -196549, 15, 0, -196548, 15, 0, -196547, 15, 0, -196546, 15, 0, -196545, 19, 0, -196544, 20, 0, -196529, 17, 0, -196528, 12, 0, -196527, 12, 0, -196526, 12, 0, -196525, 12, 0, -196524, 12, 0, -196523, 12, 0, -196522, 12, 0, -196521, 12, 0, -196520, 12, 0, -196519, 12, 0, -196518, 12, 0, -196517, 12, 0, -196516, 12, 0, -196515, 12, 0, -196514, 12, 0, -196513, 12, 0, -196512, 13, 0, -196506, 11, 0, -196505, 12, 0, -196504, 12, 0, -196503, 12, 0, -196502, 12, 0, -196501, 12, 0, -196500, 12, 0, -196499, 12, 0, -196498, 12, 0, -196497, 12, 0, -196496, 12, 0, -196495, 12, 0, -196494, 12, 0, -196493, 12, 0, -196492, 12, 0, -196491, 12, 0, -196490, 12, 0, -196489, 12, 0, -196488, 12, 0, -196487, 12, 0, -196486, 12, 0, -196485, 12, 0, -196484, 12, 0, -196483, 12, 0, -196482, 12, 0, -196481, 12, 0, -196480, 12, 0, -196479, 12, 0, -196478, 12, 0, -196477, 12, 0, -196476, 12, 0, -196475, 13, 0, -65545, 15, 0, -65544, 15, 0, -65543, 15, 0, -65542, 15, 0, -65541, 15, 0, -65540, 15, 0, -131061, 17, 0, -131060, 12, 0, -131059, 12, 0, -131058, 12, 0, -131057, 12, 0, -131056, 12, 0, -131055, 13, 0, -131049, 10, 0, -131048, 11, 0, -131047, 12, 0, -131046, 12, 0, -131045, 12, 0, -131044, 12, 0, -131043, 12, 0, -131042, 12, 0, -131041, 12, 0, -131040, 12, 0, -131039, 12, 0, -131038, 12, 0, -131037, 12, 0, -131036, 12, 0, -131035, 12, 0, -131034, 12, 0, -131033, 12, 0, -131032, 12, 0, -131031, 13, 0, -131027, 14, 0, -131026, 15, 0, -131025, 16, 0, -131022, 14, 0, -131021, 15, 0, -131020, 16, 0, -131016, 14, 0, -131015, 15, 0, -131014, 15, 0, -131013, 15, 0, -131012, 15, 0, -131011, 15, 0, -131010, 15, 0, -131009, 15, 0, -131008, 19, 0, -131007, 20, 0, -131005, 32, 0, -130994, 17, 0, -130993, 18, 0, -130992, 15, 0, -130991, 15, 0, -130990, 15, 0, -130989, 15, 0, -130988, 15, 0, -130987, 15, 0, -130986, 15, 0, -130985, 15, 0, -130984, 15, 0, -130983, 15, 0, -130982, 15, 0, -130981, 15, 0, -130980, 15, 0, -130979, 15, 0, -130978, 15, 0, -130977, 15, 0, -130976, 16, 0, -130975, 30, 0, -130971, 22, 0, -130970, 14, 0, -130969, 15, 0, -130968, 15, 0, -130967, 15, 0, -130966, 15, 0, -130965, 15, 0, -130964, 15, 0, -130963, 15, 0, -130962, 15, 0, -130961, 15, 0, -130960, 15, 0, -130959, 15, 0, -130958, 15, 0, -130957, 15, 0, -130956, 15, 0, -130955, 15, 0, -130954, 15, 0, -130953, 15, 0, -130952, 15, 0, -130951, 15, 0, -130950, 15, 0, -130949, 15, 0, -130948, 15, 0, -130947, 15, 0, -130946, 15, 0, -130945, 15, 0, -130944, 15, 0, -130943, 15, 0, -130942, 15, 0, -130941, 15, 0, -130940, 15, 0, -130939, 16, 0, -9, 15, 0, -8, 15, 0, -7, 15, 0, -6, 15, 0, -5, 15, 0, -4, 15, 0, -65528, 31, 0, -65526, 17, 0, -65525, 18, 0, -65524, 15, 0, -65523, 15, 0, -65522, 15, 0, -65521, 15, 0, -65520, 15, 0, -65519, 16, 0, -65513, 3, 0, -65512, 14, 0, -65511, 15, 0, -65510, 15, 0, -65509, 15, 0, -65508, 15, 0, -65507, 15, 0, -65506, 15, 0, -65505, 15, 0, -65504, 15, 0, -65503, 15, 0, -65502, 15, 0, -65501, 15, 0, -65500, 15, 0, -65499, 15, 0, -65498, 15, 0, -65497, 15, 0, -65496, 15, 0, -65495, 16, 0, -65491, 14, 0, -65490, 15, 0, -65489, 16, 0, -65486, 14, 0, -65485, 15, 0, -65484, 16, 0, -65480, 14, 0, -65479, 15, 0, -65478, 15, 0, -65477, 15, 0, -65476, 15, 0, -65475, 15, 0, -65474, 15, 0, -65473, 15, 0, -65472, 15, 0, -65471, 19, 0, -65470, 12, 0, -65469, 12, 0, -65468, 12, 0, -65467, 12, 0, -65466, 12, 0, -65465, 12, 0, -65464, 13, 0, -65459, 11, 0, -65458, 18, 0, -65457, 15, 0, -65456, 15, 0, -65455, 15, 0, -65454, 15, 0, -65453, 15, 0, -65452, 15, 0, -65451, 15, 0, -65450, 15, 0, -65449, 15, 0, -65448, 15, 0, -65447, 15, 0, -65446, 15, 0, -65445, 15, 0, -65444, 15, 0, -65443, 15, 0, -65442, 15, 0, -65441, 15, 0, -65440, 16, 0, -65434, 14, 0, -65433, 15, 0, -65432, 15, 0, -65431, 15, 0, -65430, 15, 0, -65429, 15, 0, -65428, 15, 0, -65427, 15, 0, -65426, 15, 0, -65425, 15, 0, -65424, 15, 0, -65423, 15, 0, -65422, 15, 0, -65421, 15, 0, -65420, 15, 0, -65419, 15, 0, -65418, 15, 0, -65417, 15, 0, -65416, 15, 0, -65415, 15, 0, -65414, 15, 0, -65413, 15, 0, -65412, 15, 0, -65411, 15, 0, -65410, 15, 0, -65409, 15, 0, -65408, 15, 0, -65407, 15, 0, -65406, 15, 0, -65405, 15, 0, -65404, 15, 0, -65403, 16, 0, 65527, 15, 0, 65528, 15, 0, 65529, 15, 0, 65530, 15, 0, 65531, 15, 0, 65532, 15, 0, 65533, 12, 0, 65534, 12, 0, 65535, 12, 0, 0, 12, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 12, 0, 6, 12, 0, 7, 12, 0, 8, 12, 0, 9, 12, 0, 10, 18, 0, 11, 15, 0, 12, 15, 0, 13, 15, 0, 14, 15, 0, 15, 15, 0, 16, 15, 0, 17, 16, 0, 23, 3, 0, 24, 14, 0, 25, 15, 0, 26, 15, 0, 27, 15, 0, 28, 15, 0, 29, 15, 0, 30, 15, 0, 31, 15, 0, 32, 15, 0, 33, 15, 0, 34, 15, 0, 35, 15, 0, 36, 15, 0, 37, 15, 0, 38, 15, 0, 39, 15, 0, 40, 15, 0, 41, 16, 0, 45, 14, 0, 46, 15, 0, 47, 16, 0, 50, 14, 0, 51, 15, 0, 52, 16, 0, 55, 22, 0, 56, 14, 0, 57, 15, 0, 58, 15, 0, 59, 15, 0, 60, 15, 0, 61, 15, 0, 62, 15, 0, 63, 15, 0, 64, 15, 0, 65, 15, 0, 66, 15, 0, 67, 15, 0, 68, 15, 0, 69, 15, 0, 70, 15, 0, 71, 15, 0, 72, 16, 0, 77, 14, 0, 78, 15, 0, 79, 15, 0, 80, 15, 0, 81, 15, 0, 82, 15, 0, 83, 15, 0, 84, 15, 0, 85, 15, 0, 86, 15, 0, 87, 15, 0, 88, 15, 0, 89, 15, 0, 90, 15, 0, 91, 15, 0, 92, 15, 0, 93, 15, 0, 94, 15, 0, 95, 15, 0, 96, 16, 0, 102, 14, 0, 103, 15, 0, 104, 15, 0, 105, 15, 0, 106, 15, 0, 107, 15, 0, 108, 15, 0, 109, 15, 0, 110, 15, 0, 111, 15, 0, 112, 15, 0, 113, 15, 0, 114, 15, 0, 115, 15, 0, 116, 15, 0, 117, 15, 0, 118, 15, 0, 119, 15, 0, 120, 15, 0, 121, 15, 0, 122, 15, 0, 123, 15, 0, 124, 15, 0, 125, 15, 0, 126, 15, 0, 127, 15, 0, 128, 15, 0, 129, 15, 0, 130, 15, 0, 131, 15, 0, 132, 15, 0, 133, 16, 0 )
+
+[node name="Fallzone" parent="World Components/Main Layer/TileMaps" instance=ExtResource( 8 )]
+position = Vector2( 1568, 64 )
+scale = Vector2( 50, 1 )
+
+[node name="Upgrades" type="Node" parent="World Components/Main Layer"]
+
+[node name="Item-Timer" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 21 )]
+position = Vector2( 2368, -160 )
+
+[node name="Item-Timer2" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 21 )]
+position = Vector2( 1568, -352 )
+
+[node name="ReparableItens" type="Node" parent="World Components/Main Layer"]
+
+[node name="Slime_2" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 17 )]
+position = Vector2( 160, 0 )
+
+[node name="Slime_3" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 17 )]
+position = Vector2( 1056, -64 )
+
+[node name="Slime_4" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 17 )]
+position = Vector2( 2688, -288 )
+
+[node name="Level02-Cano" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 18 )]
+position = Vector2( 2240, -64 )
+
+[node name="Level02-Cano2" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 18 )]
+position = Vector2( 1760, -32 )
+
+[node name="Level02-Cano3" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 18 )]
+position = Vector2( 3008, -288 )
+
+[node name="Tile-Broken" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 19 )]
+position = Vector2( 448, -32 )
+
+[node name="Tile-Broken2" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 19 )]
+position = Vector2( 1056, -128 )
+
+[node name="Tile-Broken10" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 19 )]
+position = Vector2( 1248, -32 )
+
+[node name="Bg-Broken" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 20 )]
+position = Vector2( 1824, -256 )
+
+[node name="Tile-Broken3" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 19 )]
+position = Vector2( 1632, -160 )
+
+[node name="Tile-Broken4" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 19 )]
+position = Vector2( 2848, -64 )
+
+[node name="Tile-Broken5" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 19 )]
+position = Vector2( 1600, -320 )
+
+[node name="Tile-Broken6" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 19 )]
+position = Vector2( 2464, 0 )
+
+[node name="Tile-Broken7" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 19 )]
+position = Vector2( 2784, -256 )
+
+[node name="Tile-Broken8" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 19 )]
+position = Vector2( 3040, -64 )
+
+[node name="Tile-Broken9" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 19 )]
+position = Vector2( 3264, -64 )
+
+[node name="Main_Player" parent="World Components" instance=ExtResource( 1 )]
+Level_Time = 80
+Level_Score = 1700
+
+[node name="Level_Soundtrack" type="AudioStreamPlayer2D" parent="World Components/Main_Player"]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="GameOver_Soundtrack" type="AudioStreamPlayer2D" parent="World Components/Main_Player"]
+stream = ExtResource( 10 )
+
+[node name="Foreground Layer" type="Node2D" parent="World Components"]
+
+[node name="Transition_Out" parent="World Components/Foreground Layer" instance=ExtResource( 11 )]
+
+[node name="Stage_END" parent="." instance=ExtResource( 12 )]
+position = Vector2( 3344, -96 )
+path = "res://Levels/Maps/Level_03/LEVEL_Level_03.tscn"
+
+[node name="Interface" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 15 )
+
+[node name="MenuPausa" type="Control" parent="Interface"]
+visible = false
+margin_left = 320.0
+margin_top = 270.0
+margin_right = 320.0
+margin_bottom = 270.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tela_de_fundo" type="Sprite" parent="Interface/MenuPausa"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 0.745098 )
+position = Vector2( 6.10352e-05, -78 )
+scale = Vector2( 19.9878, 12 )
+texture = ExtResource( 25 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Interface/MenuPausa"]
+margin_top = -18.2499
+margin_right = 600.0
+margin_bottom = 325.75
+use_top_left = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/MenuPausa/CenterContainer"]
+margin_left = -56.0
+margin_top = -22.0
+margin_right = 56.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( -680, -76 )
+alignment = 1
+
+[node name="pause_screen" type="Sprite" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+position = Vector2( 56, -64 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Continuar" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+margin_right = 112.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_hover = Color( 0.858824, 0.713726, 0.258824, 1 )
+text = "Continue"
+flat = true
+
+[node name="Som" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 24.0
+margin_right = 112.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.858824, 0.713726, 0.258824, 1 )
+text = "Restart"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuPrincipal" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 112.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.858824, 0.713726, 0.258824, 1 )
+text = "Main menu"
+flat = true
+
+[node name="Sair" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 104.0
+margin_right = 120.0
+margin_bottom = 124.0
+custom_fonts/font = SubResource( 4 )
+text = "Sair"
+
+[node name="FullScreen2" type="Button" parent="Interface/MenuPausa"]
+margin_left = -312.0
+margin_top = 66.0
+margin_right = -268.0
+margin_bottom = 104.0
+icon = ExtResource( 23 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="Sprite" parent="Interface/MenuPausa"]
+position = Vector2( 272, 90 )
+region_enabled = true
+region_rect = Rect2( 288, 0, 96, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="volume_icon" type="Sprite" parent="Interface/MenuPausa/Sound"]
+position = Vector2( -45.405, 2.38419e-07 )
+texture = ExtResource( 26 )
+flip_h = true
+
+[node name="Sound" type="Button" parent="Interface/MenuPausa/Sound"]
+margin_left = -48.0
+margin_top = -16.0
+margin_right = 48.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 50.5, 16 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Interface/MenuPausa/Sound"]
+margin_left = -32.0
+margin_top = -16.0
+margin_right = 32.0
+margin_bottom = 16.0
+custom_icons/grabber_highlight = ExtResource( 24 )
+custom_icons/grabber = ExtResource( 24 )
+custom_styles/slider = SubResource( 6 )
+custom_styles/grabber_area_highlight = SubResource( 7 )
+custom_styles/grabber_area = SubResource( 8 )
+min_value = -30.0
+max_value = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" parent="Interface" instance=ExtResource( 13 )]
+visible = false
+
+[connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Continuar" to="Interface" method="_on_Continuar_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Som" to="Interface" method="_on_Som_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/MenuPrincipal" to="Interface" method="_on_MenuPrincipal_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Sair" to="Interface" method="_on_Sair_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/FullScreen2" to="Interface" method="_on_FullScreen2_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/Sound/Sound" to="Interface" method="_on_Sound_pressed"]
+[connection signal="value_changed" from="Interface/MenuPausa/Sound/HSlider" to="Interface" method="_on_HSlider_value_changed"]

@@ -1,0 +1,478 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://Levels/Maps/Level_01/Background Maps/Mountains_Background.png" type="Texture" id=1]
+[ext_resource path="res://Levels/Maps/Level_01/Background Maps/Hills_Background.png" type="Texture" id=2]
+[ext_resource path="res://Levels/Maps/Level_01/Background Maps/Sky_Background.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sounds/Soundtracks/Tutorial.wav" type="AudioStream" id=4]
+[ext_resource path="res://Levels/Maps/Level_01/Background Maps/Grass_Background.png" type="Texture" id=5]
+[ext_resource path="res://User Interface/Scripts/Interface.gd" type="Script" id=6]
+[ext_resource path="res://User Interface/Menu/Sprite/pause_screen.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sounds/Soundtracks/GameOver_OST.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Probs/StageEnd/SCENE_Stage_END.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Probs/FallZone/CODE_Fallzone.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Levels/Repairable Objects/Level_01/Cano/Level01-Cano.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/Repairable Objects/Level_01/Reviver/Level01-Revive.tscn" type="PackedScene" id=13]
+[ext_resource path="res://User Interface/Menu/GameOver.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Probs/StageEnd/SCENE_Transition_Out.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Probs/Itens - Support/Timer/SCENE_Item-Timer.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Levels/Repairable Objects/Independentes/Tiles/Tile-Broken.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Levels/Maps/Level_01/Code/CODE_LEVEL_Level_01.gd" type="Script" id=18]
+[ext_resource path="res://User Interface/Fonts/pixelart.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://Levels/Maps/Level_01/Tileset/Tileset_Level01.tres" type="TileSet" id=20]
+[ext_resource path="res://Levels/Repairable Objects/Independentes/Background_Repair/Background-Broken.tscn" type="PackedScene" id=21]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_bar.png" type="Texture" id=22]
+[ext_resource path="res://User Interface/Menu/Sprite/fullscreen_button.png" type="Texture" id=23]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_slider.png" type="Texture" id=24]
+[ext_resource path="res://User Interface/Sprites/Menu_Centro.png" type="Texture" id=25]
+[ext_resource path="res://User Interface/Menu/Sprite/volume_icon.png" type="Texture" id=26]
+[ext_resource path="res://Levels/Maps/Level_00/Font/dogica.ttf" type="DynamicFontData" id=27]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+extra_spacing_bottom = 2
+font_data = ExtResource( 27 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 19 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 64, 32 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[node name="Level_01" type="Node"]
+script = ExtResource( 18 )
+
+[node name="World Components" type="Node" parent="."]
+
+[node name="Background Layer" type="Node2D" parent="World Components"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="World Components/Background Layer"]
+
+[node name="Background_00" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_00"]
+position = Vector2( -96, -480 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Background_01" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_01"]
+position = Vector2( -96, -480 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Background_02" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_02"]
+position = Vector2( -96, -480 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Background_03" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_03"]
+position = Vector2( -96, -480 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Main Layer" type="Node2D" parent="World Components"]
+
+[node name="TileMaps" type="Node" parent="World Components/Main Layer"]
+
+[node name="TileMap" type="TileMap" parent="World Components/Main Layer/TileMaps"]
+tile_set = ExtResource( 20 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -655364, 9, 0, -589828, 9, 0, -524292, 10, 0, -458756, 10, 0, -393220, 10, 0, -327684, 10, 0, -393188, 27, 0, -393175, 29, 0, -262148, 10, 0, -196612, 10, 0, -262131, 28, 0, -262124, 24, 0, -262100, 31, 0, -131076, 10, 0, -196608, 30, 0, -196570, 12, 0, -196569, 7, 0, -196568, 8, 0, -196566, 6, 0, -196565, 7, 0, -196564, 7, 0, -196563, 7, 0, -196562, 7, 0, -196561, 7, 0, -196560, 7, 0, -196559, 7, 0, -196558, 7, 0, -196557, 7, 0, -196556, 7, 0, -196555, 7, 0, -196554, 7, 0, -196553, 7, 0, -196552, 7, 0, -196551, 7, 0, -196550, 7, 0, -196549, 7, 0, -196548, 7, 0, -196547, 7, 0, -196546, 7, 0, -196545, 7, 0, -196544, 7, 0, -196543, 7, 0, -196542, 7, 0, -196541, 7, 0, -196540, 7, 0, -196539, 7, 0, -196538, 7, 0, -196537, 7, 0, -196536, 7, 0, -196535, 8, 0, -65540, 10, 0, -131056, 18, 0, -131055, 16, 0, -131048, 18, 0, -131047, 16, 0, -131041, 18, 0, -131040, 16, 0, -131035, 12, 0, -131034, 13, 0, -131033, 10, 0, -131032, 11, 0, -131030, 9, 0, -131029, 10, 0, -131028, 10, 0, -131027, 10, 0, -131026, 10, 0, -131025, 10, 0, -131024, 10, 0, -131023, 10, 0, -131022, 10, 0, -131021, 10, 0, -131020, 10, 0, -131019, 10, 0, -131018, 10, 0, -131017, 10, 0, -131016, 10, 0, -131015, 10, 0, -131014, 10, 0, -131013, 10, 0, -131012, 10, 0, -131011, 10, 0, -131010, 10, 0, -131009, 10, 0, -131008, 10, 0, -131007, 10, 0, -131006, 10, 0, -131005, 10, 0, -131004, 10, 0, -131003, 10, 0, -131002, 10, 0, -131001, 10, 0, -131000, 10, 0, -130999, 11, 0, -4, 10, 0, -2, 32, 0, -65534, 31, 0, -65524, 6, 0, -65523, 7, 0, -65522, 8, 0, -65520, 31, 0, -65517, 6, 0, -65516, 7, 0, -65515, 7, 0, -65514, 8, 0, -65509, 6, 0, -65508, 7, 0, -65507, 8, 0, -65505, 32, 0, -65502, 6, 0, -65501, 7, 0, -65500, 7, 0, -65499, 13, 0, -65498, 10, 0, -65497, 10, 0, -65496, 11, 0, -65494, 9, 0, -65493, 10, 0, -65492, 10, 0, -65491, 10, 0, -65490, 10, 0, -65489, 10, 0, -65488, 10, 0, -65487, 10, 0, -65486, 10, 0, -65485, 10, 0, -65484, 10, 0, -65483, 10, 0, -65482, 10, 0, -65481, 10, 0, -65480, 10, 0, -65479, 10, 0, -65478, 10, 0, -65477, 10, 0, -65476, 10, 0, -65475, 10, 0, -65474, 10, 0, -65473, 10, 0, -65472, 10, 0, -65471, 10, 0, -65470, 10, 0, -65469, 10, 0, -65468, 10, 0, -65467, 10, 0, -65466, 10, 0, -65465, 10, 0, -65464, 10, 0, -65463, 11, 0, 65532, 10, 0, 65533, 6, 0, 65534, 7, 0, 65535, 7, 0, 0, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 8, 0, 7, 6, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 11, 8, 0, 12, 9, 0, 13, 10, 0, 14, 11, 0, 15, 6, 0, 16, 7, 0, 17, 7, 0, 18, 8, 0, 19, 9, 0, 20, 10, 0, 21, 10, 0, 22, 11, 0, 23, 6, 0, 24, 7, 0, 25, 7, 0, 26, 8, 0, 27, 9, 0, 28, 10, 0, 29, 11, 0, 30, 6, 0, 31, 7, 0, 32, 7, 0, 33, 8, 0, 34, 9, 0, 35, 10, 0, 36, 10, 0, 37, 10, 0, 38, 10, 0, 39, 10, 0, 40, 11, 0, 42, 9, 0, 43, 10, 0, 44, 10, 0, 45, 10, 0, 46, 10, 0, 47, 10, 0, 48, 10, 0, 49, 10, 0, 50, 10, 0, 51, 10, 0, 52, 10, 0, 53, 10, 0, 54, 10, 0, 55, 10, 0, 56, 10, 0, 57, 10, 0, 58, 10, 0, 59, 10, 0, 60, 10, 0, 61, 10, 0, 62, 10, 0, 63, 10, 0, 64, 10, 0, 65, 10, 0, 66, 10, 0, 67, 10, 0, 68, 10, 0, 69, 10, 0, 70, 10, 0, 71, 10, 0, 72, 10, 0, 73, 11, 0, 65541, 18, 0, 65542, 16, 0 )
+
+[node name="Fallzone" parent="World Components/Main Layer/TileMaps" instance=ExtResource( 11 )]
+position = Vector2( 4608, 64 )
+scale = Vector2( 50, 1 )
+
+[node name="Upgrades" type="Node" parent="World Components/Main Layer"]
+
+[node name="Item-Timer" parent="World Components/Main Layer/Upgrades" instance=ExtResource( 16 )]
+position = Vector2( 1576, -96 )
+
+[node name="ReparableItens" type="Node" parent="World Components/Main Layer"]
+
+[node name="Tile-Broken" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 17 )]
+position = Vector2( 416, 0 )
+
+[node name="Slime_1" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 13 )]
+position = Vector2( 672, -32 )
+
+[node name="Bg-Broken" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 21 )]
+position = Vector2( 1120, -32 )
+
+[node name="Level01-Cano" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 12 )]
+position = Vector2( 896, -64 )
+
+[node name="Tutorial" type="Node" parent="World Components/Main Layer"]
+
+[node name="Dialog_1" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
+color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
+polygon = PoolVector2Array( -64, -192, -64, -120, 280, -120, 280, -192 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_1"]
+margin_left = -56.0
+margin_top = -184.0
+margin_right = 280.0
+margin_bottom = -120.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Welcome, Player. Here, in George Janitor, you need to fix the things that the Hero left broken a while ago.
+It's extremely important that you do that in time, as the next Hero needs the stage in an almost perfect condition."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_2" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
+position = Vector2( 176, 96 )
+color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
+polygon = PoolVector2Array( -64, -192, -64, -160, 88, -160, 88, -192 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_2"]
+margin_left = -56.0
+margin_top = -184.0
+margin_right = 88.0
+margin_bottom = -160.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "To Jump, you must press Space."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_3" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
+position = Vector2( 0, 128 )
+color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
+polygon = PoolVector2Array( -64, -192, -64, -160, 80, -160, 80, -192 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_3"]
+margin_left = -56.0
+margin_top = -184.0
+margin_right = 88.0
+margin_bottom = -160.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "To move, you can press A or D."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_4" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
+position = Vector2( 432, 24 )
+color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
+polygon = PoolVector2Array( -64, -192, -64, -160, 64, -160, 64, -192 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_4"]
+margin_left = -56.0
+margin_top = -184.0
+margin_right = 88.0
+margin_bottom = -160.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "You can repair Blocks..."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_5" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
+position = Vector2( 660, 24 )
+scale = Vector2( 1.15, 1 )
+color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
+polygon = PoolVector2Array( -80, -192, -80, -160, 86.9565, -160, 86.9565, -192 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_5"]
+margin_left = -72.0
+margin_top = -184.0
+margin_right = 94.0
+margin_bottom = -160.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Use a Slime Pump to Revive... Slimes."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_6" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
+position = Vector2( 904, -48 )
+scale = Vector2( 1.15, 1 )
+color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
+polygon = PoolVector2Array( -48.6957, -176, -48.6957, -144, 62.6086, -144, 62.6086, -176 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_6"]
+margin_left = -42.0
+margin_top = -168.0
+margin_right = 63.0
+margin_bottom = -144.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "You can also fix Pipes"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_7" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
+position = Vector2( 1128, 32 )
+scale = Vector2( 1.15, 1 )
+color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
+polygon = PoolVector2Array( -83.4783, -200, -83.4783, -160, 90.4348, -160, 90.4348, -200 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_7"]
+margin_left = -77.0
+margin_top = -192.0
+margin_right = 97.0
+margin_bottom = -160.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "And finally, you can close holes on the background."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_8" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
+position = Vector2( 1328, 32 )
+scale = Vector2( 1.15, 1 )
+color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
+polygon = PoolVector2Array( -83.4783, -296, -83.4783, -224, 76.5217, -224, 76.5217, -296 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_8"]
+margin_left = -77.0
+margin_top = -288.0
+margin_right = 97.0
+margin_bottom = -176.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "A couple more things: Avoid falling into the gaps, you'll be teleported back to the start. "
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_10" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
+position = Vector2( 1576, 88 )
+scale = Vector2( 1.15, 1 )
+color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
+polygon = PoolVector2Array( -83.4783, -296, -83.4783, -256, 90.4348, -256, 90.4348, -296 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_10"]
+margin_left = -77.0
+margin_top = -288.0
+margin_right = 97.0
+margin_bottom = -176.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Remember to collect the clocks for extra time. "
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_9" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
+position = Vector2( 1864, 80 )
+scale = Vector2( 1.15, 1 )
+color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
+polygon = PoolVector2Array( -83.4783, -296, -83.4784, -248, 55.6521, -248, 55.6521, -296 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_9"]
+margin_left = -77.0
+margin_top = -288.0
+margin_right = 70.0
+margin_bottom = -248.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "You must leave the stage before the time is up, or you're FIRED!"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main_Player" parent="World Components" instance=ExtResource( 10 )]
+Level_Time = 400
+Level_Score = 500
+
+[node name="Level_Soundtrack" type="AudioStreamPlayer" parent="World Components/Main_Player"]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="GameOver_Soundtrack" type="AudioStreamPlayer2D" parent="World Components/Main_Player"]
+stream = ExtResource( 8 )
+
+[node name="Foreground Layer" type="Node2D" parent="World Components"]
+
+[node name="Transition_Out" parent="World Components/Foreground Layer" instance=ExtResource( 15 )]
+
+[node name="Stage_END" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1856, -96 )
+path = "res://Levels/Maps/Level_01/LEVEL_Level_01.tscn"
+
+[node name="Interface" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 6 )
+
+[node name="MenuPausa" type="Control" parent="Interface"]
+visible = false
+margin_left = 320.0
+margin_top = 270.0
+margin_right = 320.0
+margin_bottom = 270.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tela_de_fundo" type="Sprite" parent="Interface/MenuPausa"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 0.745098 )
+position = Vector2( 6.10352e-05, -78 )
+scale = Vector2( 19.9878, 12 )
+texture = ExtResource( 25 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Interface/MenuPausa"]
+margin_top = -18.2499
+margin_right = 600.0
+margin_bottom = 325.75
+use_top_left = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/MenuPausa/CenterContainer"]
+margin_left = -56.0
+margin_top = -22.0
+margin_right = 56.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( -680, -76 )
+alignment = 1
+
+[node name="pause_screen" type="Sprite" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+position = Vector2( 56, -64 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Continuar" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+margin_right = 112.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.858824, 0.713726, 0.258824, 1 )
+text = "Continue"
+flat = true
+
+[node name="Som" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 24.0
+margin_right = 112.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.858824, 0.713726, 0.258824, 1 )
+text = "Restart"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuPrincipal" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 112.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.858824, 0.713726, 0.258824, 1 )
+text = "Main menu"
+flat = true
+
+[node name="Sair" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 104.0
+margin_right = 120.0
+margin_bottom = 124.0
+custom_fonts/font = SubResource( 5 )
+text = "Sair"
+
+[node name="FullScreen2" type="Button" parent="Interface/MenuPausa"]
+margin_left = -312.0
+margin_top = 66.0
+margin_right = -268.0
+margin_bottom = 104.0
+icon = ExtResource( 23 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="Sprite" parent="Interface/MenuPausa"]
+position = Vector2( 272, 90 )
+region_enabled = true
+region_rect = Rect2( 288, 0, 96, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="volume_icon" type="Sprite" parent="Interface/MenuPausa/Sound"]
+position = Vector2( -45.405, 2.38419e-07 )
+texture = ExtResource( 26 )
+flip_h = true
+
+[node name="Sound" type="Button" parent="Interface/MenuPausa/Sound"]
+margin_left = -48.0
+margin_top = -16.0
+margin_right = 48.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 50.5, 16 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Interface/MenuPausa/Sound"]
+margin_left = -32.0
+margin_top = -16.0
+margin_right = 32.0
+margin_bottom = 16.0
+custom_icons/grabber_highlight = ExtResource( 24 )
+custom_icons/grabber = ExtResource( 24 )
+custom_styles/slider = SubResource( 7 )
+custom_styles/grabber_area_highlight = SubResource( 8 )
+custom_styles/grabber_area = SubResource( 9 )
+min_value = -30.0
+max_value = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" parent="Interface" instance=ExtResource( 14 )]
+visible = false
+
+[connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Continuar" to="Interface" method="_on_Continuar_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Som" to="Interface" method="_on_Som_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/MenuPrincipal" to="Interface" method="_on_MenuPrincipal_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Sair" to="Interface" method="_on_Sair_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/FullScreen2" to="Interface" method="_on_FullScreen2_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/Sound/Sound" to="Interface" method="_on_Sound_pressed"]
+[connection signal="value_changed" from="Interface/MenuPausa/Sound/HSlider" to="Interface" method="_on_HSlider_value_changed"]
