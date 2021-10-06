@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Maps/Level_02/Tilesets/Level02_Tilemap.tres" type="TileSet" id=2]
@@ -8,8 +8,10 @@
 [ext_resource path="res://Levels/Maps/Level_02/Background Maps/SandHillsBack_Background.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sounds/Soundtracks/Desert.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Probs/FallZone/CODE_Fallzone.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Maps/Level_01/Code/CODE_LEVEL_Level_01.gd" type="Script" id=9]
 
 [node name="Level_02" type="Node"]
+script = ExtResource( 9 )
 
 [node name="World Componnets" type="Node" parent="."]
 

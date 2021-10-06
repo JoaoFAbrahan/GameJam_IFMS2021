@@ -1,4 +1,5 @@
 extends CLASS_Character
+signal _onPlayerDead(condition);
 
 #### Player Variables
 var InteractTo;
@@ -174,8 +175,6 @@ func _RemoveTime(time: int):
 ### Adiciona pontos
 func _AddScore(points: int):
 	MyScore += points;
-
-
 
 
 func DebugMessage():
