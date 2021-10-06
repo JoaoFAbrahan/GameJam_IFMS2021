@@ -171,6 +171,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="volume_icon" type="Sprite" parent="Sound"]
+position = Vector2( -45.3689, -0.157166 )
+texture = ExtResource( 10 )
+flip_h = true
+
 [node name="Sound" type="Button" parent="Sound"]
 margin_left = -48.0
 margin_top = -16.0
@@ -201,10 +206,6 @@ max_value = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="volume_icon" type="Sprite" parent="Sound"]
-position = Vector2( 47.309, -0.479004 )
-texture = ExtResource( 10 )
 
 [node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 320.02, 196.548 )

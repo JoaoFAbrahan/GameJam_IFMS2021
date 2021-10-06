@@ -31,3 +31,5 @@ func _on_HSlider_value_changed(value):
 
 func _on_FullScreen2_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
+
+
