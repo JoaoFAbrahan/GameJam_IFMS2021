@@ -15,8 +15,8 @@
 [ext_resource path="res://Levels/Maps/Level_01/Code/CODE_LEVEL_Level_01.gd" type="Script" id=13]
 [ext_resource path="res://Levels/Repairable Objects/Level_01/Cano/Level01-Cano.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sounds/Soundtracks/GameOver_OST.wav" type="AudioStream" id=15]
-[ext_resource path="res://User Interface/Menu/GameOver.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Probs/StageEnd/SCENE_Transition_Out.tscn" type="PackedScene" id=17]
+[ext_resource path="res://User Interface/Menu/GameOver.tscn" type="PackedScene" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -200,7 +200,7 @@ margin_bottom = 110.0
 custom_fonts/font = SubResource( 5 )
 text = "Sair"
 
-[node name="GameOver" parent="Interface" instance=ExtResource( 16 )]
+[node name="GameOver" parent="Interface" instance=ExtResource( 18 )]
 visible = false
 
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Continuar" to="Interface" method="_on_Continuar_pressed"]
