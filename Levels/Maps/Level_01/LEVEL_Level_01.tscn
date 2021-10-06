@@ -20,6 +20,9 @@
 [ext_resource path="res://User Interface/Menu/GameOver.tscn" type="PackedScene" id=18]
 [ext_resource path="res://User Interface/Sprites/Menu_Centro.png" type="Texture" id=19]
 
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 9 )
+
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 9 )
 
@@ -27,9 +30,6 @@ font_data = ExtResource( 9 )
 font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 9 )
-
-[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 9 )
 
 [node name="Level_01" type="Node"]
@@ -123,7 +123,7 @@ position = Vector2( 3904, -192 )
 Level_Time = 30
 Level_Score = 1700
 
-[node name="Level01_Soundtrack" type="AudioStreamPlayer" parent="World Components/Main_Player"]
+[node name="Level_Soundtrack" type="AudioStreamPlayer" parent="World Components/Main_Player"]
 stream = ExtResource( 7 )
 autoplay = true
 
@@ -177,7 +177,8 @@ texture = ExtResource( 16 )
 [node name="Continuar" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
 margin_right = 112.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.137255, 0.721569, 0.054902, 1 )
 text = "Continue"
 flat = true
@@ -186,7 +187,8 @@ flat = true
 margin_top = 24.0
 margin_right = 112.0
 margin_bottom = 44.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.137255, 0.721569, 0.054902, 1 )
 text = "Main menu"
 flat = true
@@ -195,7 +197,8 @@ flat = true
 margin_top = 48.0
 margin_right = 112.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.137255, 0.721569, 0.054902, 1 )
 text = "Som"
 flat = true
@@ -205,7 +208,7 @@ visible = false
 margin_top = 104.0
 margin_right = 120.0
 margin_bottom = 124.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "Sair"
 
 [node name="GameOver" parent="Interface" instance=ExtResource( 18 )]

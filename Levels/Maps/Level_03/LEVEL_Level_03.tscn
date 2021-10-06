@@ -95,12 +95,14 @@ position = Vector2( 2240, -32 )
 [node name="Tile-Broken9" parent="World Componnets/Main Layer/ReparableItens" instance=ExtResource( 8 )]
 position = Vector2( 2688, -96 )
 
-[node name="Main_Player" parent="World Componnets/Main Layer" instance=ExtResource( 2 )]
+[node name="Main_Player" parent="World Componnets" instance=ExtResource( 2 )]
 Level_Time = 1000
 Speed = 150
 
-[node name="Level03_Soundtrack" type="AudioStreamPlayer2D" parent="World Componnets/Main Layer/Main_Player"]
+[node name="Level_Soundtrack" type="AudioStreamPlayer2D" parent="World Componnets/Main_Player"]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="GameOver_Soundtrack" type="AudioStreamPlayer2D" parent="World Componnets/Main_Player"]
 
 [node name="Foreground Layer" type="Node2D" parent="World Componnets"]
