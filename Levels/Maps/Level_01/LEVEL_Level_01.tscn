@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Maps/Level_01/Background Maps/Grass_Background.png" type="Texture" id=2]
@@ -30,6 +30,9 @@ font_data = ExtResource( 9 )
 font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 9 )
 
 [node name="Level_01" type="Node"]
@@ -151,6 +154,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="FullScreen" type="Button" parent="Interface/MenuPausa"]
+margin_left = 288.0
+margin_top = -270.0
+margin_right = 320.0
+margin_bottom = -238.0
+text = "[  ]"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CenterContainer" type="CenterContainer" parent="Interface/MenuPausa"]
 margin_right = 600.0
 margin_bottom = 344.0
@@ -161,9 +175,10 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Interface/MenuPausa/CenterContainer"]
 margin_left = -56.0
-margin_top = -34.0
+margin_top = -22.0
 margin_right = 56.0
-margin_bottom = 34.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( -680, -76 )
 alignment = 1
 
 [node name="pause_screen" type="Sprite" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
@@ -191,6 +206,7 @@ text = "Main menu"
 flat = true
 
 [node name="Som" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+visible = false
 margin_top = 48.0
 margin_right = 112.0
 margin_bottom = 68.0
@@ -208,9 +224,46 @@ margin_bottom = 124.0
 custom_fonts/font = SubResource( 4 )
 text = "Sair"
 
+[node name="Sound" type="Sprite" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
+position = Vector2( 344, 120 )
+region_enabled = true
+region_rect = Rect2( 288, 0, 96, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sound" type="Button" parent="Interface/MenuPausa/CenterContainer/VBoxContainer/Sound"]
+margin_left = -48.0
+margin_top = -16.0
+margin_right = 48.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 50.5, 16 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Interface/MenuPausa/CenterContainer/VBoxContainer/Sound"]
+margin_left = -32.0
+margin_top = -16.0
+margin_right = 32.0
+margin_bottom = 16.0
+min_value = -40.0
+max_value = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GameOver" parent="Interface" instance=ExtResource( 18 )]
 visible = false
 
+[connection signal="pressed" from="Interface/MenuPausa/FullScreen" to="Interface" method="_on_FullScreen_pressed"]
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Continuar" to="Interface" method="_on_Continuar_pressed"]
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/MenuPrincipal" to="Interface" method="_on_MenuPrincipal_pressed"]
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Sair" to="Interface" method="_on_Sair_pressed"]
+[connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Sound/Sound" to="Interface" method="_on_Sound_pressed"]
+[connection signal="value_changed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Sound/HSlider" to="Interface" method="_on_HSlider_value_changed"]
