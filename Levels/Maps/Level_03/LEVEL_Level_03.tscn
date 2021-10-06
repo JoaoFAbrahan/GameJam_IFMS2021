@@ -1,8 +1,8 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Levels/Maps/Level_03/Tileset/Tundra_Tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Sounds/Soundtracks/Winter.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sounds/Soundtracks/Desert.wav" type="AudioStream" id=3]
 [ext_resource path="res://Levels/Maps/Level_03/Background Maps/PostMountains_Background.png" type="Texture" id=4]
 [ext_resource path="res://Levels/Maps/Level_03/Background Maps/Front_Background.png" type="Texture" id=5]
 [ext_resource path="res://Levels/Maps/Level_03/Background Maps/Sky_Background.png" type="Texture" id=6]
@@ -24,6 +24,7 @@
 [ext_resource path="res://User Interface/Menu/Sprite/volume_bar.png" type="Texture" id=22]
 [ext_resource path="res://User Interface/Sprites/Menu_Centro.png" type="Texture" id=23]
 [ext_resource path="res://User Interface/Menu/Sprite/fullscreen_button.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Sounds/Soundtracks/GameOver_OST.wav" type="AudioStream" id=25]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 14 )
@@ -189,6 +190,7 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [node name="GameOver_Soundtrack" type="AudioStreamPlayer2D" parent="World Components/Main_Player"]
+stream = ExtResource( 25 )
 
 [node name="Foreground Layer" type="Node2D" parent="World Components"]
 
