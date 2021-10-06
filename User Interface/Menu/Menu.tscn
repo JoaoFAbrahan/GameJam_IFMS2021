@@ -217,6 +217,9 @@ __meta__ = {
 [node name="Intro" parent="." instance=ExtResource( 11 )]
 position = Vector2( 320.02, 192 )
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
 [connection signal="pressed" from="Jogar/Jogar" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Sair/Sair" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="Config/Config" to="." method="_on_Config_pressed"]

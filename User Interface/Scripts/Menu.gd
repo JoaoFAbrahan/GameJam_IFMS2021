@@ -2,7 +2,9 @@ extends Control
 var isPlaying = false
 
 func _input(event):
-	yield( get_tree().create_timer(4.0), "timeout" )
+	#yield( get_tree().create_timer(4.0), "timeout" )
+	$Timer.start();
+	yield($Timer,"timeout")
 	get_node("Intro").hide()
 	if !isPlaying:
 		get_node("MainTheme").play()
