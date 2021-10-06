@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CoinRecharge1.wav-d5b7e3a24d1a68ade1c2cd67f16fb739.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sound Effects/CoinRecharge1.wav"
+dest_files=[ "res://.import/CoinRecharge1.wav-d5b7e3a24d1a68ade1c2cd67f16fb739.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

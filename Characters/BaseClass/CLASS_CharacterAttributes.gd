@@ -2,44 +2,29 @@ extends KinematicBody2D
 class_name CLASS_CharacterAttributes
 
 ##### Class Atributes
-### Character Signals
-
-
 ### Character variables
-export var MaxHealth = 50;
-export var Stamina = 50;
-export var Speed = 250;
-export var CrouchSpeed = 70;
-export var JumpHeight = 450;
-
-### Character status
-export var isAlive: bool;
-export var isCrouch: bool;
-export var isFlying: bool;
+export var Level_Time = 300;
+export var Level_Score = 1000;
+export var Respawn_POS = Vector2(0,0);
 
 ### Internal variables
-onready var HealthBar;
-var health = MaxHealth;
+export var Speed = 250;
+export var JumpHeight = 400;
+var MyTime;
+var MyScore;
 var ForwardFacing: int;
-var isAttack: bool;
+
+### Character status
+var isAlive: bool;
+var isInteract: bool;
 var isGrounded: bool;
 
+
 ### Character Animation
-enum State {IDLE, WALK, CROUCH_IN, CROUCH_OUT, CROUCH_IDLE, DASH, JUMP, FALL, DEAD, HURT, ATTACK};
+enum State {IDLE = 0, WALK, JUMP, FALL, INTERACTION};
 var CharacterState = State.IDLE;
 
 
 ### Damage Controller
 func Life_Status() -> bool:
 	return isAlive;
-
-func Heal(heal: int):
-	if health < MaxHealth:
-		health += heal;
-
-func Damage(damage: int):
-	if Life_Status() && health > 0:
-		health -= damage;
-		CharacterState = State.HURT;
-	else:
-		isAlive = false;

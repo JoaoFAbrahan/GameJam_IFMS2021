@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/HammerSound.wav-694b4b015e89c900cbe733c256334b5f.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sound Effects/HammerSound.wav"
+dest_files=[ "res://.import/HammerSound.wav-694b4b015e89c900cbe733c256334b5f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
