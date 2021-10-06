@@ -9,7 +9,7 @@ func _on_Config_pressed():
 	AudioServer.generate_bus_layout()
 	 
 func _on_Button3_pressed():
-	get_tree().quit()
+	get_tree().change_scene("res://Levels/Maps/Level_00/LEVEL_Level_00.tscn")
 
 
 func _on_HSlider_value_changed(value):
