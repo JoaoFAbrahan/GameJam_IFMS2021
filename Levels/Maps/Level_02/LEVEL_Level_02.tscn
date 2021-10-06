@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Characters/Player/SCENE_Main_Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Maps/Level_02/Tilesets/Level02_Tilemap.tres" type="TileSet" id=2]
@@ -10,80 +10,86 @@
 [ext_resource path="res://Assets/Probs/FallZone/CODE_Fallzone.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Levels/Maps/Level_01/Code/CODE_LEVEL_Level_01.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Sounds/Soundtracks/GameOver_OST.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Probs/StageEnd/SCENE_Transition_Out.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Probs/StageEnd/SCENE_Stage_END.tscn" type="PackedScene" id=12]
 
 [node name="Level_02" type="Node"]
 script = ExtResource( 9 )
 
-[node name="World Componnets" type="Node" parent="."]
+[node name="World Components" type="Node" parent="."]
 
-[node name="Background Layer" type="Node2D" parent="World Componnets"]
+[node name="Background Layer" type="Node2D" parent="World Components"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="World Componnets/Background Layer"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="World Components/Background Layer"]
 
-[node name="Background_00" type="ParallaxLayer" parent="World Componnets/Background Layer/ParallaxBackground"]
+[node name="Background_00" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
 motion_scale = Vector2( 0.1, 1 )
 motion_mirroring = Vector2( 1280, 0 )
 
-[node name="Sprite" type="Sprite" parent="World Componnets/Background Layer/ParallaxBackground/Background_00"]
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_00"]
 position = Vector2( -96, -480 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="Background_01" type="ParallaxLayer" parent="World Componnets/Background Layer/ParallaxBackground"]
+[node name="Background_01" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
 motion_scale = Vector2( 0.2, 1 )
 motion_mirroring = Vector2( 1280, 0 )
 
-[node name="Sprite" type="Sprite" parent="World Componnets/Background Layer/ParallaxBackground/Background_01"]
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_01"]
 position = Vector2( -96, -480 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="Background_02" type="ParallaxLayer" parent="World Componnets/Background Layer/ParallaxBackground"]
+[node name="Background_02" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
 motion_scale = Vector2( 0.4, 1 )
 motion_mirroring = Vector2( 1280, 0 )
 
-[node name="Sprite" type="Sprite" parent="World Componnets/Background Layer/ParallaxBackground/Background_02"]
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_02"]
 position = Vector2( -96, -480 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="Background_03" type="ParallaxLayer" parent="World Componnets/Background Layer/ParallaxBackground"]
+[node name="Background_03" type="ParallaxLayer" parent="World Components/Background Layer/ParallaxBackground"]
 motion_scale = Vector2( 0.6, 1 )
 motion_mirroring = Vector2( 1280, 0 )
 
-[node name="Sprite" type="Sprite" parent="World Componnets/Background Layer/ParallaxBackground/Background_03"]
+[node name="Sprite" type="Sprite" parent="World Components/Background Layer/ParallaxBackground/Background_03"]
 position = Vector2( -96, -480 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Main Layer" type="Node2D" parent="World Componnets"]
+[node name="Main Layer" type="Node2D" parent="World Components"]
 
-[node name="TileMaps" type="Node" parent="World Componnets/Main Layer"]
+[node name="TileMaps" type="Node" parent="World Components/Main Layer"]
 
-[node name="TileMap" type="TileMap" parent="World Componnets/Main Layer/TileMaps"]
+[node name="TileMap" type="TileMap" parent="World Components/Main Layer/TileMaps"]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -655364, 14, 0, -589828, 14, 0, -524292, 14, 0, -458756, 14, 0, -524232, 11, 0, -524231, 12, 0, -524230, 12, 0, -524229, 20, 0, -393220, 14, 0, -458696, 14, 0, -458695, 15, 0, -458694, 15, 0, -458693, 19, 0, -458692, 20, 0, -327684, 14, 0, -393186, 0, 0, -393185, 31, 0, -393184, 1, 0, -393182, 1, 0, -393181, 2, 0, -393166, 11, 0, -393164, 13, 0, -393160, 14, 0, -393159, 15, 0, -393158, 15, 0, -393157, 15, 0, -393156, 19, 0, -393155, 20, 0, -262148, 15, 0, -327650, 11, 0, -327649, 12, 0, -327648, 12, 0, -327646, 12, 0, -327645, 13, 0, -327630, 14, 0, -327629, 15, 0, -327628, 16, 0, -327624, 14, 0, -327623, 15, 0, -327622, 15, 0, -327621, 15, 0, -327620, 15, 0, -327619, 19, 0, -327618, 20, 0, -196612, 15, 0, -262098, 31, 0, -262094, 14, 0, -262093, 15, 0, -262092, 16, 0, -262088, 14, 0, -262087, 15, 0, -262086, 15, 0, -262085, 15, 0, -262084, 15, 0, -262083, 15, 0, -262082, 19, 0, -262081, 20, 0, -262061, 31, 0, -262050, 32, 0, -131076, 15, 0, -196604, 23, 0, -196595, 32, 0, -196589, 22, 0, -196588, 21, 0, -196587, 21, 0, -196586, 30, 0, -196583, 32, 0, -196563, 11, 0, -196562, 12, 0, -196561, 13, 0, -196558, 14, 0, -196557, 15, 0, -196556, 16, 0, -196552, 14, 0, -196551, 15, 0, -196550, 15, 0, -196549, 15, 0, -196548, 15, 0, -196547, 15, 0, -196546, 15, 0, -196545, 19, 0, -196544, 20, 0, -196539, 14, 0, -196538, 14, 0, -196529, 17, 0, -196528, 12, 0, -196527, 12, 0, -196526, 12, 0, -196525, 12, 0, -196524, 12, 0, -196523, 12, 0, -196522, 12, 0, -196521, 12, 0, -196520, 12, 0, -196519, 12, 0, -196518, 12, 0, -196517, 12, 0, -196516, 12, 0, -196515, 12, 0, -196514, 12, 0, -196513, 12, 0, -196512, 13, 0, -196506, 11, 0, -196505, 12, 0, -196504, 12, 0, -196503, 12, 0, -196502, 13, 0, -65540, 15, 0, -131061, 17, 0, -131060, 12, 0, -131059, 12, 0, -131057, 12, 0, -131056, 12, 0, -131055, 13, 0, -131049, 10, 0, -131048, 11, 0, -131047, 12, 0, -131046, 12, 0, -131045, 12, 0, -131044, 12, 0, -131043, 12, 0, -131042, 12, 0, -131041, 12, 0, -131040, 12, 0, -131039, 12, 0, -131038, 12, 0, -131037, 12, 0, -131036, 12, 0, -131035, 12, 0, -131034, 12, 0, -131033, 12, 0, -131032, 12, 0, -131031, 13, 0, -131027, 14, 0, -131026, 15, 0, -131025, 16, 0, -131022, 14, 0, -131021, 15, 0, -131020, 16, 0, -131016, 14, 0, -131015, 15, 0, -131014, 15, 0, -131013, 15, 0, -131012, 15, 0, -131011, 15, 0, -131010, 15, 0, -131009, 15, 0, -131008, 19, 0, -131007, 20, 0, -131005, 32, 0, -131003, 14, 0, -131002, 14, 0, -130994, 17, 0, -130993, 18, 0, -130992, 15, 0, -130991, 15, 0, -130990, 15, 0, -130989, 15, 0, -130988, 15, 0, -130987, 15, 0, -130986, 15, 0, -130985, 15, 0, -130984, 15, 0, -130983, 15, 0, -130982, 15, 0, -130981, 15, 0, -130980, 15, 0, -130979, 15, 0, -130978, 15, 0, -130977, 15, 0, -130976, 16, 0, -130970, 14, 0, -130969, 15, 0, -130968, 15, 0, -130967, 15, 0, -130966, 16, 0, -4, 15, 0, -65528, 31, 0, -65526, 17, 0, -65525, 18, 0, -65524, 15, 0, -65523, 15, 0, -65522, 15, 0, -65521, 15, 0, -65520, 15, 0, -65519, 16, 0, -65513, 3, 0, -65512, 14, 0, -65511, 15, 0, -65510, 15, 0, -65509, 15, 0, -65508, 15, 0, -65507, 15, 0, -65506, 15, 0, -65505, 15, 0, -65504, 15, 0, -65503, 15, 0, -65502, 15, 0, -65501, 15, 0, -65500, 15, 0, -65499, 15, 0, -65498, 15, 0, -65497, 15, 0, -65496, 15, 0, -65495, 16, 0, -65491, 14, 0, -65490, 15, 0, -65489, 16, 0, -65486, 14, 0, -65485, 15, 0, -65484, 16, 0, -65480, 14, 0, -65479, 15, 0, -65478, 15, 0, -65477, 15, 0, -65476, 15, 0, -65475, 15, 0, -65474, 15, 0, -65473, 15, 0, -65472, 15, 0, -65471, 19, 0, -65470, 12, 0, -65469, 12, 0, -65468, 12, 0, -65467, 12, 0, -65466, 12, 0, -65465, 12, 0, -65464, 13, 0, -65459, 11, 0, -65458, 18, 0, -65457, 15, 0, -65456, 15, 0, -65455, 15, 0, -65454, 15, 0, -65453, 15, 0, -65452, 15, 0, -65451, 15, 0, -65450, 15, 0, -65449, 15, 0, -65448, 15, 0, -65447, 15, 0, -65446, 15, 0, -65445, 15, 0, -65444, 15, 0, -65443, 15, 0, -65442, 15, 0, -65441, 15, 0, -65440, 16, 0, -65434, 14, 0, -65433, 15, 0, -65432, 15, 0, -65431, 15, 0, -65430, 16, 0, 65533, 11, 0, 65534, 12, 0, 65535, 12, 0, 0, 12, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 12, 0, 6, 12, 0, 7, 12, 0, 8, 12, 0, 9, 12, 0, 10, 18, 0, 11, 15, 0, 12, 15, 0, 13, 15, 0, 14, 15, 0, 15, 15, 0, 16, 15, 0, 17, 16, 0, 23, 3, 0, 24, 14, 0, 25, 15, 0, 26, 15, 0, 27, 15, 0, 28, 15, 0, 29, 15, 0, 30, 15, 0, 31, 15, 0, 32, 15, 0, 33, 15, 0, 34, 15, 0, 35, 15, 0, 36, 15, 0, 37, 15, 0, 38, 15, 0, 39, 15, 0, 40, 15, 0, 41, 16, 0, 45, 14, 0, 46, 15, 0, 47, 16, 0, 50, 14, 0, 51, 15, 0, 52, 16, 0, 56, 14, 0, 57, 15, 0, 58, 15, 0, 59, 15, 0, 60, 15, 0, 61, 15, 0, 62, 15, 0, 63, 15, 0, 64, 15, 0, 65, 15, 0, 66, 15, 0, 67, 15, 0, 68, 15, 0, 69, 15, 0, 70, 15, 0, 71, 15, 0, 72, 16, 0, 77, 14, 0, 78, 15, 0, 79, 15, 0, 80, 15, 0, 81, 15, 0, 82, 15, 0, 83, 15, 0, 84, 15, 0, 85, 15, 0, 86, 15, 0, 87, 15, 0, 88, 15, 0, 89, 15, 0, 90, 15, 0, 91, 15, 0, 92, 15, 0, 93, 15, 0, 94, 15, 0, 95, 15, 0, 96, 16, 0, 102, 14, 0, 103, 15, 0, 104, 15, 0, 105, 15, 0, 106, 16, 0 )
 
-[node name="Fallzone" parent="World Componnets/Main Layer/TileMaps" instance=ExtResource( 8 )]
+[node name="Fallzone" parent="World Components/Main Layer/TileMaps" instance=ExtResource( 8 )]
 position = Vector2( 1568, 64 )
 scale = Vector2( 50, 1 )
 
-[node name="Upgrades" type="Node" parent="World Componnets/Main Layer"]
+[node name="Upgrades" type="Node" parent="World Components/Main Layer"]
 
-[node name="ReparableItens" type="Node" parent="World Componnets/Main Layer"]
+[node name="ReparableItens" type="Node" parent="World Components/Main Layer"]
 
-[node name="Main_Player" parent="World Componnets" instance=ExtResource( 1 )]
-Level_Time = 1000
-Speed = 150
-JumpHeight = 350
+[node name="Main_Player" parent="World Components" instance=ExtResource( 1 )]
+Level_Score = 0
 
-[node name="Level_Soundtrack" type="AudioStreamPlayer2D" parent="World Componnets/Main_Player"]
+[node name="Level_Soundtrack" type="AudioStreamPlayer2D" parent="World Components/Main_Player"]
 stream = ExtResource( 7 )
 autoplay = true
 
-[node name="GameOver_Soundtrack" type="AudioStreamPlayer2D" parent="World Componnets/Main_Player"]
+[node name="GameOver_Soundtrack" type="AudioStreamPlayer2D" parent="World Components/Main_Player"]
 stream = ExtResource( 10 )
 
-[node name="Foreground Layer" type="Node2D" parent="World Componnets"]
+[node name="Foreground Layer" type="Node2D" parent="World Components"]
+
+[node name="Transition_Out" parent="World Components/Foreground Layer" instance=ExtResource( 11 )]
+
+[node name="Stage_END" parent="." instance=ExtResource( 12 )]
+position = Vector2( 3344, -96 )
+path = "res://Levels/Maps/Level_03/LEVEL_Level_03.tscn"

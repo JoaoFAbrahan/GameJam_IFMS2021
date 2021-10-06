@@ -18,7 +18,7 @@
 [ext_resource path="res://User Interface/Sprites/pause_screen.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Probs/StageEnd/SCENE_Transition_Out.tscn" type="PackedScene" id=17]
 [ext_resource path="res://User Interface/Menu/GameOver.tscn" type="PackedScene" id=18]
-[ext_resource path="res://User Interface/Sprites/Menu_Centro.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Probs/StageEnd/SCENE_Stage_END.tscn" type="PackedScene" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 9 )
@@ -120,8 +120,7 @@ position = Vector2( 5976, -64 )
 position = Vector2( 3904, -192 )
 
 [node name="Main_Player" parent="World Components" instance=ExtResource( 1 )]
-Level_Time = 30
-Level_Score = 1700
+Level_Score = 10
 
 [node name="Level_Soundtrack" type="AudioStreamPlayer" parent="World Components/Main_Player"]
 stream = ExtResource( 7 )
@@ -162,12 +161,6 @@ margin_top = -34.0
 margin_right = 56.0
 margin_bottom = 34.0
 alignment = 1
-
-[node name="Tela_de_fundo" type="Sprite" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
-modulate = Color( 0.0941176, 0.0941176, 0.0941176, 0.745098 )
-position = Vector2( 56, -44 )
-scale = Vector2( 20, 12 )
-texture = ExtResource( 19 )
 
 [node name="pause_screen" type="Sprite" parent="Interface/MenuPausa/CenterContainer/VBoxContainer"]
 position = Vector2( 56, -82 )
@@ -213,6 +206,10 @@ text = "Sair"
 
 [node name="GameOver" parent="Interface" instance=ExtResource( 18 )]
 visible = false
+
+[node name="Stage_END" parent="." instance=ExtResource( 19 )]
+position = Vector2( 6312, -128 )
+path = "res://Levels/Maps/Level_02/LEVEL_Level_02.tscn"
 
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Continuar" to="Interface" method="_on_Continuar_pressed"]
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/MenuPrincipal" to="Interface" method="_on_MenuPrincipal_pressed"]

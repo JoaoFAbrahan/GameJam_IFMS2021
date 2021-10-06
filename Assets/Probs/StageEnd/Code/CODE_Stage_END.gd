@@ -12,7 +12,6 @@ func _ready():
 	$Sprite.visible = false;
 
 func _process(delta):
-	print(player.name)
 	if player.MyScore >= player.Level_Score:
 		$Sprite.visible = true;
 		ScoreAchieved = true;
