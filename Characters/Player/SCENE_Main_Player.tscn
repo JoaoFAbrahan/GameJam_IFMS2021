@@ -138,7 +138,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 10, 15 )
 
 [node name="Main_Player" type="KinematicBody2D"]
@@ -179,7 +179,7 @@ anims/Walk = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -15 )
-shape = SubResource( 13 )
+shape = SubResource( 9 )
 
 [node name="HUD Timer" type="CanvasLayer" parent="."]
 

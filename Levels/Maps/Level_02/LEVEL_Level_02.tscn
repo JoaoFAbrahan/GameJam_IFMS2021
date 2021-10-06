@@ -8,7 +8,7 @@
 [ext_resource path="res://Levels/Maps/Level_02/Background Maps/SandHillsBack_Background.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sounds/Soundtracks/Desert.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Probs/FallZone/CODE_Fallzone.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Levels/Maps/Level_01/Code/CODE_LEVEL_Level_01.gd" type="Script" id=9]
+[ext_resource path="res://Levels/Maps/Level_02/Code/CODE_LEVEL_Level_02.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Sounds/Soundtracks/GameOver_OST.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Probs/StageEnd/SCENE_Transition_Out.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Probs/StageEnd/SCENE_Stage_END.tscn" type="PackedScene" id=12]
