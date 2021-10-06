@@ -38,7 +38,8 @@ scale = Vector2( 19.9878, 12 )
 texture = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="CenterContainer/VBoxContainer"]
-position = Vector2( -478, 289 )
+position = Vector2( -1458.23, 455.726 )
+scale = Vector2( 2.25908, 2.25908 )
 texture = ExtResource( 2 )
 offset = Vector2( 778.533, -132.419 )
 
@@ -49,7 +50,6 @@ volume_db = -2.0
 autoplay = true
 
 [node name="Credito" type="Node2D" parent="."]
-visible = false
 __meta__ = {
 "_edit_group_": true
 }
