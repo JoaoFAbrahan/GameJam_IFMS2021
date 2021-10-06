@@ -32,4 +32,6 @@ func _on_HSlider_value_changed(value):
 func _on_FullScreen2_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
 
-
+func _on_Som_pressed():
+	get_tree().reload_current_scene()
+	get_tree().paused = false
