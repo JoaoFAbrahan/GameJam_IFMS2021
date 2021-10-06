@@ -133,6 +133,10 @@ stream = ExtResource( 15 )
 
 [node name="Transition_Out" parent="World Components/Foreground Layer" instance=ExtResource( 17 )]
 
+[node name="Stage_END" parent="." instance=ExtResource( 19 )]
+position = Vector2( 6312, -128 )
+path = "res://Levels/Maps/Level_02/LEVEL_Level_02.tscn"
+
 [node name="Interface" type="CanvasLayer" parent="."]
 pause_mode = 2
 script = ExtResource( 8 )
@@ -206,10 +210,6 @@ text = "Sair"
 
 [node name="GameOver" parent="Interface" instance=ExtResource( 18 )]
 visible = false
-
-[node name="Stage_END" parent="." instance=ExtResource( 19 )]
-position = Vector2( 6312, -128 )
-path = "res://Levels/Maps/Level_02/LEVEL_Level_02.tscn"
 
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/Continuar" to="Interface" method="_on_Continuar_pressed"]
 [connection signal="pressed" from="Interface/MenuPausa/CenterContainer/VBoxContainer/MenuPrincipal" to="Interface" method="_on_MenuPrincipal_pressed"]
