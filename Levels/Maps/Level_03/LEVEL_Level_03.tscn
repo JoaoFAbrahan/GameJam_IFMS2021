@@ -114,6 +114,9 @@ position = Vector2( 960, -224 )
 [node name="Bg-Broken" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 20 )]
 position = Vector2( 1024, 0 )
 
+[node name="Bg-Broken4" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 20 )]
+position = Vector2( 1152, -224 )
+
 [node name="Bg-Broken2" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 20 )]
 position = Vector2( 2944, -192 )
 
@@ -122,6 +125,9 @@ position = Vector2( 4416, 0 )
 
 [node name="Tile-Broken" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 8 )]
 position = Vector2( 448, -64 )
+
+[node name="Tile-Broken5" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 8 )]
+position = Vector2( 2528, -32 )
 
 [node name="Tile-Broken3" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 8 )]
 position = Vector2( 96, -64 )
@@ -152,9 +158,6 @@ position = Vector2( 3488, -256 )
 
 [node name="Tile-Broken11" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 8 )]
 position = Vector2( 3520, 32 )
-
-[node name="Slime_3" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 18 )]
-position = Vector2( 1184, -224 )
 
 [node name="Slime_4" parent="World Components/Main Layer/ReparableItens" instance=ExtResource( 18 )]
 position = Vector2( 640, -96 )
