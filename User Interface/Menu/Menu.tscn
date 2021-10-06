@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://User Interface/Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://User Interface/Menu/Sprite/Desentupidores.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://User Interface/Menu/Sprite/volume_slider.png" type="Texture" id=8]
 [ext_resource path="res://User Interface/Menu/Sprite/volume_bar.png" type="Texture" id=9]
 [ext_resource path="res://User Interface/Menu/Sprite/volume_icon.png" type="Texture" id=10]
+[ext_resource path="res://User Interface/Intro/Intro.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Sounds/Soundtracks/Harpyart.mp3" type="AudioStream" id=12]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -55,22 +57,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 320.0
-margin_top = 192.0
-margin_right = 320.0
-margin_bottom = 192.0
-alignment = 2
-
-[node name="Tile_Notas" type="Node" parent="."]
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 640.0
@@ -211,6 +197,10 @@ __meta__ = {
 position = Vector2( 320.02, 196.548 )
 stream = ExtResource( 4 )
 volume_db = -2.0
+
+[node name="LogoTheme" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 320.02, 192 )
+stream = ExtResource( 12 )
 autoplay = true
 
 [node name="FullScreen" type="Button" parent="."]
@@ -223,6 +213,9 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Intro" parent="." instance=ExtResource( 11 )]
+position = Vector2( 320.02, 192 )
 
 [connection signal="pressed" from="Jogar/Jogar" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Sair/Sair" to="." method="_on_Button3_pressed"]

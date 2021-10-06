@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Harpyart.mp3-b3c2dbab0f9064018a3ab3c1665796c7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Soundtracks/Harpyart.mp3"
+dest_files=[ "res://.import/Harpyart.mp3-b3c2dbab0f9064018a3ab3c1665796c7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

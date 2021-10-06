@@ -1,5 +1,13 @@
 extends Control
+var isPlaying = false
 
+func _input(event):
+	yield( get_tree().create_timer(4.0), "timeout" )
+	get_node("Intro").hide()
+	if !isPlaying:
+		get_node("MainTheme").play()
+		isPlaying = true
+		
 func _on_Button_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Levels/Maps/Level_01/LEVEL_Level_01.tscn")

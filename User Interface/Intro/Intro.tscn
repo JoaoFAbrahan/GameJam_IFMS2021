@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://User Interface/Scripts/Intro.gd" type="Script" id=1]
 [ext_resource path="res://User Interface/Intro/Sprite Sheet/harpyart_logo-Sheet.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -33,7 +32,6 @@ tracks/1/keys = {
 }
 
 [node name="Intro" type="Node2D"]
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
