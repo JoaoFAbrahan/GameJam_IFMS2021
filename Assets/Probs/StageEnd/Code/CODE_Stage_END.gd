@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var player = get_parent().get_node("Main_Player");
+onready var player = get_parent().get_node("World Components/Main_Player");
 #onready var changer = get_parent().get_node("Transition_In");
 onready var changer = $Transition_In
 export var path: String;
