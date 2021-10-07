@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://User Interface/Fonts/arial_narrow_7.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://User Interface/AVISO/Code/CODE_SCENE_Aviso.gd" type="Script" id=2]
+[ext_resource path="res://User Interface/AVISO/SCENE_Aviso.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24

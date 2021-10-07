@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Assets/Sounds/Soundtracks/Harpyart.mp3" type="AudioStream" id=1]
 [ext_resource path="res://User Interface/Intro/Sprite Sheet/harpyart_logo-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://User Interface/Intro/Intro.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Motion"
@@ -32,6 +34,7 @@ tracks/1/keys = {
 }
 
 [node name="Intro" type="Node2D"]
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -59,3 +62,10 @@ anims/Motion = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="LogoTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0

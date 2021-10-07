@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://User Interface/Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://User Interface/Menu/Sprite/Desentupidores.png" type="Texture" id=2]
@@ -10,8 +10,6 @@
 [ext_resource path="res://User Interface/Menu/Sprite/volume_slider.png" type="Texture" id=8]
 [ext_resource path="res://User Interface/Menu/Sprite/volume_bar.png" type="Texture" id=9]
 [ext_resource path="res://User Interface/Menu/Sprite/volume_icon.png" type="Texture" id=10]
-[ext_resource path="res://User Interface/Intro/Intro.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Sounds/Soundtracks/Harpyart.mp3" type="AudioStream" id=12]
 [ext_resource path="res://User Interface/Intro/Sprite Sheet/credit_background.png" type="Texture" id=13]
 [ext_resource path="res://User Interface/Intro/Sprite Sheet/IMG_20211006_153442150.jpg" type="Texture" id=14]
 [ext_resource path="res://User Interface/Intro/Sprite Sheet/IMG_20211006_162437.jpg" type="Texture" id=15]
@@ -229,11 +227,6 @@ position = Vector2( 320.02, 196.548 )
 stream = ExtResource( 4 )
 volume_db = -2.0
 
-[node name="LogoTheme" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 320.02, 192 )
-stream = ExtResource( 12 )
-autoplay = true
-
 [node name="FullScreen" type="Button" parent="."]
 margin_left = 1.0
 margin_top = 345.0
@@ -244,9 +237,6 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Intro" parent="." instance=ExtResource( 11 )]
-position = Vector2( 320.02, 192 )
 
 [node name="Credito" type="Node2D" parent="."]
 visible = false
@@ -381,9 +371,6 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
 
 [connection signal="pressed" from="Jogar/Jogar" to="." method="_on_Jogar_pressed"]
 [connection signal="pressed" from="Sair/Sair" to="." method="_on_Button3_pressed"]
