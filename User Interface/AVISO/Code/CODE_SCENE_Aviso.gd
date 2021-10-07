@@ -1,9 +1,5 @@
 extends Control
-var timeIn = true;
 
-func _input(event):
-	if timeIn:
-		$Timer.start();
-		yield($Timer,"timeout");
-		timeIn = false;
+
+func _on_Button_pressed():
 	get_tree().change_scene("res://User Interface/Menu/Menu.tscn")
