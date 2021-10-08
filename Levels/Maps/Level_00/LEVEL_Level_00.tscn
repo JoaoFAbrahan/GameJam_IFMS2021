@@ -295,18 +295,18 @@ __meta__ = {
 }
 
 [node name="Dialog_9" type="Polygon2D" parent="World Components/Main Layer/Tutorial"]
-position = Vector2( 1864, 80 )
+position = Vector2( 1836, 81 )
 scale = Vector2( 1.15, 1 )
 color = Color( 0.160784, 0.160784, 0.160784, 0.588235 )
-polygon = PoolVector2Array( -83.4783, -296, -83.4784, -248, 55.6521, -248, 55.6521, -296 )
+polygon = PoolVector2Array( -118.261, -296, -118.261, -272, -118.261, -248, 153.043, -248, 153.043, -272, 153.043, -296 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="World Components/Main Layer/Tutorial/Dialog_9"]
-margin_left = -77.0
-margin_top = -288.0
-margin_right = 70.0
-margin_bottom = -248.0
+margin_left = -116.0
+margin_top = -290.0
+margin_right = 159.0
+margin_bottom = -250.0
 custom_fonts/normal_font = SubResource( 1 )
-text = "You must leave the stage before the time is up, or you're FIRED!"
+text = "You don't have to fix everything, but you must reach the score and leave the stage before the time is up, or you're FIRED!"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
